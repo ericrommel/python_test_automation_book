@@ -13,13 +13,13 @@ In this session, we will start by covering essential Python fundamentals, includ
 ---
 
 
-### [Section 1](weeks/week01/section01.md): Setting Up Tools
+### [Section 1](section01.md): Setting Up Tools
 
-### [Section 2](weeks/week01/section02.md): Python Basics
+### [Section 2](section02.md): Python Basics
 
-### [Section 3](weeks/week01/section03.md): Control Structures
+### [Section 3](section03.md): Control Structures
 
-### [Section 4](weeks/week01/section04.md): Functions
+### [Section 4](section04.md): Functions
 
 ## Hands-On Exercises:
 ### Exercise 1: Variable Assignment
