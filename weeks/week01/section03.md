@@ -3,6 +3,7 @@
 Control structures are essential for decision-making in test scripts. In this section, you'll learn how to use `if-else` statements to handle different test cases and loops (`for` and `while`) to iterate over data sets or repeat actions in your scripts.
 
 ## References:
+
 1. [Python Control Flow](https://docs.python.org/3/tutorial/controlflow.html)
 2. [Python If-Else](https://www.w3schools.com/python/python_conditions.asp)
 3. [For and While Loops](https://realpython.com/python-loops-iterators/)
@@ -15,9 +16,14 @@ Control structures are essential for decision-making in test scripts. In this se
 
 The `if-elif-else` statements lets you make decisions in your code. In test automation, this can be used to determine if a test passes or fails based on the test result.
 
+
 The `if` statement is used to execute a block of code only if a specified condition is true.
 
+
 The `elif` (meaning `else if`) and `else` blocks provide additional conditional checks and a fallback when none of the conditions are true.
+
+
+### Syntax:
 
    ```python
    if condition:
@@ -28,7 +34,9 @@ The `elif` (meaning `else if`) and `else` blocks provide additional conditional 
        # Code to execute if condition is false
    ```
 
+
 ### Example:
+
    ```python
    def login(username):
        valid_user = "test_user"
@@ -43,6 +51,7 @@ The `elif` (meaning `else if`) and `else` blocks provide additional conditional 
 
    ```
 
+
 ### Hands-On Task:
 
 Write a script that checks whether a user’s score falls within certain ranges:
@@ -56,6 +65,9 @@ Write a script that checks whether a user’s score falls within certain ranges:
 
 Loops are used to execute a block of code multiple times, which is essential for running tests with different data sets.
 
+
+### Syntax:
+
    ```python
    # While loop
    while condition:
@@ -66,11 +78,14 @@ Loops are used to execute a block of code multiple times, which is essential for
        # Code to execute for each item in the sequence
    ```
 
+
 ### 3.2.1 `for` Loops
 
 A `for` loop is used for iterating over a sequence (e.g., a list, tuple, dictionary, set, or string). You can use for loops to repeat an action for a specific number of iterations, which is useful when working with test cases or data sets.
 
+
 #### Example:
+
    ```python
    # Looping over a list of test cases
    test_cases = ["Test1", "Test2", "Test3"]
@@ -78,6 +93,7 @@ A `for` loop is used for iterating over a sequence (e.g., a list, tuple, diction
    for test in test_cases:
        print(f"Running {test}")  
    ```
+
 
 #### Hands-On Task:
 
@@ -88,7 +104,9 @@ Write a for loop to iterate over a list of test scores and print whether each sc
 
 A while loop continues executing as long as the specified condition remains true. This is helpful when you don’t know in advance how many times the loop should run, such as waiting for a condition to be met in an automation task.
 
+
 #### Example:
+
    ```python
    # Using a while loop to retry a test case until it passes
    test_passed = False
@@ -103,6 +121,7 @@ A while loop continues executing as long as the specified condition remains true
            print("Test passed on attempt", attempts)
    ```
 
+
 #### Hands-On Task:
 
 Write a while loop that simulates retrying a test case up to 5 times until it passes. Use a condition to break out of the loop early if the test passes.
@@ -112,6 +131,7 @@ Write a while loop that simulates retrying a test case up to 5 times until it pa
 
 - `break`: Exits the loop entirely.
 - `continue`: Skips the current iteration and moves to the next one.
+
 
 #### Examples:
 
@@ -125,6 +145,7 @@ Write a while loop that simulates retrying a test case up to 5 times until it pa
            break
        print(f"Running {test}")
    ```
+
 
 #### Hands-On Task:
 

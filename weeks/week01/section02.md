@@ -1,14 +1,16 @@
 # Section 2: Python Basics
 
-This section introduces the basic building blocks of Python: variables, data types, and operators. Understanding these are essential for writing test scripts as they allow you to manage test data, define test conditions, and perform calculations in tests.
+This section introduces the basic building blocks of Python: comments, indentations, variables, data types, and operators. Understanding these are essential for writing test scripts as they allow you to manage test data, define test conditions, and perform calculations in tests.
 
 ## References:
+
 1. [Python comments](https://www.w3schools.com/python/gloss_python_comments.asp)
 2. [Python Variables](https://docs.python.org/3/tutorial/introduction.html#using-python-as-a-calculator)
 3. [Python Data Types](https://docs.python.org/3/library/stdtypes.html)
 4. [Python Operators](https://www.w3schools.com/python/python_operators.asp)
 5. [Basic Data Types](https://realpython.com/python-data-types/)
 6. [Python Operators](https://www.geeksforgeeks.org/python-operators/)
+7. [Style Guide for Python Code](https://peps.python.org/pep-0008/)
 
 ---
 
@@ -17,44 +19,85 @@ This section introduces the basic building blocks of Python: variables, data typ
 
 Comments are non-executable lines in your code used to describe or explain what the code does. They are essential in test automation scripts for providing context, making the script easier to maintain and understand by other testers or developers.
 
+
 ### Types of Comments:
 
 - **`Single-line Comments`**: Start with a `#` symbol. They are often used to annotate specific lines of code.
+
   ```python
   # This is a single-line comment
   passed_tests = 3  # This variable stores the number of passed tests
   ```
+  
 - **`Multi-line Comments`**: Enclosed in triple quotes (''' or """). These are helpful for longer explanations or documentation at the start of a function or script.
+  
   ```python
-  '''
-  This function calculates the number of passed tests
-  and returns the percentage of tests that passed.
-  '''
   def calculate_pass_percentage(total_tests, failed_tests):
-    passed_tests = total_tests - failed_tests
-    return (passed_tests / total_tests) * 100
+      '''
+      This function calculates the number of passed tests
+      and returns the percentage of tests that passed.
+      '''
+      passed_tests = total_tests - failed_tests
+      return (passed_tests / total_tests) * 100
   ``` 
+
+
 ### Best Practices:
 
 - Use comments to explain why certain decisions are made in the code, not just what the code does.
 - Keep comments concise and relevant to the code section.
 - Avoid over-commenting on code that is self-explanatory.
 
+
 ### Hands-On Task:
 
 Add comments to a script and run the code. Observe that they are not print out to the console.
 
 
-## 2.2 Variables
+## 2.2 Indentation
+
+Before diving into Python syntax, it is crucial to understand the structure of the code, particularly how Python uses **indentation** to define blocks of code for writing effective test scripts.
+
+Unlike many other programming languages that use braces `{}` or keywords to define code blocks, Python uses **indentation**. Consistent indentation is mandatory in Python, as it indicates the structure of the code. This makes the code cleaner but requires attention to detail.
+
+
+### Example:
+
+  ```python
+  # Proper indentation
+  if True:
+      print("This is indented and part of the if statement.")
+      print("This is also part of the if statement.")
+
+  # Incorrect indentation
+  if True:
+  print("This will cause an IndentationError.")  # No indentation
+  ```
+
+
+### Key Points:
+
+- Indentation must be consistent. Python doesn't enforce a specific number of spaces or tabs, but it's best practice to use 4 spaces per indentation level.
+- Every new code block, such as inside an `if` statement, `for`/`while` loops, or function, must be indented.
+- Incorrect or inconsistent indentation will raise an `IndentationError`.
+
+
+## 2.3 Variables
 
 Variables are placeholders used to store data that can be referenced and manipulated. In test automation, variables help you store test inputs, expected outputs, or results.
 
+
 ### Rules for Naming Variables:
+
 - Variable names should be **descriptive** and reflect their purpose (e.g., `test_case_count`, `login_status`).
 - Must start with a **letter** or an **underscore** (e.g., `_username`, `user_name`).
 - Can contain letters, numbers, and underscores, but **cannot start with a number** (e.g., `username1` is valid, but `1username` is not).
 - Variable names are **case-sensitive** (`UserName` and `username` are considered different).
 - Avoid using Python **keywords** like `if`, `else`, `while`, etc., as variable names.
+
+
+To learn more about naming convention click [here](https://peps.python.org/pep-0008/#naming-conventions) 
+
 
 ### Sintaxe:
 
@@ -62,20 +105,23 @@ Variables are placeholders used to store data that can be referenced and manipul
    variable_name = value   
    ```
 
+
 ### Example:
+
    ```python
    # Storing user data for testing
    username = "test_user"
-   password = "pass123"
+   password = "pass123" # Security breach. Avoid it
    login_attempts = 3
    ```
 
+
 ### Hands-On Task:
 
-Create variables to store test data, such as usernames, passwords, and expected outputs for tests.
+Create variables to store test data, such as names, date of birth, actual result and expected outputs for tests.
 
 
-## 2.2 Data Types
+## 2.4 Data Types
 
 Python supports several data types, which are essential for organizing and manipulating test data. Let's check the main `built-in` types below (check the completed [list of types](https://docs.python.org/3/library/stdtypes.html#)) 
 
@@ -106,31 +152,51 @@ Python supports several data types, which are essential for organizing and manip
 
 
 ### Typing (type hints)
+
 Python is dynamically typed. It means variable types are determined at runtime, not at the time of declaration. We don't need to declare the type of variable explicitly, and its type can change over the time. For example:
+
   ```python
-  password = "pass123"
-  password = 123456
+  my_variable = "123456" # This is a string type variable
+  my_variable = 123456 # Now this is a numeric type variable
   ```
 
 Since Python 3.5, the [type hinting](https://docs.python.org/3/library/typing.html) functionality was added. This is a way to specify the expected types of variables, function arguments, and return values.
 
-**`Note`**: The Python runtime does not enforce function and variable type annotations. They can be used by third party tools such as type checkers, IDEs, linters, etc.
+**`Note`**: The **Python runtime** DOES NOT enforce function and variable type annotations. They can be used by third party tools such as type checkers, IDEs, linters, etc.
 
 
-#### Example:
+#### Example in variables:
+
+  ```python
+  my_variable: str = "123456" # This is a string type variable
+  another_variable: int = 123456 # This is a numeric type (integer) variable
+  ```
+
+
+#### Example in functions:
+
    ```python
    def add(x: int, y: int) -> int:
+       """
+       This function sum up two integers.
+       :param x: first integer
+       :param y: second integer
+       :return: return an integer with the sum of the two parameters provided
+       """ 
+
        return x + y
    ```
+
 
 #### Hands-On Task:
 
 Write a script that initializes variables of different data types (strings, integers, booleans) to store test results and log information.
 
 
-## 2.3 Operators
+## 2.5 Operators
 
 Python has several operators that allow you to perform calculations, comparisons, and logic operations. These operators are crucial in test conditions and validating outputs.
+
 
 ### Main Operators:
 - Arithmetic Operators:
@@ -204,6 +270,7 @@ Let's assume `a = 10` and `b = 5`.
 
 
 ### Hands-On Task:
+
 Create a script that uses arithmetic operators to calculate the percentage of passed and failed tests, then use comparison and logical operators to check if the tests meet a predefined success rate, given:
 - Percentage of passed is calculated by dividing the number of passed tests by the total number of tests and then multiplying by 100.
 - Percentage of failed is calculated by subtracting 100 by percentage of passed tests.
