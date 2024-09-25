@@ -6,11 +6,12 @@ This section introduces the basic building blocks of Python: comments, indentati
 
 1. [Python comments](https://www.w3schools.com/python/gloss_python_comments.asp)
 2. [Python Variables](https://docs.python.org/3/tutorial/introduction.html#using-python-as-a-calculator)
-3. [Python Data Types](https://docs.python.org/3/library/stdtypes.html)
-4. [Python Operators](https://www.w3schools.com/python/python_operators.asp)
-5. [Basic Data Types](https://realpython.com/python-data-types/)
-6. [Python Operators](https://www.geeksforgeeks.org/python-operators/)
-7. [Style Guide for Python Code](https://peps.python.org/pep-0008/)
+3. [Python Variables](https://realpython.com/python-variables/)
+4. [Python Data Types](https://docs.python.org/3/library/stdtypes.html)
+5. [Python Operators](https://www.w3schools.com/python/python_operators.asp)
+6. [Basic Data Types](https://realpython.com/python-data-types/)
+7. [Python Operators](https://www.geeksforgeeks.org/python-operators/)
+8. [Style Guide for Python Code](https://peps.python.org/pep-0008/)
 
 ---
 
@@ -99,7 +100,7 @@ Variables are placeholders used to store data that can be referenced and manipul
 To learn more about naming convention click [here](https://peps.python.org/pep-0008/#naming-conventions) 
 
 
-### Sintaxe:
+### Syntax:
 
    ```python
    variable_name = value   

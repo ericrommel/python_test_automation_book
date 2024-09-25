@@ -3,6 +3,14 @@
 Functions are reusable blocks of code that perform specific tasks. Python provides a wide range of built-in functions, as well as the ability to define your own custom functions. In this section, we'll cover how to use some essential built-in functions such as `input()`, `print()`, casting functions, and others.
 
 
+## References:
+
+1. [Built-in Functions](https://docs.python.org/3/library/functions.html)
+2. [Defining Functions](https://docs.python.org/3/tutorial/controlflow.html#defining-functions)
+3. [Format String Syntax](https://docs.python.org/3/library/string.html#formatstrings)
+4. [A Guide to the Newer Python String Format Techniques](https://realpython.com/python-formatted-output/)
+
+
 ## 4.1 Built-in Functions
 
 Python provides several built-in functions that simplify common tasks, such as getting user input, printing output, and converting data types. These functions are crucial for creating interactive test scripts and handling test data.
@@ -24,18 +32,41 @@ The `input()` function allows you to capture user input from the console. This i
 
 The `print()` function is used to output data to the console. This is one of the most commonly used functions in Python for debugging and displaying test results.
 
+
+#### Syntax:
+
+In its simplest form, the `print()` function takes one or more arguments and outputs them to the console. Each argument is separated by a space by default
+
+  ````python
+  print(value1, value2, ...)
+  ````
+
+#### Example:
+
    ```python
    # Printing test results
    test_passed = True
    print("Test passed:", test_passed)
    ```
 
-You can also use formatted strings (`f-strings`) to embed variables inside your output:
+#### Formatting Strings
 
-   ```python
-   # Using f-strings for formatted output
-   username = "test_user"
-   print(f"Welcome, {username}!")
+While `print()` is simple, sometimes you need to format your output in a more structured way. Python offers several methods to format strings, including using `format()` and `f-strings` (introduced in Python 3.6).
+
+- Using `format()` method allows you to insert values into a string at designated `placeholders` marked by curly braces `{}`:
+
+  ```python
+   test_case_id = 101
+   status = 'Success'
+   print('Test case {}: {}'.format(test_case_id, status))
+   ```
+
+- Using `f-strings` (formatted string literals) offer a more concise and readable way to format strings by directly embedding expressions inside `{}` within a string prefixed with an `f`:
+
+  ```python
+   test_case_id = 102
+   status = "Failure"
+   print(f"Test case {test_case_id}: {status}")
    ```
 
 

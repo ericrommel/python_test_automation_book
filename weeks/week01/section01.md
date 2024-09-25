@@ -5,13 +5,15 @@ In this section, we will set up the essential tools you need for the course. The
 
 ## References
 1. [Python Downloads](https://www.python.org/downloads/)
-2. [Python Documentation](https://docs.python.org/3/contents.html)
-3. [Git Documentation](https://git-scm.com/doc)
-4. [GitHub](https://github.com)
-5. [PyCharm Download](https://www.jetbrains.com/pycharm/download/)
-6. [Visual Studio Code](https://code.visualstudio.com/)
-7. [BeeCrowd](https://www.beecrowd.com.br/)
-8. [Course Repository](https://github.com/ericrommel/python_test_automation_book)
+2. [Python Documentation](https://docs.python.org/3/)
+3. [Python Tutorial](https://docs.python.org/3/tutorial/index.html)
+4. [Git Documentation](https://git-scm.com/doc)
+5. [GitHub](https://github.com)
+6. [PyCharm Download](https://www.jetbrains.com/pycharm/download/)
+7. [Visual Studio Code](https://code.visualstudio.com/)
+8. [Installing Python Modules](https://docs.python.org/3/installing/index.html#basic-usage)
+9. [BeeCrowd](https://www.beecrowd.com.br/)
+10. [Course Repository](https://github.com/ericrommel/python_test_automation_book)
 
 ---
 
@@ -48,7 +50,7 @@ Git is a version control tool that will help us manage code repositories. We wil
    $ git --version
    ```
 
-## 1.3 Github Setup 
+## 1.3 GitHub Setup 
 
 GitHub is a powerful web-based platform for version control and collaboration in software development. It allows developers to collaborate on projects, track changes, and maintain a history of code development. It is widely used in the software development industry for open-source projects, team collaborations, and test automation.
 
@@ -122,8 +124,7 @@ After installing your chosen IDE, open a new Python project and write a simple "
 
 A virtual environment is an isolated Python environment where it will have its own Python interpreter, libraries and scripts installed. It allows you to manage dependencies for different projects separately, preventing conflicts between packages.
 
-Follow the [Python documentation](https://docs.python.org/3/library/venv.html) instruction to have it done.
-
+Follow the [Python documentation](https://docs.python.org/3/library/venv.html) for more background on Python Virtual Environments.
 
 ### Instructions
 
@@ -150,6 +151,65 @@ Follow the [Python documentation](https://docs.python.org/3/library/venv.html) i
 
 1. Create a new virtual environment for the Week 1 class.
 2. Activate the new virtual environment
+
+
+## 1.5 Package Management Tools
+
+Package management tools are essential for managing dependencies. These tools allow you to install, update, and manage external libraries or packages that your Python projects may rely on. Instead of manually downloading and maintaining libraries, you can easily pull in the required packages using a package manager, ensuring that your environment stays organized and consistent.
+
+Some examples of package management tools:
+
+- `pip`: Python's standard package installer. This is what we will focus on in this course. [Official documentation](https://pip.pypa.io/en/stable/)
+- `pipenv`: Manages both packages and virtual environments, combining `pip` and `virtualenv` in a unified workflow. [Official documentation](https://pipenv.pypa.io/en/latest/)
+- `Conda`: More commonly used in data science, `Conda` is an environment manager and package manager that works across multiple programming languages. [Official documentation](https://docs.conda.io/en/latest/)
+- `Poetry`: Designed to simplify dependency management and packaging, `Poetry` is growing in popularity due to its ease of use. [Official Documentation](https://python-poetry.org/)
+
+In this course, we will primarily use `pip`, the standard package management tool, due to its simplicity and widespread use in Python projects.
+
+
+### Syntax:
+
+```python
+$ pip install <package_name>
+```
+
+
+### Example:
+
+```python
+$ pip install pytest
+```
+
+
+### Installing Packages
+
+You can install specific packages that you need for your test automation projects using pip. These packages are often listed in a requirements.txt file, which is used to ensure that everyone on the team is using the same package versions.
+
+```python
+$ pip install -r requirements.txt
+```
+
+
+### Updating and Uninstalling Packages
+
+Updating:
+
+   ```python
+   $ pip install --upgrade <package_name>
+   ```
+
+Uninstalling:
+
+   ```python
+   $ pip uninstall <package_name>
+   ```
+
+
+### Generating the `requirements.txt`
+
+```python
+$ pip freeze > requirements.txt
+```
 
 
 ## 1.6 BeeCrowd Code Challenges
