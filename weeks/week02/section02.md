@@ -25,8 +25,19 @@ Tuples can store multiple items in a single variable. Their immutability makes t
 
 ### Syntax:
 
+Creating
+
 ```python
-my_tuple = (1, 2, 3)
+my_tuple = ()
+my_tuple = (21, 12, 33)
+# from list
+tuple_from_list = tuple([11, 22, 33])
+```
+
+Access to element by integer index
+
+```python
+print(my_tuple[2]) # returns 12
 ```
 
 
