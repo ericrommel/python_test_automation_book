@@ -1,6 +1,14 @@
 # Section 2: Tuples
 
-Tuples are `immutable` sequences, useful for storing fixed sets of data that should not change during execution.
+## Introduction:
+* Used to store collections of heterogeneous data (any type of data in the same tuple
+* Tuples are `immutable` sequences, useful for storing fixed sets of data that should not change during execution.
+* Round brackets ()
+* Only two built-in method:
+    count()	Returns the number of times a specified value occurs in a tuple
+    index() Searches the tuple for a specified value and returns the position of where it was found
+* Uses less memory and are faster to access than to lists
+
 
 
 ## References:
