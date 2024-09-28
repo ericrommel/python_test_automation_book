@@ -1,13 +1,14 @@
 # Section 2: Tuples
 
 ## Introduction:
-* Used to store collections of heterogeneous data (any type of data in the same tuple
-* Tuples are `immutable` sequences, useful for storing fixed sets of data that should not change during execution.
+* Used to store collections of heterogeneous data (any type of data: string, boolean, etc)
 * Round brackets ()
+* Tuple is `immutable` - can't be changed
 * Only two built-in method:
     count()	Returns the number of times a specified value occurs in a tuple
     index() Searches the tuple for a specified value and returns the position of where it was found
-* Uses less memory and are faster to access than to lists
+* Uses less memory and is faster to access to elements vs list
+* Tuple is `immutable`, therefore is useful for storing fixed sets of data that should not change during execution (contant).
 
 
 
@@ -18,20 +19,17 @@
 
 ---
 
-## 2.1 Understanding Tuples
-
-Tuples can store multiple items in a single variable. Their immutability makes them suitable for storing constants.
-
 
 ### Syntax:
 
 Creating
-
 ```python
 my_tuple = ()
 my_tuple = (21, 12, 33)
 # from list
 tuple_from_list = tuple([11, 22, 33])
+# from any sequence of elements (e.g. range)
+tuple_from_range = tuple(range(10))
 ```
 
 Access to element by integer index
