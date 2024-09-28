@@ -41,11 +41,8 @@ print(my_tuple[2]) # returns 12
 ```
 
 
-### Example:
-
-```python
-http_status_codes = (200, 404, 500)
-```
-
-
 ## Hands-On Task:
+
+1. Create a tuple with several following types of elemenents: integer, boolean, list, tuple, string.
+2. Define type of 3d element of tuple
+3. Add new element into the tuple.
