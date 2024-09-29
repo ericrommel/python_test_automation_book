@@ -1,6 +1,8 @@
 # Section 2: Tuples
 
 ## Introduction:
+Python tuples is a type of data structure that is similar to lists. The main difference between the two is that tuples are immutable, meaning they cannot be changed after creating.
+## Introduction statements:
 * Used to store collections of heterogeneous data (any type of data: string, boolean, etc)
 * Round brackets ()
 * Tuple is `immutable` - can't be changed
@@ -24,7 +26,10 @@
 
 Creating
 ```python
-my_tuple = ()
+# from contructor:
+test_empty_tupple = tuple()
+# 
+my_tuple_empty = ()
 my_tuple = (21, 12, 33)
 # from list
 tuple_from_list = tuple([11, 22, 33])
