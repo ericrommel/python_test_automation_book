@@ -44,3 +44,5 @@ print(my_tuple[2]) # returns 12
 1. Create a tuple with several following types of elemenents: integer, boolean, list, tuple, string.
 2. Define type of 3d element of tuple
 3. Add new element into the tuple.
+4. Get tuple that contains sorted elements of initial tuple e.g. tuple_to_find_largest = (2, 6, 4, 17, 9, 3, 15, 7)
+5. Get tuple that contains two largest elements of initial tuple e.g. tuple_to_find_largest = (2, 6, 4, 17, 9, 3, 15, 7)
