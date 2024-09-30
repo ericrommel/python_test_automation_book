@@ -418,6 +418,9 @@ List comprehensions can also be used to update lists by transforming existing el
     print(numbers)  # Output: [1, 4, 9, 16]
     ```
 
+
+## 1.3 Deleting
+
 In test automation, there are situations where test data needs to be dynamically removed from lists. Python provides several ways to delete elements from a list, each serving different use cases.
 
 
@@ -526,9 +529,17 @@ print(test_cases)  # Output: []
 
 ## Hands-On Task:
 
-1. [TI] What are the main characteristics/properties about Lists in Python?
+1. [TI] What are the main characteristics/properties of Lists in Python?
 2. Create a list of numbers and extract every second number from it.
 3. Reverse a list using slicing and verify visually if the list has been reversed correctly.
 4. Use slicing to reverse a list, modify a subset of it, and then restore the original list using a copy.
 5. Extract a sublist from index 1 to 3 from a list of test case IDs.
 6. Slice a list with a step of 3 to get every third element, starting from the second position.
+7. Add 3 new elements to the end of a list using different methods (`append()`, `extend()`, and `insert()`).
+8. Remove the second element from a list using the `pop()` method and print the removed element.
+9. Remove the first occurrence of a specific value from a list using the `remove()` method.
+10. Clear a list and then add elements back to it using `append()` inside a loop.
+11. Create a shallow copy of a list containing nested lists and modify one of the inner lists. Observe how the original list changes.
+12. Create a deep copy of a list using `copy.deepcopy()` from the `copy` module and modify one of the inner lists. Verify that the original list remains unchanged.
+13. Create a list comprehension to generate a list of squared numbers from 1 to 10.
+14. Use list comprehension to create a new list with only the even numbers from an existing list.
