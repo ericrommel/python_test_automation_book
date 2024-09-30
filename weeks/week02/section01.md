@@ -47,7 +47,7 @@ digits = list() # creates an empty list
 digits = list(range(10)) # creates a list with: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
-**Note:** Variables that represent sequences usually are named using plural.
+**Note:** It's a good practice to use plural names for lists to indicate they hold multiple items.
 
 
 ### Examples:
@@ -55,14 +55,16 @@ digits = list(range(10)) # creates a list with: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```python
 test_cases = [] # An empty list
 test_cases = [1, 2, 3] # A list of numbers
-test_cases = ["1", "2", "3"] # A list of strings
-test_cases = ["Cat", 2] # A list of different data types
-test_cases = ["Login Page", "Dashboard", "Logout Functionality"]
+test_cases = ["Login Page", "Dashboard", "Logout Functionality"] # A list of strings
+test_cases = ["Login Page", 2, True] # A list of different data types
+
 ```
+
 
 ### Adding new elements
 
 The `create` process for lists also involves `adding` new elements to a list. In Python, this can be done using various methods, but the most common one is `append()`, which allows you to add a new item to the end of a list. This is especially useful in test automation for dynamically building up test data during the execution of a test suite.
+
 
 #### Syntax
 
@@ -79,6 +81,104 @@ list_name.append(element)
 test_cases = ['Login Test', 'Signup Test']
 test_cases.append('Logout Test')
 print(test_cases)  # Output: ['Login Test', 'Signup Test', 'Logout Test']
+```
+
+
+#### List Comprhensions:
+
+List comprehensions offer a concise way to create lists. They allow you to generate new lists by applying an expression to each element in an iterable.
+
+##### Syntax:
+
+```python
+[expression for item in iterable if condition]
+```
+
+##### Example:
+
+- Creating a list of squared numbers from an existing list:
+
+    ```python
+    numbers = [1, 2, 3, 4, 5]
+    squares = [n**2 for n in numbers]
+    print(squares)  # Output: [1, 4, 9, 16, 25]
+    ```
+
+- Creating a list of only even numbers:
+    
+    ```python
+    even_numbers = [n for n in range(10) if n % 2 == 0]
+    print(even_numbers)  # Output: [0, 2, 4, 6, 8]
+    ```
+
+
+#### Copying Lists:
+
+Copying lists can be tricky in Python, especially if it's a nested or complex list. Simply using `=` to copy a list only creates a reference to the original list, not an actual copy. This can cause issues in test automation if changes to one list affect another.
+
+##### Example:
+
+```python
+test_cases = ['Login', 'Signup', 'Logout']
+test_cases_copy = test_cases  # This is a reference, not a copy
+test_cases_copy.append('Dashboard')
+print(test_cases)  # Output: ['Login', 'Signup', 'Logout', 'Dashboard']
+```
+
+The proper ways to copy a list can be using `list()` or the `copy()` method
+
+```python
+test_cases = ['Login', 'Signup', 'Logout']
+test_cases_copy = list(test_cases)
+test_cases_copy.append('Dashboard')
+print(test_cases)  # Output: ['Login', 'Signup', 'Logout']
+print(test_cases_copy)  # Output: ['Login', 'Signup', 'Logout', 'Dashboard']
+```
+
+```python
+test_cases = ['Login', 'Signup', 'Logout']
+test_cases_copy = test_cases.copy()
+test_cases_copy.append('Dashboard')
+print(test_cases)  # Output: ['Login', 'Signup', 'Logout']
+print(test_cases_copy)  # Output: ['Login', 'Signup', 'Logout', 'Dashboard']
+```
+
+**Note:** Using these ways are also called as `Shallow Copy`. This means that only the `outer` list is copied, but the `inner` lists remain references to the original ones. Changes to the inner lists will affect both the original and copied lists.
+
+```python
+import copy # built-in library to support copy mechanisms
+
+# Original list with nested lists
+original_list = [['Login', 'Signup'], ['Logout', 'Settings']]
+
+# Shallow copy of the list
+shallow_copy = original_list.copy()
+
+# Modifying an inner list in the shallow copy
+shallow_copy[0].append('Dashboard')
+
+# Both the original and shallow copy are affected
+print("Original List:", original_list)  # Output: [['Login', 'Signup', 'Dashboard'], ['Logout', 'Settings']]
+print("Shallow Copy:", shallow_copy)    # Output: [['Login', 'Signup', 'Dashboard'], ['Logout', 'Settings']]
+```
+
+We should use `Deep Copy` to avoid referencing issues. It creates a completely independent copy of both the `outer` and `inner` lists, ensuring no references are shared between the two.
+
+```python
+import copy
+
+# Original list with nested lists
+original_list = [['Login', 'Signup'], ['Logout', 'Settings']]
+
+# Deep copy of the list
+deep_copy = copy.deepcopy(original_list)
+
+# Modifying an inner list in the deep copy
+deep_copy[0].append('Dashboard')
+
+# The original list remains unchanged
+print("Original List:", original_list)  # Output: [['Login', 'Signup'], ['Logout', 'Settings']]
+print("Deep Copy:", deep_copy)          # Output: [['Login', 'Signup', 'Dashboard'], ['Logout', 'Settings']]
 ```
 
 
@@ -231,7 +331,7 @@ print(out_of_bounds)  # Output: [30, 40, 50]
 
 ## 1.3 Updating
 
-Updating a list is useful when test data or test scenarios increase/decrease (evolve). You can modify elements by assigning new values to specific indexes.
+Updating a list is useful when test data or test scenarios increase/decrease (evolve). You can update a list by modifying its elements, appending new items, or even inserting elements at specific positions.
 
 
 ### Syntax:
@@ -241,9 +341,11 @@ Updating a list is useful when test data or test scenarios increase/decrease (ev
 test_cases[0] = "New Value"
 ```
 
+
 ### Adding elements to a list
 
-As the `append()` method, that add a new element in a list, there are a few other ways.
+While append() adds a single element to the end of a list, other methods provide more flexibility.
+
 
 #### extend(iterable)
 
@@ -252,9 +354,10 @@ The `extend()` method also adds items to the end of a list. However, the argumen
 ```python
 test_cases = ['Login Test']
 test_cases.extend(['Signup Test', 'Logout Test']) # Output: ['Login Test', 'Signup Test', 'Logout Test']
+print(test_cases) # Output: ['Login Test', 'Signup Test', 'Logout Test']
 ```
 
-This same behaviour is expected from the concatenation operator `+`.
+This is equivalent to using the `+` operator:
 
 ```python
 test_cases = ['Login Test']
@@ -264,12 +367,168 @@ test_cases = test_cases + ['Signup Test', 'Logout Test'] # Output: ['Login Test'
 
 #### insert(index, obj)
 
-The `insert()` method inserts the input object into the target list at the position specified by index. Following the method call, a[<index>] is <obj>, and the remaining list elements are pushed to the right:
+The `insert()` method adds an element at a specific index, pushing the other elements to the right:
+
+- Add at the beginning:
+
+    ```python
+    test_cases_id = ['TC01', 'TC02', 'TC03', 'TC04']
+    test_cases_id.insert(0, 'TC00')
+    print(test_cases_id) # Output: ['TC00', 'TC01', 'TC02', 'TC03', 'TC04']
+    ```
+
+- Add at the end:
+
+    ```python
+    test_cases_id = ['TC01', 'TC02', 'TC03', 'TC04']
+    test_cases_id.insert(len(test_cases_id), 'TC05') # This is equivalent to test_cases_id.append('TC05')
+    print(test_cases_id) # Output: ['TC01', 'TC02', 'TC03', 'TC04', 'TC05']
+    ```
+
+- Add at the middle:
+
+    ```python
+    test_cases_id = ['TC01', 'TC02', 'TC03', 'TC04']
+    test_cases_id.insert(2, 'TC02.1')
+    print(test_cases_id) # Output: ['TC01', 'TC02', 'TC02.1', 'TC03', 'TC04']
+    ```
+
+
+#### List Comprehensions for Updating:
+
+List comprehensions can also be used to update lists by transforming existing elements or creating a modified copy of the original list.
+
+
+##### Example:
+
+- Updating all test cases to add a "Test" suffix:
+
+    ```python
+    test_cases = ["Login", "Signup", "Logout"]
+    updated_cases = [case + " Test" for case in test_cases]
+    print(updated_cases)  # Output: ['Login Test', 'Signup Test', 'Logout Test']
+    ```
+
+- Replacing all numbers with their squared values:
+
+    ```python
+    numbers = [1, 2, 3, 4]
+    print(numbers)  # Output: [1, 2, 3, 4]
+    numbers = [n**2 for n in numbers]
+    print(numbers)  # Output: [1, 4, 9, 16]
+    ```
+
+In test automation, there are situations where test data needs to be dynamically removed from lists. Python provides several ways to delete elements from a list, each serving different use cases.
+
+
+### `pop(index)`:
+
+The `pop()` method removes an element at the specified index and returns the element. If no index is provided, it removes and returns the `last item` of the list. This is particularly useful when you need to remove an element while preserving it for later use.
+
+
+#### Syntax:
+
+```python
+list_name.pop(index)
+```
+
+
+#### Example:
+
+```python
+test_cases = ['Login', 'Signup', 'Logout']
+
+# Removing the last element
+last_case = test_cases.pop()
+print(test_cases)  # Output: ['Login', 'Signup']
+print(last_case)   # Output: 'Logout'
+
+# Removing the first element by index
+first_case = test_cases.pop(0)  
+print(test_cases)  # Output: ['Signup']
+print(first_case)  # Output: 'Login'
+```
+
+
+### `remove(element)`:
+
+The `remove()` method removes the first occurrence of the specified element. It `does not return` the removed element. This method is useful when you want to delete an item based on its value rather than its position.
+
+
+#### Syntax:
+
+```python
+list_name.remove(element_value)
+```
+
+
+#### Example:
+
+```python
+test_cases = ['Login', 'Signup', 'Logout', 'Signup']
+
+# Removing the first occurrence of 'Signup'
+test_cases.remove('Signup')
+print(test_cases)  # Output: ['Login', 'Logout', 'Signup']
+```
+
+**Note:** If the element is not found in the list, a `ValueError` is raised. You can handle this with `try` and `except` if needed.
+
+
+### `del` statement:
+
+The `del` statement allows you to delete elements by index. Unlike `pop()`, it `does not return` the removed element. It is also capable of deleting multiple elements at once by `slicing` or `deleting` the entire list.
+
+
+#### Syntax:
+
+```python
+del list_name[index] # Deletes the element at the specified index
+del list_name # Deletes the entire list
+```
+
+
+#### Example:
+
+```python
+test_cases = ['Login', 'Signup', 'Logout', 'Settings']
+
+# Deleting an element by index
+del test_cases[1]
+print(test_cases)  # Output: ['Login', 'Logout', 'Settings']
+
+# Deleting multiple elements using slicing
+del test_cases[1:3]
+print(test_cases)  # Output: ['Login']
+
+# Deleting the entire list
+del test_cases
+```
+
+**Note:** After using `del test_cases`, the list no longer exists, and any further reference to it will result in a `NameError` exception.
+
+
+### `clear()`:
+
+The `clear()` method removes all elements from the list, but keeps the list itself intact. This is helpful when you need to reset a list without deleting the actual list object.
+
+
+#### Example:
+
+```python
+test_cases = ['Login', 'Signup', 'Logout']
+
+# Clearing the list
+test_cases.clear()
+print(test_cases)  # Output: []
+```
+
 
 ## Hands-On Task:
 
-1. Create a list of numbers and extract every second number from it.
-2. Reverse a list using slicing and verify if the list has been reversed correctly.
-3. Use slicing to reverse a list, modify a subset of it, and then restore the original list using a copy.
-4. Extract a sublist from index 1 to 3 from a list of test case IDs.
-5. Slice a list with a step of 3 to get every third element, starting from the second position.
+1. [TI] What are the main characteristics/properties about Lists in Python?
+2. Create a list of numbers and extract every second number from it.
+3. Reverse a list using slicing and verify visually if the list has been reversed correctly.
+4. Use slicing to reverse a list, modify a subset of it, and then restore the original list using a copy.
+5. Extract a sublist from index 1 to 3 from a list of test case IDs.
+6. Slice a list with a step of 3 to get every third element, starting from the second position.
