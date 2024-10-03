@@ -30,12 +30,19 @@ By using data structures, test automation becomes `scalable` and `maintainable`.
 
 These tasks should be delivered/solved in maximum 1 week (next Friday):
 
-1. Research by Bubble Sort Algorithm in Python. Implement three version of it:
-- Ascending order (regular one)
-- Descending order
+1. Research about the `Bubble Sort Algorithm` in Python. Implement three version of it:
+- In ascending order (regular one)
+- In descending order
 - With early stopping
 
-2. Complete the following challenges on BeeCrowd:
+2. Research about `Caching Mechanism` and then, implement a caching mechanism for a function that calculates the square of a number. Instructions:
+- Define a function `square(n)` that calculates the square of an input number n.
+- Implement a cache using a dictionary to store previously computed squares.
+- Modify the `square(n)` function to check if the result for the given n is already in the cache:
+  - If it is, return the cached result.
+  - If it is not, compute the square, store it in the cache, and then return the result.
+
+3. Complete the following challenges on BeeCrowd:
 - [1011: Volume of a Sphere](https://judge.beecrowd.com/en/problems/view/1011)
 - [1041: Point Location](https://judge.beecrowd.com/en/problems/view/1041)
 - [1071: Sum of Consecutive Integers](https://judge.beecrowd.com/en/problems/view/1071)
