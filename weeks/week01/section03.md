@@ -4,6 +4,7 @@ Control structures are essential for decision-making in test scripts. In this se
 
 
 ## References:
+
 1. [Python Control Flow](https://docs.python.org/3/tutorial/controlflow.html)
 2. [Python If-Else](https://www.w3schools.com/python/python_conditions.asp)
 3. [For and While Loops](https://realpython.com/python-loops-iterators/)
@@ -17,9 +18,14 @@ Control structures are essential for decision-making in test scripts. In this se
 
 The `if-elif-else` statements lets you make decisions in your code. In test automation, this can be used to determine if a test passes or fails based on the test result.
 
+
 The `if` statement is used to execute a block of code only if a specified condition is true.
 
+
 The `elif` (meaning `else if`) and `else` blocks provide additional conditional checks and a fallback when none of the conditions are true.
+
+
+### Syntax:
 
    ```python
    if condition:
@@ -60,6 +66,9 @@ Write a script that checks whether a user’s score falls within certain ranges:
 ## 3.2 Loops
 
 Loops are used to execute a block of code multiple times, which is essential for running tests with different data sets.
+
+
+### Syntax:
 
    ```python
    # While loop
