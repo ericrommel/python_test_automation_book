@@ -26,61 +26,23 @@ By using data structures, test automation becomes `scalable` and `maintainable`.
 ### [Section 4](section04.md): Sets
 
 
-## Hands-On Exercises:
+## Task Exercises:
 
-### Exercise 1:
+These tasks should be delivered/solved in maximum 1 week (next Friday):
 
-Create a list of 10 different test case names for a web application.
+1. Research by Bubble Sort Algorithm in Python. Implement three version of it:
+- Ascending order (regular one)
+- Descending order
+- With early stopping
 
-
-### Exercise 2:
-
-Convert the list of test cases into a dictionary mapping each case to an expected result (e.g., "Success" or "Failure").
-
-
-### Exercise 3:
-
-Write a function that takes a list of numbers and returns a list of only the even numbers.
-
-
-### Exercise 4:
-
-Create a tuple to store three constants used in your tests (e.g., HTTP status codes).
-
-
-### Exercise 5:
-
-Write a program that merges two sets and displays the unique values.
-
-
-### Exercise 6:
-
-Create a nested dictionary to represent user profiles, where each user has a name, email, and a list of test cases associated with them.
-
-
-### Exercise 7:
-
-Write a function that accepts a dictionary and returns a list of its keys.
-
-
-### Exercise 8:
-
-Given a list of items, write a program to remove duplicates using a set.
-
-
-### Exercise 9:
-
-Create a function that takes a dictionary and returns a new dictionary with keys sorted in alphabetical order.
-
-
-### Exercise 10:
-
-Complete the following challenges on BeeCrowd to reinforce your understanding:
-- Specific about lists - TBD
-- Specific about lists - TBD
-- Specific about tuples - TBD
-- Specific about tuples - TBD
-- Specific about dictionaries - TBD
-- Specific about dictionaries - TBD
-- Specific about sets - TBD
-- Specific about sets - TBD
+2. Complete the following challenges on BeeCrowd:
+- [1011: Volume of a Sphere](https://judge.beecrowd.com/en/problems/view/1011)
+- [1041: Point Location](https://judge.beecrowd.com/en/problems/view/1041)
+- [1071: Sum of Consecutive Integers](https://judge.beecrowd.com/en/problems/view/1071)
+- [1094: Experiment](https://judge.beecrowd.com/en/problems/view/1094)
+- [1085: Chess](https://judge.beecrowd.com/en/problems/view/1085)
+- [1020: Age in Days](https://judge.beecrowd.com/en/problems/view/1020)
+- [1051: Tax Calculation](https://judge.beecrowd.com/en/problems/view/1051)
+- [1093: K-Substring](https://judge.beecrowd.com/en/problems/view/1093)
+- [1050: DDD](https://judge.beecrowd.com/en/problems/view/1050)
+- [1065: Even Between Five Numbers](https://judge.beecrowd.com/en/problems/view/1065)

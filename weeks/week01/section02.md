@@ -2,6 +2,7 @@
 
 This section introduces the basic building blocks of Python: variables, data types, and operators. Understanding these are essential for writing test scripts as they allow you to manage test data, define test conditions, and perform calculations in tests.
 
+
 ## References:
 1. [Python comments](https://www.w3schools.com/python/gloss_python_comments.asp)
 2. [Python Variables](https://docs.python.org/3/tutorial/introduction.html#using-python-as-a-calculator)
@@ -17,14 +18,18 @@ This section introduces the basic building blocks of Python: variables, data typ
 
 Comments are non-executable lines in your code used to describe or explain what the code does. They are essential in test automation scripts for providing context, making the script easier to maintain and understand by other testers or developers.
 
+
 ### Types of Comments:
 
 - **`Single-line Comments`**: Start with a `#` symbol. They are often used to annotate specific lines of code.
+
   ```python
   # This is a single-line comment
   passed_tests = 3  # This variable stores the number of passed tests
   ```
+
 - **`Multi-line Comments`**: Enclosed in triple quotes (''' or """). These are helpful for longer explanations or documentation at the start of a function or script.
+
   ```python
   '''
   This function calculates the number of passed tests
@@ -33,12 +38,15 @@ Comments are non-executable lines in your code used to describe or explain what 
   def calculate_pass_percentage(total_tests, failed_tests):
     passed_tests = total_tests - failed_tests
     return (passed_tests / total_tests) * 100
-  ``` 
+  ```
+
+
 ### Best Practices:
 
 - Use comments to explain why certain decisions are made in the code, not just what the code does.
 - Keep comments concise and relevant to the code section.
 - Avoid over-commenting on code that is self-explanatory.
+
 
 ### Hands-On Task:
 
@@ -49,26 +57,32 @@ Add comments to a script and run the code. Observe that they are not print out t
 
 Variables are placeholders used to store data that can be referenced and manipulated. In test automation, variables help you store test inputs, expected outputs, or results.
 
+
 ### Rules for Naming Variables:
+
 - Variable names should be **descriptive** and reflect their purpose (e.g., `test_case_count`, `login_status`).
 - Must start with a **letter** or an **underscore** (e.g., `_username`, `user_name`).
 - Can contain letters, numbers, and underscores, but **cannot start with a number** (e.g., `username1` is valid, but `1username` is not).
 - Variable names are **case-sensitive** (`UserName` and `username` are considered different).
 - Avoid using Python **keywords** like `if`, `else`, `while`, etc., as variable names.
 
+
 ### Sintaxe:
 
    ```python
-   variable_name = value   
+   variable_name = value
    ```
 
+
 ### Example:
+
    ```python
    # Storing user data for testing
    username = "test_user"
    password = "pass123"
    login_attempts = 3
    ```
+
 
 ### Hands-On Task:
 
@@ -77,7 +91,7 @@ Create variables to store test data, such as usernames, passwords, and expected 
 
 ## 2.2 Data Types
 
-Python supports several data types, which are essential for organizing and manipulating test data. Let's check the main `built-in` types below (check the completed [list of types](https://docs.python.org/3/library/stdtypes.html#)) 
+Python supports several data types, which are essential for organizing and manipulating test data. Let's check the main `built-in` types below (check the completed [list of types](https://docs.python.org/3/library/stdtypes.html#))
 
 - [Text type](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str):
   - `str` (strings): Text data between single or double quotes, e.g., ```username = "test_user"```.
@@ -94,7 +108,7 @@ Python supports several data types, which are essential for organizing and manip
 - [Mapping type](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict):
   - `dict`: An unordered and mutable pair Key-Value for mapping objects.
   - `Keys` should be immutable types of objects.
-  - Use a comma-separated list of `key: value` pairs within braces, e.g., ```{'jack': 4098, 'sjoerd': 4127}``` or ```{4098: 'jack', 4127: 'sjoerd'}```. 
+  - Use a comma-separated list of `key: value` pairs within braces, e.g., ```{'jack': 4098, 'sjoerd': 4127}``` or ```{4098: 'jack', 4127: 'sjoerd'}```.
 - [Set types](https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset):
   - `set`: An unordered and mutable collection of distinct objects of any type. It uses braces and commas to be represented. e.g., ```usernames = {"jack", "jonh"}```
   - `fronzenset`: It is similar to set, except that frozensets are immutable.
@@ -106,7 +120,9 @@ Python supports several data types, which are essential for organizing and manip
 
 
 ### Typing (type hints)
+
 Python is dynamically typed. It means variable types are determined at runtime, not at the time of declaration. We don't need to declare the type of variable explicitly, and its type can change over the time. For example:
+
   ```python
   password = "pass123"
   password = 123456
@@ -118,10 +134,12 @@ Since Python 3.5, the [type hinting](https://docs.python.org/3/library/typing.ht
 
 
 #### Example:
+
    ```python
    def add(x: int, y: int) -> int:
        return x + y
    ```
+
 
 #### Hands-On Task:
 
@@ -132,7 +150,9 @@ Write a script that initializes variables of different data types (strings, inte
 
 Python has several operators that allow you to perform calculations, comparisons, and logic operations. These operators are crucial in test conditions and validating outputs.
 
+
 ### Main Operators:
+
 - Arithmetic Operators:
 
 | Operator | Name           | Example         |
@@ -203,8 +223,30 @@ Let's assume `a = 10` and `b = 5`.
 | `is not` | Evaluates to false if the variables on either side of the operator point to the same object and true otherwise | `a is not b` returns True |
 
 
-### Hands-On Task:
-Create a script that uses arithmetic operators to calculate the percentage of passed and failed tests, then use comparison and logical operators to check if the tests meet a predefined success rate, given:
-- Percentage of passed is calculated by dividing the number of passed tests by the total number of tests and then multiplying by 100.
-- Percentage of failed is calculated by subtracting 100 by percentage of passed tests.
-- To check if the percentage of passed tests meets the success rate threshold, just check if the percentage of passed is greater than or equals to a success rate threshold defined earlier.
+### Practical Exercises (Drills):
+
+1. Create variables for the following:
+- username as a string.
+- login_attempts as an integer.
+- is_logged_in as a boolean.
+- test_duration as a float representing the time (in seconds) it took for a test case to execute.
+
+2. Identify the errors in the following variable names and correct them:
+- 1user = "John"
+- password length = 8
+- is_valid? = True
+
+3. Write a script that:
+- Assigns a string, integer, float, and boolean to different variables.
+- Prints each variable’s type using the `type()` function.
+
+4. Write a script to calculate the percentage of tests passed. Given the total number of tests and the number of failed tests, calculate how many passed and what percentage of the total that represents.
+- `total_tests = 100`
+- `failed_tests = 5`
+- `passed_tests = total_tests - failed_tests`
+- `pass_percentage = (passed_tests / total_tests) * 100`
+
+5. Go through your scripts from Exercises 1–4 and add comments explaining:
+- What each variable represents.
+- Why certain operations are performed.
+- Use both `single-line` and `multi-line` comments where appropriate.

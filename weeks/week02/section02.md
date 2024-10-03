@@ -182,7 +182,7 @@ del tuple_name
 
 
 
-## Hands-On Task:
+## Practical Exercises (Drills):
 
 1. Create a tuple containing multiple types of elements, including an integer, a boolean, a list, another tuple, and a string.
 2. Print the data type of the third element in the tuple you created in the previous exercise. Tip: use [type()](https://www.programiz.com/python-programming/methods/built-in/type) or [isinstance()](https://www.programiz.com/python-programming/methods/built-in/isinstance)` method.

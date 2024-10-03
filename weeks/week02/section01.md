@@ -78,7 +78,7 @@ list_name.append(element)
 #### Example:
 
 ```python
-test_cases = ['Login Test', 'Signup Test']
+test_cases = ["Login Test", "Signup Test"]
 test_cases.append('Logout Test')
 print(test_cases)  # Output: ['Login Test', 'Signup Test', 'Logout Test']
 ```
@@ -105,7 +105,7 @@ List comprehensions offer a concise way to create lists. They allow you to gener
     ```
 
 - Creating a list of only even numbers:
-    
+
     ```python
     even_numbers = [n for n in range(10) if n % 2 == 0]
     print(even_numbers)  # Output: [0, 2, 4, 6, 8]
@@ -186,7 +186,7 @@ print("Deep Copy:", deep_copy)          # Output: [['Login', 'Signup', 'Dashboar
 
 Reading from a list is essential for retrieving test data. Python allows reading individual elements or slices (subsets) of a list.
 
-List are indexed by integers starting from 0. There is no size limit other than the memory capacity of the computer.  
+List are indexed by integers starting from 0. There is no size limit other than the memory capacity of the computer.
 
 
 ### Syntax:
@@ -205,9 +205,41 @@ test_data[-2]  # Before last element
 
 The `len()` function in Python is used to determine the number of elements in a list. In test automation, the size of your test data is important for several reasons:
 - `Validation`: You can use `len()` to verify that a function returns the expected number of results.
-- `Boundary Conditions`: Understanding the size of a list helps in writing tests for edge cases like `empty` lists, `single-element` lists, and `large` lists.
-- `Iteration`: The length of a list is often used in loops to iterate through all elements.
 
+  ```python
+  def get_even_numbers(numbers):
+      return [num for num in numbers if num % 2 == 0]
+
+  test_data = [1, 2, 3, 4, 5, 6]
+  expected_length = 3  # There should be 3 even numbers: 2, 4, 6
+
+  result = get_even_numbers(test_data)
+  assert len(result) == expected_length, f"Expected {expected_length}, but got {len(result)}"
+  ```
+
+- `Boundary Conditions`: Understanding the size of a list helps in writing tests for edge cases like `empty` lists, `single-element` lists, and `large` lists.
+
+  ```python
+  def test_empty_list():
+    empty_list = []
+    assert len(empty_list) == 0, "The list should be empty."
+
+  def test_single_element_list():
+      single_element_list = [42]
+      assert len(single_element_list) == 1, "The list should contain one element."
+
+  def test_large_list():
+      large_list = list(range(1000))  # A list with 1000 elements
+      assert len(large_list) == 1000, "The list should contain 1000 elements."
+  ```
+
+- `Iteration`: The length of a list can be used in loops to iterate through all elements.
+
+  ```python
+  test_data = ['apple', 'banana', 'cherry']
+  for i in range(len(test_data)):
+      print(f"Element at index {i}: {test_data[i]}")
+  ```
 
 #### Syntax:
 
@@ -394,6 +426,44 @@ The `insert()` method adds an element at a specific index, pushing the other ele
     ```
 
 
+#### sort()
+
+In addition to `appending`, `extending`, and `inserting` elements, lists in Python can be sorted using the `sort()` method. This method sorts the elements of the list `in place` (it modifies the original list - does not return anything) and can be used to arrange them in `ascending` (by default) or `descending` order.
+
+```python
+import random
+
+# Creating a list of integers
+numbers = random.sample(range(1, 100), 10) # A possible list: [8, 96, 87, 66, 5, 99, 57, 78, 95, 18]
+
+# Sorting the list in ascending order
+numbers.sort()
+print(numbers)  # Output: [5, 8, 18, 57, 66, 78, 87, 95, 96, 99]
+
+# Sorting the list in descending order
+numbers.sort(reverse=True)
+print(numbers)  # Output: [99, 96, 95, 87, 78, 66, 57, 18, 8, 5]
+```
+
+
+#### count()
+
+The `count()` method in Python returns the number of occurrences of a specified element in a list. This can be particularly useful in test automation when you need to validate that specific items appear the expected number of times in your test data.
+
+```python
+# Creating a list with duplicate elements
+fruits = ['apple', 'banana', 'orange', 'apple', 'kiwi', 'banana']
+
+# Counting occurrences of 'apple'
+apple_count = fruits.count('apple')
+print(f"'apple' appears {apple_count} times in the list.")  # Output: 'apple' appears 2 times in the list.
+
+# Counting occurrences of 'banana'
+banana_count = fruits.count('banana')
+print(f"'banana' appears {banana_count} times in the list.")  # Output: 'banana' appears 2 times in the list.
+```
+
+
 #### List Comprehensions for Updating:
 
 List comprehensions can also be used to update lists by transforming existing elements or creating a modified copy of the original list.
@@ -447,7 +517,7 @@ print(test_cases)  # Output: ['Login', 'Signup']
 print(last_case)   # Output: 'Logout'
 
 # Removing the first element by index
-first_case = test_cases.pop(0)  
+first_case = test_cases.pop(0)
 print(test_cases)  # Output: ['Signup']
 print(first_case)  # Output: 'Login'
 ```
@@ -527,19 +597,24 @@ print(test_cases)  # Output: []
 ```
 
 
-## Hands-On Task:
+## Practical Exercises (Drills):
 
 1. [TI] What are the main characteristics/properties of Lists in Python?
 2. Create a list of numbers and extract every second number from it.
-3. Reverse a list using slicing and verify visually if the list has been reversed correctly.
-4. Use slicing to reverse a list, modify a subset of it, and then restore the original list using a copy.
-5. Extract a sublist from index 1 to 3 from a list of test case IDs.
-6. Slice a list with a step of 3 to get every third element, starting from the second position.
-7. Add 3 new elements to the end of a list using different methods (`append()`, `extend()`, and `insert()`).
-8. Remove the second element from a list using the `pop()` method and print the removed element.
-9. Remove the first occurrence of a specific value from a list using the `remove()` method.
-10. Clear a list and then add elements back to it using `append()` inside a loop.
-11. Create a shallow copy of a list containing nested lists and modify one of the inner lists. Observe how the original list changes.
-12. Create a deep copy of a list using `copy.deepcopy()` from the `copy` module and modify one of the inner lists. Verify that the original list remains unchanged.
-13. Create a list comprehension to generate a list of squared numbers from 1 to 10.
-14. Use list comprehension to create a new list with only the even numbers from an existing list.
+3. [TI] Reverse a list using slicing and print out its items separated by spaces. E.g.:
+
+   ```python
+   my_list = [1, 2, 3, 4]
+   # output: 4 3 2 1
+   ```
+
+4. Extract a sublist from index 1 to 3 from a list of 10 test case IDs.
+5. Slice a list with a step of 3 to get every third element, starting from the second position.
+6. Add 3 new elements to the end of a list using different methods (`append()`, `extend()`, and `insert()`).
+7. Remove the second element from a list using the `pop()` method and print the removed element.
+8. Remove the first occurrence of a specific value from a list using the `remove()` method.
+9. Clear a list and then add elements back to it using `append()` inside a loop.
+10. Create a shallow copy of a list containing nested lists and modify one of the inner lists. Observe how the original list changes.
+11. Create a deep copy of a list using `copy.deepcopy()` from the `copy` module and modify one of the inner lists. Verify that the original list remains unchanged.
+12. [TI] Create a list comprehension to generate a list of squared numbers from 1 to 10.
+13. Use list comprehension to create a new list with only the even numbers from an existing list.
