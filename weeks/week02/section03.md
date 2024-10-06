@@ -213,7 +213,7 @@ In an example below we will generate a dictionary containing key n mapped to val
 results = {n: n ** 2 for n in range(10)}
 ```
 
-### Hands-On Task:
+### Practical Exercises (Drills):
 1. [TI] How can you merge two dictionaries in Python?
 2. [TI] Is it possible to use a tuple as a key in the dictionary?
 3. Write a function that takes a dictionary and returns a list of all the keys.
