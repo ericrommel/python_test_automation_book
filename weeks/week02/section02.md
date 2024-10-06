@@ -4,7 +4,7 @@ In this section, we will explore tuples, another core data structure in Python.
 
 `Tuple` is a type of data structure that is similar to lists. The main difference between the two is that tuples are `immutable`, meaning they cannot be changed after creating. Here a list of characteristics about Tuples:
 
-- Tuples are `immutables`,can't be changed
+- Tuples are `immutables`, can't be changed.
 - Used to store collections of heterogeneous data (any type of data: string, boolean, etc)
 - Rounded by parenthesis `()`
 - Only two built-in method:
