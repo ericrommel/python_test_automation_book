@@ -18,7 +18,8 @@ A dictionary is presented with class `dict`.
 
 ---
 
-The main operations on a dictionary are storing a value with some key and extracting the value given the key. 
+Dictionaries stores data in key-value pairs. The main operations on a dictionary are storing a value with some key and 
+extracting the value given the key. 
 
 ## 3.1 Creating and storing data
 
@@ -217,6 +218,10 @@ results = {n: n ** 2 for n in range(10)}
 2. [TI] Is it possible to use a tuple as a key in the dictionary?
 3. Write a function that takes a dictionary and returns a list of all the keys.
 4. Created a nested dictionary.
-5. Create a shallow copy of a nested dictionary. Modify the original dictionary. How has the shallow copy changed? 
+
+ [Note] For the next two questions please refer to the previous lesson where you study Lists. Copying mechanism was 
+explained there.
+
+5. Create a shallow copy of a nested dictionary. Modify the original dictionary. How has the shallow copy changed?
 6. Create a deep copy of a nested dictionary. Modify the original dictionary. How has the deep copy changed?
 7. Write a function that inverts a dictionary (i.e., the keys become values and the values become keys).
