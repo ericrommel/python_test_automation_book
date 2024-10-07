@@ -36,7 +36,8 @@ test_tuple = value, value, value
 
 # using parenthesis
 test_tuple = () # empty tuple
-test_tuple = (value, value, value)
+test_tuple = (value1,)
+test_tuple2 = (value1, value2)
 
 # from contructor:
 test_from_constructor = tuple() # empty tuple
@@ -58,7 +59,7 @@ test_cases = ("Login Page", "Dashboard", "Logout Functionality")  # A tuple of s
 test_cases = ("Login Page", 2, True)  # A tuple of different data types
 ```
 
-**Note:** Note: Even though tuples are immutable, they can contain mutable objects like lists. However, the tuple itself cannot be modified after creation.
+**Note:** Even though tuples are immutable, they can contain mutable objects like lists. However, the tuple itself cannot be modified after creation.
 
 
 ## 2.2 Reading
