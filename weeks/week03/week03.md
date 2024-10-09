@@ -26,4 +26,8 @@ In this section, you will learn how to handle files in Python for reading and wr
 ### 3.2.3 Email Validation Using Regex
 ### 3.2.4 Regex for Phone Number and Date Validation
 
-## Task Exercises:
+## 3.3 Task Exercises:
+### 3.3.1 Non-Beecrowd tasks
+### 3.3.2 Beecrowd tasks
+### 3.3.3 Questin from Technical Interview
+
