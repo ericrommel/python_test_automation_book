@@ -22,6 +22,7 @@ In this section, we will set up the essential tools you need for the course. The
 
 Python is a powerful, flexible, and popular language used widely in test automation due to its simplicity and large ecosystem of libraries. It is the language we will use for writing test scripts during this training.
 
+
 ### Instructions:
 
 1. Go to the [Python official website](https://www.python.org/downloads/).
@@ -49,8 +50,10 @@ Git is a version control tool that will help us manage code repositories. We wil
    ```bash
    $ git --version
    ```
+5. Set up a [GitHub](https://github.com/) account to host your code repositories and collaborate with others.
 
-## 1.3 GitHub Setup 
+
+## 1.3 GitHub Setup
 
 GitHub is a powerful web-based platform for version control and collaboration in software development. It allows developers to collaborate on projects, track changes, and maintain a history of code development. It is widely used in the software development industry for open-source projects, team collaborations, and test automation.
 
@@ -68,7 +71,7 @@ Once your account is ready, you can create a new repository, explore open-source
 For this training, we will use this [repository](https://github.com/ericrommel/python_test_automation_book). Clone it in your local machine:
 
 1. Open a terminal window (e.g.: `cmd.exe`, `Git Bash`, `PowerShell`, etc) inside your preferable work folder
-2. Clone the repo
+2. Clone the repo using SSH (need setup private/public keys on Security in GitHub) or HTTPS
 
    ```bash
    $ git clone git@github.com:ericrommel/python_test_automation_book.git
@@ -147,6 +150,7 @@ Follow the [Python documentation](https://docs.python.org/3/library/venv.html) f
 | bash/zsh   | Windows  | $ source <venv>/bin/activate            |
 
 
+
 ### Hands-On Task:
 
 1. Create a new virtual environment for the Week 1 class.
@@ -223,6 +227,7 @@ BeeCrowd is a platform where you can practice your coding skills through challen
 2. Sign up for a free account.
 3. Familiarize yourself with the interface
 4. Try solving one or two basic problems. Go to the `Beginner` section under `Problems` and search for challenges `1000` and `1001`.
+
 
 
 ### Hands-On Task:

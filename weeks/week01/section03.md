@@ -2,6 +2,7 @@
 
 Control structures are essential for decision-making in test scripts. In this section, you'll learn how to use `if-else` statements to handle different test cases and loops (`for` and `while`) to iterate over data sets or repeat actions in your scripts.
 
+
 ## References:
 
 1. [Python Control Flow](https://docs.python.org/3/tutorial/controlflow.html)
@@ -11,6 +12,7 @@ Control structures are essential for decision-making in test scripts. In this se
 5. [Python Loops](https://www.programiz.com/python-programming/for-loop)
 
 ---
+
 
 ## 3.1 `if`, `elif`, and `else` Statements
 
@@ -29,7 +31,7 @@ The `elif` (meaning `else if`) and `else` blocks provide additional conditional 
    if condition:
        # Code to execute if condition is true
    elif condition:
-       # 
+       #
    else:
        # Code to execute if condition is false
    ```
@@ -44,7 +46,7 @@ The `elif` (meaning `else if`) and `else` blocks provide additional conditional 
            return "Login Successful"
        else:
            return "Login Failed"
-   
+
    # Test cases
    print(login("test_user"))  # Should return "Login Successful"
    print(login("invalid_user"))  # Should return "Login Failed"
@@ -72,7 +74,7 @@ Loops are used to execute a block of code multiple times, which is essential for
    # While loop
    while condition:
        # Code to execute while condition is true
-   
+
    # For loop
    for item in sequence:
        # Code to execute for each item in the sequence
@@ -89,9 +91,9 @@ A `for` loop is used for iterating over a sequence (e.g., a list, tuple, diction
    ```python
    # Looping over a list of test cases
    test_cases = ["Test1", "Test2", "Test3"]
-   
+
    for test in test_cases:
-       print(f"Running {test}")  
+       print(f"Running {test}")
    ```
 
 
@@ -111,7 +113,7 @@ A while loop continues executing as long as the specified condition remains true
    # Using a while loop to retry a test case until it passes
    test_passed = False
    attempts = 0
-   
+
    while not test_passed and attempts < 3:
        print("Running test...")
        attempts += 1
@@ -138,7 +140,7 @@ Write a while loop that simulates retrying a test case up to 5 times until it pa
    ```python
    # Breaking out of a loop if a condition is met
    test_cases = ["Test1", "Test2", "Test3", "Test4"]
-   
+
    for test in test_cases:
        if test == "Test3":
            print(f"{test} failed, stopping further tests.")
@@ -147,6 +149,21 @@ Write a while loop that simulates retrying a test case up to 5 times until it pa
    ```
 
 
-#### Hands-On Task:
+#### Practical Exercises (Drills):
 
-Write a loop that iterates over test cases. If the current test case fails, break out of the loop; otherwise, print the result.
+1. Create a script that uses arithmetic operators to calculate the percentage of passed and failed tests, then use comparison and logical operators to check if the tests meet a predefined success rate, given:
+- Percentage of passed is calculated by dividing the number of passed tests by the total number of tests and then multiplying by 100.
+- Percentage of failed is calculated by subtracting 100 by percentage of passed tests.
+- To check if the percentage of passed tests meets the success rate threshold, just check if the percentage of passed is greater than or equals to a success rate threshold defined earlier.
+
+2. Write a loop that iterates over test cases. If the current test case fails, break out of the loop; otherwise, print the result.
+
+3. Write a script that checks if a user is eligible for a special test case discount:
+- The user must be a registered tester and must have run at least 5 tests in the last week.
+- If the user meets both conditions, print "Eligible for discount".
+- If the user is registered but hasn’t run 5 tests, print "Not enough tests for discount".
+- If the user is not registered, print "Not eligible for discount".
+
+3. Create a list of test results (e.g., [True, False, True, False]). Write a `for` loop that prints `"Test Passed"` for `True` values and `"Test Failed"` for `False` values.
+
+4. Simulate a test runner that will continue running test cases until all tests pass. If a critical test fails, stop the runner early using a `break` statement.

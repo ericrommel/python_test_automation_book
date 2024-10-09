@@ -5,10 +5,15 @@ Functions are reusable blocks of code that perform specific tasks. Python provid
 
 ## References:
 
-1. [Built-in Functions](https://docs.python.org/3/library/functions.html)
-2. [Defining Functions](https://docs.python.org/3/tutorial/controlflow.html#defining-functions)
-3. [Format String Syntax](https://docs.python.org/3/library/string.html#formatstrings)
-4. [A Guide to the Newer Python String Format Techniques](https://realpython.com/python-formatted-output/)
+1. [Functions - Official Python Documentation](https://docs.python.org/3/tutorial/controlflow.html#defining-functions)
+2. [Defining Functions in Python - Real Python](https://realpython.com/defining-functions-in-python/)
+3. [Python Functions - W3Schools](https://www.w3schools.com/python/python_functions.asp)
+4. [Python Functions - GeeksforGeeks](https://www.geeksforgeeks.org/python-functions/)
+5. [Python Functions - Programiz](https://www.programiz.com/python-programming/function)
+6. [Built-in Functions](https://docs.python.org/3/library/functions.html)
+7. [Defining Functions](https://docs.python.org/3/tutorial/controlflow.html#defining-functions)
+8. [Format String Syntax](https://docs.python.org/3/library/string.html#formatstrings)
+9. [A Guide to the Newer Python String Format Techniques](https://realpython.com/python-formatted-output/)
 
 
 ## 4.1 Built-in Functions
@@ -82,18 +87,19 @@ Casting functions convert data from one type to another. These are essential whe
    # Converting a string to an integer
    age_str = "25"
    age = int(age_str)
-   
+
    # Converting a float to an integer
    price_float = 19.99
    price_int = int(price_float)
-   
+
    # Converting an integer to a string
    test_count = 5
    test_count_str = str(test_count)
-   
+
    # Converting to a boolean
    is_active = bool(1)  # True
    ```
+
 
 ### Hands-On Task:
 
@@ -112,7 +118,7 @@ In Python, you can define your own functions using the `def` keyword. Functions 
    def calculate_pass_percentage(total_tests, failed_tests):
        passed_tests = total_tests - failed_tests
        return (passed_tests / total_tests) * 100
-   
+
    # Using the function in a script
    total = 10
    failed = 2
@@ -121,6 +127,6 @@ In Python, you can define your own functions using the `def` keyword. Functions 
    ```
 
 
-### Hands-On Task:
+### Practical Exercises (Drills):
 
-Define a function that takes two numbers as input and returns their product. Call this function with different test data.
+1. Define a function that takes two numbers as input and returns their product. Call this function with different test data.
