@@ -42,23 +42,17 @@ Git is a version control tool that will help us manage code repositories. We wil
 
 ### Instructions:
 
-<<<<<<< HEAD
-1. Got to the [Git official website](https://git-scm.com/downloads).
-2. Download the latest version of Git for your operatin system (Windows, macOS, Linux).
-=======
 1. Go to the [Git official website](https://git-scm.com/downloads).
 2. Download the latest version of Git for your operating system (Windows, macOS, Linux).
->>>>>>> 326fd9efbe1f307565a4573257b6c00fa1e59b8d
 3. Follow the installation steps for your operating system.
 4. Verify the installation by typing the following in the terminal or command prompt:
 
    ```bash
    $ git --version
    ```
-
-<<<<<<< HEAD
 5. Set up a [GitHub](https://github.com/) account to host your code repositories and collaborate with others.
-=======
+
+
 ## 1.3 GitHub Setup
 
 GitHub is a powerful web-based platform for version control and collaboration in software development. It allows developers to collaborate on projects, track changes, and maintain a history of code development. It is widely used in the software development industry for open-source projects, team collaborations, and test automation.
@@ -77,7 +71,7 @@ Once your account is ready, you can create a new repository, explore open-source
 For this training, we will use this [repository](https://github.com/ericrommel/python_test_automation_book). Clone it in your local machine:
 
 1. Open a terminal window (e.g.: `cmd.exe`, `Git Bash`, `PowerShell`, etc) inside your preferable work folder
-2. Clone the repo
+2. Clone the repo using SSH (need setup private/public keys on Security in GitHub) or HTTPS
 
    ```bash
    $ git clone git@github.com:ericrommel/python_test_automation_book.git
@@ -99,7 +93,6 @@ For this training, we will use this [repository](https://github.com/ericrommel/p
 **Note:** You can also fork the repo. A fork is a new repository that shares code and visibility settings with the original `upstream` repository. Forks are often used to iterate on ideas or changes before they are proposed back to the `upstream` repository, such as in open source projects or when a user does not have the **write access** to the `upstream` repository.
 
 For more information, see ["Working with forks."](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks)
->>>>>>> 326fd9efbe1f307565a4573257b6c00fa1e59b8d
 
 
 ## 1.4 IDE Installation
