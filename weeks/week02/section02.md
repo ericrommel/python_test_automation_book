@@ -4,7 +4,7 @@ In this section, we will explore tuples, another core data structure in Python.
 
 `Tuple` is a type of data structure that is similar to lists. The main difference between the two is that tuples are `immutable`, meaning they cannot be changed after creating. Here a list of characteristics about Tuples:
 
-- Tuples are `immutables`,can't be changed
+- Tuples are `immutables`, can't be changed.
 - Used to store collections of heterogeneous data (any type of data: string, boolean, etc)
 - Rounded by parenthesis `()`
 - Only two built-in method:
@@ -25,7 +25,7 @@ In this section, we will explore tuples, another core data structure in Python.
 
 ## 2.1 Creating
 
-Tuples are useful in test automation for storing `immutable` collections of test data, such as constant values or configuration parameters. Tuples can be created values separated by commas, using parentheses `()` or the `tuple()` constructor.
+Tuples are useful in test automation for storing data that not expected to be changed, such as constant values or configuration parameters. Tuples can be created using values separated by commas, using parentheses `()` or the `tuple()` constructor.
 
 
 ### Syntax:
@@ -36,7 +36,8 @@ test_tuple = value, value, value
 
 # using parenthesis
 test_tuple = () # empty tuple
-test_tuple = (value, value, value)
+test_tuple = (value1,)
+test_tuple2 = (value1, value2)
 
 # from contructor:
 test_from_constructor = tuple() # empty tuple
@@ -58,11 +59,12 @@ test_cases = ("Login Page", "Dashboard", "Logout Functionality")  # A tuple of s
 test_cases = ("Login Page", 2, True)  # A tuple of different data types
 ```
 
-**Note:** Note: Even though tuples are immutable, they can contain mutable objects like lists. However, the tuple itself cannot be modified after creation.
+**Note:** Even though tuples are immutable, they can contain mutable objects like lists. However, the tuple itself cannot be modified after creation.
 
 
 ## 2.2 Reading
 
+2.2.1
 Tuples are indexed in the same way as lists, meaning each element in the tuple can be accessed by its index. The index starts at 0, and negative indexing is also supported.
 
 
@@ -74,7 +76,25 @@ test_data[1]  # Second element
 test_data[-1]  # Last element
 test_data[-2]  # Second-to-last element
 ```
+2.2.2 Extract/ Unpack/ Assigning to variables
+Tuples elements can be assigned to variable (unpacked / extracted as follow)
 
+```python
+max_spead = (12, 30, 60)
+
+(first_gear, second_gear, third_gear) = max_spead
+or
+one, two, three = max_spead
+*Remark* There is good practice use name "_" if value is not needed
+_, two, three = max_spead
+
+
+print(first_gear)  # output 12
+print(second_gear)  # output 30
+print(third_gear)  # output 60
+print(two)  # output 30
+```
+The reference link: [Python Tuples - W3Schools](https://www.w3schools.com/python/python_tuples_unpack.asp)
 
 ### Using the `len()` function for tuples:
 
