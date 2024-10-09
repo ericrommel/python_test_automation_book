@@ -1,6 +1,6 @@
 # Python Test Automation
 
-This training was broken down into 9 weeks. Each week can have one or more sections. Feel free to navigate there.
+This training was broken down into 9 weeks plus a last week dedicated to the final project. Each week can have one or more sections. Feel free to navigate there.
 
 
 ### [Week 1](weeks/week01/week01.md): Python Basics, Control Structures, and Functions in Test Scripts
