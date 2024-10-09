@@ -1,6 +1,7 @@
 # Python Test Automation
 
-This training was broke down in 9 weeks. Each week can have one or more sections. Feel free to navigate there.
+This training was broken down into 9 weeks. Each week can have one or more sections. Feel free to navigate there.
+
 
 ### [Week 1](weeks/week01/week01.md): Python Basics, Control Structures, and Functions in Test Scripts
 
@@ -22,9 +23,11 @@ This training was broke down in 9 weeks. Each week can have one or more sections
 
 ### [Week 10](weeks/week10/week10.md): Building a Test Automation Suite, utilizing both web and API testing
 
+
 ## Fork the Repo
 
 A `fork` is a new repository that shares code and visibility settings with the original “upstream” repository. This is a good way to have your own repository and still having updates from the "upstream". Here the basic steps to take it. Follow the references to you want to get it deeper.
+
 
 ### Creating your fork
 
