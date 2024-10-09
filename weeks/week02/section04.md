@@ -35,6 +35,22 @@ empty_set = set() # Output: set()
 ```
 
 
+Sets can be easily created from lists using the `set()` constructor. This is useful when you want to remove duplicate elements from a list or perform set operations on list data.
+
+### Example:
+
+```python
+# Creating a list with duplicate elements
+test_case_ids = ["TC01", "TC02", "TC02", "TC03", "TC04", "TC04", "TC05"]
+
+# Converting the list to a set
+unique_test_case_ids = set(test_case_ids)
+
+# Output
+print(unique_test_case_ids)  # Output: {'TC02', 'TC04', 'TC01', 'TC03', 'TC05'}
+```
+
+
 ## 4.2 Reading
 
 Reading elements in a `set` is typically done through iteration. Since sets are `unordered`,  you cannot access elements by `index`.
@@ -163,7 +179,7 @@ Removes all elements from the set.
 
 ```python
 colors = {'green', 'pink', 'red', 'blue', 'yellow'}
-colors.clear() # Removes and returns an arbitrary element
+colors.clear() # Removes all elements
 print(colors) # Output: set()
 ```
 
@@ -175,48 +191,62 @@ Python sets support mathematical operations like `union`, `intersection`, `diffe
 
 #### Union:
 
-Combines all unique elements from two or more sets.
+Combines all unique elements from two or more sets. You can use the `.union()` method or the `|` operator.
 
 ```python
 set_a = {1, 2, 3, 4}
 set_b = {3, 4, 5, 6}
+
 set_a.union(set_b) # Output: {1, 2, 3, 4, 5, 6}
+# or
+set_a | set_b # Output: {1, 2, 3, 4, 5, 6}
 ```
 
 
 #### Intersection:
 
-Finds the common elements between sets.
+Finds the common elements between sets. You can use the `.intersection()` method or the `&` operator.
 
 ```python
 set_a = {1, 2, 3, 4}
 set_b = {3, 4, 5, 6}
+
 set_a.intersection(set_b) # Output: {3, 4}
+# or
+set_a & set_b # Output: {3, 4}
 ```
 
 
 #### Difference
 
-Returns elements that are in the first `set` but not in the second.
+Returns elements that are in the first `set` but not in the second. You can use the `.difference()` method or the `-` operator.
 
 ```python
 set_a = {1, 2, 3, 4}
 set_b = {3, 4, 5, 6}
+
 set_a.difference(set_b) # Output: {1, 2}
+# or
+set_a - set_b # Output: {1, 2}
 ```
 
 #### Symmetric Difference
 
-Returns elements that are in either `set` but not in both.
+Returns elements that are in either `set` but not in both. You can use the `.symmetric_difference()` method or the `^` operator.
 
 ```python
 set_a = {1, 2, 3, 4}
 set_b = {3, 4, 5, 6}
+
 set_a.symmetric_difference(set_b) # Output: {1, 2, 5, 6}
+# or
+set_a ^ set_b  # Output: {1, 2, 5, 6}
 ```
 
 
 #### Additional Set Methods
+
+There are a few other methods related to sets that are important to know.
 
 
 ##### `intersection_update()`
