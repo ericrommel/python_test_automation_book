@@ -25,7 +25,7 @@ In this section, we will explore tuples, another core data structure in Python.
 
 ## 2.1 Creating
 
-Tuples are useful in test automation for storing `immutable` collections of test data, such as constant values or configuration parameters. Tuples can be created values separated by commas, using parentheses `()` or the `tuple()` constructor.
+Tuples are useful in test automation for storing data that not expected to be changed, such as constant values or configuration parameters. Tuples can be created using values separated by commas, using parentheses `()` or the `tuple()` constructor.
 
 
 ### Syntax:
