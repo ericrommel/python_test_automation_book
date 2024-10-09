@@ -64,7 +64,6 @@ test_cases = ("Login Page", 2, True)  # A tuple of different data types
 
 ## 2.2 Reading
 
-2.2.1
 Tuples are indexed in the same way as lists, meaning each element in the tuple can be accessed by its index. The index starts at 0, and negative indexing is also supported.
 
 
@@ -76,25 +75,25 @@ test_data[1]  # Second element
 test_data[-1]  # Last element
 test_data[-2]  # Second-to-last element
 ```
-2.2.2 Extract/ Unpack/ Assigning to variables
+
+### Extract/ Unpack/ Assigning to variables
+
+The reference link: [Python Tuples - W3Schools](https://www.w3schools.com/python/python_tuples_unpack.asp)
+
 Tuples elements can be assigned to variable (unpacked / extracted as follow)
 
 ```python
 max_spead = (12, 30, 60)
 
 (first_gear, second_gear, third_gear) = max_spead
-or
 one, two, three = max_spead
-*Remark* There is good practice use name "_" if value is not needed
-_, two, three = max_spead
-
+_, two, three = max_spead  # *Remark* There is good practice use name "_" if value is not needed
 
 print(first_gear)  # output 12
 print(second_gear)  # output 30
 print(third_gear)  # output 60
 print(two)  # output 30
 ```
-The reference link: [Python Tuples - W3Schools](https://www.w3schools.com/python/python_tuples_unpack.asp)
 
 ### Using the `len()` function for tuples:
 
@@ -158,7 +157,6 @@ reverted_tuple = numbers[::-1]
 print(reverted_tuple)  # Output: (50, 40, 30, 20, 10)
 ```
 
-
 - Out-of-Bounds indexing
 
 ```python
@@ -199,7 +197,6 @@ Tuples, being immutable, cannot have their elements deleted directly. However, y
 ```python
 del tuple_name
 ```
-
 
 
 ## Practical Exercises (Drills):
