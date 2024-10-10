@@ -132,8 +132,9 @@ Traceback (most recent call last):
 KeyError: 'test_1'
 ```
 
-`pop(key, default)` method remove `key` from the dictionary and return its value. If `key` is not in 
-the dictionary, it will return `defalt` if it is provided.
+`pop(key, default)`
+Remove `key` from the dictionary and return its value. If `key` is not in the dictionary, it will return `defalt` if it 
+is provided.
 
 
 ### Example:
