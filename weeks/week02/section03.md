@@ -148,6 +148,16 @@ Traceback (most recent call last):
 KeyError: 'test_two'
 ```
 
+`popitem()`
+Remove and return a (key, value) pair from the dictionary. Pairs are returned in LIFO (last-in, first-out) order. If 
+the dictionary is empty, calling `popitem()` raises a `KeyError`.
+
+[NOTE] *Changed in version 3.7:* LIFO order is now guaranteed. In prior versions, popitem() would return an arbitrary 
+key/value pair.
+
+`clear()`
+Remove all items from the dictionary.
+
 ## 3.5 Extracting keys
 
 Performing `list(d)` on a dictionary returns a list of all the keys used in the dictionary, in insertion order:
