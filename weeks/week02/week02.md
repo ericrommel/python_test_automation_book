@@ -42,7 +42,16 @@ These tasks should be delivered/solved in maximum 1 week (next Friday):
   - If it is, return the cached result.
   - If it is not, compute the square, store it in the cache, and then return the result.
 
-3. Complete the following challenges on BeeCrowd:
+3. Research about `fronzenset()`. You are building a test automation framework and want to store a collection of test case scenarios (with unique steps) in an immutable set so that the test scenarios can’t be altered. Each test scenario is a list of test steps, and you want to avoid duplicates.
+- Use `frozenset()` to store the test steps of each scenario in an immutable set.
+- Store each test scenario in a dictionary where the key is the test case name and the value is the `frozenset` of steps
+- Write a function that, given a test case name, prints whether the scenario already exists in the dictionary
+- Examples of test steps for different scenarios:
+  - `steps_1 = ["open browser", "navigate to page", "click login"]`
+  - `steps_2 = ["open browser", "navigate to page", "fill form"]`
+  - `steps_3 = ["open browser", "navigate to page", "click login"]`  # duplicate steps
+
+4. Complete the following challenges on BeeCrowd:
 - [1011: Volume of a Sphere](https://judge.beecrowd.com/en/problems/view/1011)
 - [1041: Point Location](https://judge.beecrowd.com/en/problems/view/1041)
 - [1071: Sum of Consecutive Integers](https://judge.beecrowd.com/en/problems/view/1071)
