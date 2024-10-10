@@ -56,7 +56,6 @@ These tasks should be delivered/solved in maximum 1 week (next Friday):
 - [1041: Point Location](https://judge.beecrowd.com/en/problems/view/1041)
 - [1071: Sum of Consecutive Integers](https://judge.beecrowd.com/en/problems/view/1071)
 - [1094: Experiment](https://judge.beecrowd.com/en/problems/view/1094)
-- [1085: Chess](https://judge.beecrowd.com/en/problems/view/1085)
 - [1020: Age in Days](https://judge.beecrowd.com/en/problems/view/1020)
 - [1051: Tax Calculation](https://judge.beecrowd.com/en/problems/view/1051)
 - [1093: K-Substring](https://judge.beecrowd.com/en/problems/view/1093)
