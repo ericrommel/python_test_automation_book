@@ -27,15 +27,12 @@ In this section, you will learn how to handle files in Python for reading and wr
 ### 3.2.4 Regex for Phone Number and Date Validation
 
 ## 3.3 Task Exercises:
-### 3.3.1 Non-Beecrowd tasks
 #### Regex. Using Regex:
 1. Define if string contains the required characters. E.g. if '7865serS3' includes '583' - True; '973' - False
-2. Count number of Upper case letters in the string.  E.g. '7865serS3' - 'Number of capital letters: 1'
+2. Count number of Upper case letters in the string.  E.g. '7865serS3' - 'Number of Capital letters: 1'
 3. Define if string contains least one Upper case letter followed by Lower case letters.  E.g. '75serS3' - False; '75WseTrS3' - True; 
 #### File Handling. 
 1. Read file and remove equal lines (if any).
-2.
-3.
-### 3.3.2 Beecrowd tasks
-### 3.3.3 Questin from Technical Interview
+2. Print out all words with length of n-characters
+3. Combine two files into third file
 
