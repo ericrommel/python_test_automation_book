@@ -28,11 +28,11 @@ In this section, you will learn how to handle files in Python for reading and wr
 
 ## 3.3 Task Exercises:
 #### Regex. Using Regex:
-1. Define if string contains the required characters. E.g. if '7865serS3' includes '583' - True; '973' - False
-2. Count number of Upper case letters in the string.  E.g. '7865serS3' - 'Number of Capital letters: 1'
-3. Define if string contains least one Upper case letter followed by Lower case letters.  E.g. '75serS3' - False; '75WseTrS3' - True; 
+1. Define if a string contains the required characters. E.g. if '7865serS3' includes '583' - True; '973' - False
+2. Count a number of Upper case letters in the string. E.g. '7865serS3' - 'Number of Capital letters: 1'
+3. Define if the string contains at least one Upper case letter followed by Lower case letters. E.g. '75serS3' - False; '75WseTrS3' - True;
 #### File Handling. 
-1. Read file and remove equal lines (if any).
+1. Read the file and remove equal lines (if any).
 2. Print out all words with length of n-characters
-3. Combine two files into third file
+3. Combine two files into a third file
 
