@@ -7,6 +7,9 @@ In this section, you will learn how to handle files in Python for reading and wr
 
 1. [Official Python documentation on File Handling](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
 2. [Working With Files in Python - Real Python](https://realpython.com/working-with-files-in-python/)
+3. [Python File Methods - W3Schools](https://www.w3schools.com/python/python_ref_file.asp)
+4. [Python File I/O - GeeksforGeeks](https://www.geeksforgeeks.org/file-handling-python/)
+5. [Python Directory Management - GeeksforGeeks](https://www.geeksforgeeks.org/python-directory-management/)
 
 ---
 
@@ -135,6 +138,32 @@ except FileNotFoundError:
     print("File not found!")
 ```
 
+### Handling File Exceptions Gracefully
+
+Use specific exceptions like `FileNotFoundError`, `PermissionError`, and others to handle file-related issues.
+
+```python
+try:
+    with open('data.txt', "r") as file:
+        content = file.read()
+except FileNotFoundError:
+    print("File not found!")
+except PermissionError:
+    print("You don't have permission to open this file.")
+```
+
+Exceptions file-related issues:
+
+1. `FileNotFoundError`: Raised when trying to open a file that does not exist.
+2. `PermissionError`: Raised when the file cannot be accessed due to permission restrictions (e.g., trying to write to a read-only file or accessing a file you don't have rights to).
+3. `IsADirectoryError`: Raised when a file operation (like `open()`) is attempted on a directory instead of a file.
+4. `NotADirectoryError`: Raised when a directory operation is attempted on something that is not a directory.
+5. `EOFError`: Raised when `input()` reaches the end of a file unexpectedly. This is not typically used with `open()`, but it's related to file input scenarios.
+6. `OSError`: A general-purpose exception that is raised for various operating system-related errors, including file handling. `OSError` can catch various lower-level errors related to the system's handling of files.
+7. `UnsupportedOperation`: Raised when an unsupported operation is attempted on a file object, such as writing to a file opened in read mode.
+
+For more detailed information on file-related exceptions in Python, you can visit the [official Python documentation](https://docs.python.org/3/library/exceptions.html#exception-hierarchy)
+
 
 ## 1.5 Using `os` and `pathlib` for Cross-Platform File Paths
 
@@ -202,35 +231,7 @@ with open('data.csv', "r") as file:
         print(row)
 ```
 
-
-## 1.9 Handling File Exceptions Gracefully
-
-Use specific exceptions like `FileNotFoundError`, `PermissionError`, and others to handle file-related issues.
-
-```python
-try:
-    with open('data.txt', "r") as file:
-        content = file.read()
-except FileNotFoundError:
-    print("File not found!")
-except PermissionError:
-    print("You don't have permission to open this file.")
-```
-
-Exceptions file-related issues:
-
-1. `FileNotFoundError`: Raised when trying to open a file that does not exist.
-2. `PermissionError`: Raised when the file cannot be accessed due to permission restrictions (e.g., trying to write to a read-only file or accessing a file you don't have rights to).
-3. `IsADirectoryError`: Raised when a file operation (like `open()`) is attempted on a directory instead of a file.
-4. `NotADirectoryError`: Raised when a directory operation is attempted on something that is not a directory.
-5. `EOFError`: Raised when `input()` reaches the end of a file unexpectedly. This is not typically used with `open()`, but it's related to file input scenarios.
-6. `OSError`: A general-purpose exception that is raised for various operating system-related errors, including file handling. `OSError` can catch various lower-level errors related to the system's handling of files.
-7. `UnsupportedOperation`: Raised when an unsupported operation is attempted on a file object, such as writing to a file opened in read mode.
-
-For more detailed information on file-related exceptions in Python, you can visit the [official Python documentation](https://docs.python.org/3/library/exceptions.html#exception-hierarchy)
-
-
-## 1.10 Using Temporary Files
+## 1.9 Using Temporary Files
 
 For testing purposes, sometimes it’s useful to create temporary files. The `tempfile` module provides this functionality.
 
@@ -245,7 +246,7 @@ with tempfile.TemporaryFile(mode="w+") as temp_file:
 ```
 
 
-## 1.11 Reading and Writing Text Files in Different Encodings
+## 1.10 Reading and Writing Text Files in Different Encodings
 
 When working with files in different languages or character sets, specify the encoding explicitly to avoid encoding-related issues.
 
