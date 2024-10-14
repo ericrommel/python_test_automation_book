@@ -24,6 +24,7 @@ def main():
     print(all_chars_are_in_string(regex_one, string_one))
     print(all_chars_are_in_string(regex_two, string_one))
     print(all_chars_are_in_string("res", string_one))
+    print(all_chars_are_in_string("rest", string_one))
 
 
 if __name__ == "__main__":
