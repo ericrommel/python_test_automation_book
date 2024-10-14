@@ -70,7 +70,7 @@ Once your account is ready, you can create a new repository, explore open-source
 
 For this training, we will use this [repository](https://github.com/ericrommel/python_test_automation_book). Clone it in your local machine:
 
-1. Open a terminal window (e.g.: `cmd.exe`, `Git Bash`, `PowerShell`, etc) inside your preferable work folder
+1. Open a terminal window (e.g.: `cmd.exe`, `Git Bash`, `PowerShell`, etc.) inside your preferable work folder
 2. Clone the repo using SSH (need setup private/public keys on Security in GitHub) or HTTPS
 
    ```bash
@@ -118,9 +118,9 @@ An Integrated Development Environment (IDE) helps you write, manage, and debug y
 
 After installing your chosen IDE, open a new Python project and write a simple "Hello, World" script to ensure everything is working:
 
-   ```python
-   print("Hello, World!")
-   ```
+```python
+print("Hello, World!")
+```
 
 
 ## 1.5 Set a Virtual Environment
@@ -137,7 +137,7 @@ Follow the [Python documentation](https://docs.python.org/3/library/venv.html) f
    $ python -m venv /path/to/new/virtual/environment
    ```
 
-2. Activate the new virtual environment. The way to do so will depend on the terminal and OS (Windows/Linux/MacOs/etc):
+2. Activate the new virtual environment. The way to do so will depend on the terminal and OS (Windows/Linux/macOS/etc):
 
 | Shell      | Platform | Command to activate virtual environment |
 |------------|----------|-----------------------------------------|
@@ -173,14 +173,14 @@ In this course, we will primarily use `pip`, the standard package management too
 
 ### Syntax:
 
-```python
+```bash
 $ pip install <package_name>
 ```
 
 
 ### Example:
 
-```python
+```bash
 $ pip install pytest
 ```
 
@@ -189,7 +189,7 @@ $ pip install pytest
 
 You can install specific packages that you need for your test automation projects using pip. These packages are often listed in a requirements.txt file, which is used to ensure that everyone on the team is using the same package versions.
 
-```python
+```bash
 $ pip install -r requirements.txt
 ```
 
@@ -198,20 +198,20 @@ $ pip install -r requirements.txt
 
 Updating:
 
-   ```python
-   $ pip install --upgrade <package_name>
-   ```
+```bash
+$ pip install --upgrade <package_name>
+```
 
 Uninstalling:
 
-   ```python
-   $ pip uninstall <package_name>
-   ```
+```bash
+$ pip uninstall <package_name>
+```
 
 
 ### Generating the `requirements.txt`
 
-```python
+```bash
 $ pip freeze > requirements.txt
 ```
 
@@ -232,4 +232,4 @@ BeeCrowd is a platform where you can practice your coding skills through challen
 
 ### Hands-On Task:
 
-Complete the challenges [`1000`](https://judge.beecrowd.com/en/problems/view/1000) and [`1001`](https://judge.beecrowd.com/en/problems/view/1001) from the `Beginner` section.
+Complete the challenges [`1000`](https://judge.beecrowd.com/en/problems/view/1000), [`1001`](https://judge.beecrowd.com/en/problems/view/1001), and [`1002`](https://judge.beecrowd.com/en/problems/view/1002) from the `Beginner` section.
