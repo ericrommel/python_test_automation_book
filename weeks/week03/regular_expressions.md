@@ -63,6 +63,16 @@ pattern = re.compile("HttpStatusCode\W\s\d{3}", re.I)
 
 Once you have an object representing a compiled regular expression, you can use it's methods and attributes.
 
+[Note] If you want to match an arbitrary literal string that may have regular expression metacharacters in it, 
+you can use `re.escape(pattern)` function, which returns a copy of <regex> with each nonword character (anything other than a letter, digit, or underscore) preceded by a backslash.  
+It saves you the trouble of putting in all the backslash characters manually.
+
+### Example:
+```python
+import re
+re.escape('https://www.python.org') # Output: 'https://www\\.python\\.org'
+```
+
 ## 2.3 Matching Patterns
 
 The `match()` function checks for a match only at the beginning of the string.
