@@ -21,9 +21,6 @@ In this session, we will cover how to handling files start by covering essential
 
 These tasks should be delivered/solved in maximum 1 week (next Friday).
 
-
-## 3.3 Task Exercises:
-
 #### File Handling
 1. Read the file and remove equal lines (if any).
 2. Print out all words with length of n-characters
