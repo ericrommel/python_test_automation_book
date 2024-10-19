@@ -453,10 +453,12 @@ execute_tests(test_cases)
 
 
 ## Practical Exercises (Drill)
+
 - Write a TestCase class with methods for `setup()`, `run()`, and `teardown()`. Create objects of the TestCase class to represent individual test cases.
-- Research about the `Diamond Problem`. How can you mitigate this problem?
+- Investigate what the `Diamond Problem` is in the context of multiple inheritance in OOP. How can you mitigate this problem in your designs?
 - Implement method overriding in a test automation context. Override a method in the child test class to customize the test execution.
 - Create a multiple inheritance example: Write a class that inherits from multiple parent classes (e.g., BaseTest and a custom mixin class), and check how MRO impacts method calls.
+- [TI] What are `@classmethod` and `@staticmethod` and their main differences?
 - [TI] What will be the MRO for class `W` (`W.mro()`)? What is the output after the `w.call()` execution?
     ```python
     class X:
@@ -478,4 +480,3 @@ execute_tests(test_cases)
     w = W()
     w.call()
     ```
--
