@@ -2,7 +2,7 @@
 
 ## Playwright general information:
 Playwright is the powerful tool for Web Test automation (UI and API) in different programming languages:
--TypeScript, 
+- TypeScript, 
 - JavaScript,
 - .NET,
 - Java.
