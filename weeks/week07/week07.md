@@ -30,4 +30,4 @@ The scope of this page: Playwright - Python
 
 ## Installation:
 
-## Launching
+## Launching:
