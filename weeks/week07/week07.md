@@ -30,6 +30,7 @@ The scope of this page: Playwright - Python
 
 ## Installation:
 From Python point of view Playwright is just a package
+
 Installation: 
 ```python
 pip install pytest-playwright
@@ -37,6 +38,7 @@ pip install pytest-playwright
 
 ## Launching:
 From Python point of view Playwright is enhanced pytest
+
 Launching: 
 ```python
 pytest
