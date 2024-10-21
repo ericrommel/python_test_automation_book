@@ -25,9 +25,19 @@ The scope of this page: Playwright - Python
 ## References:
 
 1. [Playwright - Python oficial page](https://playwright.dev/python/)
-2. [TBD](TBC/)
+2. [Installation]([TBC/](https://playwright.dev/python/docs/intro/)
 3. [TBD](TBC/)
 
 ## Installation:
+From Python point of view Playwright is just a package
+Installation: 
+```python
+pip install pytest-playwright
+```
 
 ## Launching:
+From Python point of view Playwright is enhanced pytest
+Launching: 
+```python
+pytest
+```
