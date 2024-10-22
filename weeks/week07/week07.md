@@ -25,8 +25,8 @@ The scope of this page: Playwright - Python
 ## References:
 
 1. [Playwright - Python oficial page](https://playwright.dev/python/)
-2. [Installation](https://playwright.dev/python/docs/intro/)
-3. [TBD](TBC/)
+2. [Installation](https://playwright.dev/python/docs/intro)
+3. [Pytest fixtures](https://docs.pytest.org/en/6.2.x/fixture.html#autouse-fixtures-fixtures-you-don-t-have-to-request)
 
 ## Installation:
 From Python point of view Playwright is just a package
@@ -43,3 +43,8 @@ Launching:
 ```python
 pytest
 ```
+
+## Test:
+1. Action
+2. Assertion
+3. Using fixtures
