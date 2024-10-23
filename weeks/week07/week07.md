@@ -48,3 +48,16 @@ pytest
 1. Action
 2. Assertion
 3. Using fixtures
+
+## UI testing
+Kernel of Playwright UI test: import Page
+
+```python
+from playwright.sync_api import Page
+```
+
+## Assert vs Expect
+The important part of playwright is 'expect'
+'assert' returns Boolean
+'expect' returns None
+The main advantage of 'expect' - waiting for page loading with required parameter till framework's timer
