@@ -22,9 +22,9 @@ Why OOP matters in Test Automation?
 
 ## 4.1.1 Classes and Objects
 
-A `class` is a blueprint (like a plan) for creating objects. It defines attributes (data or state) and methods (behavior) for objects. We can understand a `class` as an abstraction from the real world.
+A `class` is a blueprint (contract or plan) for creating objects, defining the attributes (properties or data) and methods (behavior) that its objects will have. We can think of a `class` as an abstraction of real-world entities.
 
-An `object` is an instance of a `class`. Each `object` created from a `class` can have unique attributes. It is a concrete class representation.
+An `object` is an instance of a class, representing a concrete implementation of that blueprint. In Python, every `object` is created from a `class`. While all objects of a `class` share the same structure (attributes and methods), each instance can hold unique values for those attributes, allowing different instances to represent different data.
 
 
 ### Example
@@ -53,6 +53,7 @@ The `__init__` method, also known as the `constructor`, is used to initialize an
 In `Python`, it is not possible to have multiple `__init__` methods in the same class, like in other languages such as `Java`, which support method overloading (having multiple methods with the same name but different parameter signatures).
 
 Defining multiple `__init__` methods or any kind of methods with the same name will cause the last one defined to override any previous ones. However, you can achieve similar behavior by using default arguments or checking the arguments passed to the methods.
+
 
 ### Example
 
@@ -100,6 +101,7 @@ test.run() # Output: Running login test
 
 Method overriding occurs when a child class provides its own implementation of a method that exists in the parent class. In test automation, you can override methods like `setup()` or `run()` to customize the behavior of test cases.
 
+
 ### Example
 
 ```python
@@ -123,6 +125,7 @@ obj.call() # Output: 'Calling from Y'
 
 `Python` supports `multiple inheritance`. It occurs when a class inherits from more than one parent class. While useful in certain cases, it should be used cautiously as it can make the code complex.
 
+
 ### Example
 
 ```python
@@ -145,6 +148,7 @@ print(child.hobby())  # Output: fishing
 ## 4.2.2 Method Resolution Order (MRO)
 
 In `Python`, when a method is called on an object, the interpreter looks for the method in a specific order. This order is determined by the Method Resolution Order (MRO), which defines the hierarchy in which `Python` searches for methods in the parent classes.
+
 
 ### Example
 
@@ -185,6 +189,7 @@ print(LoginTest.mro())
 
 The `super()` method is used to refer to the parent class or superclass. It allows you to call methods defined in the superclass from the subclass, enabling you to extend and customize the functionality inherited from the parent class
 
+
 ### Example
 
 ```python
@@ -220,6 +225,7 @@ d.do_something()
 
 Sometimes, you may want to call methods from a specific parent class, especially if they share the same method name. You can bypass `super()` and call a specific parent class’s method directly.
 
+
 ### Example
 
 ```python
@@ -240,13 +246,13 @@ In `Python`, while there are no strict access modifiers (`public`, `protected`, 
 
 ### Access Modifiers in `Python`
 
-- Public Members:
+- **Public Members:**
   - Attributes and methods that are defined `without any leading underscore` are public by default.
   - They can be accessed from outside the class without any restrictions.
-- Protected Members:
+- **Protected Members:**
   - Attributes and methods that start with a `single underscore` (`_`) are considered protected.
   - This indicates that they are intended for internal use within the class and its subclasses. While they can still be accessed from outside, it is discouraged.
-- Private Members:
+- **Private Members:**
   - Attributes and methods that start with `double underscores` (`__`) are considered private.
   - They cannot be accessed directly from outside the class, as they are `name-mangled` to avoid naming conflicts in subclasses.
 
@@ -413,9 +419,15 @@ TestSuite.increment_count()  # Output: Total tests: 2
 
 ## 4.2.8 Abstract Classes
 
-Abstract Classes provide a contract for other classes. They can have both concrete methods (with implementation) and abstract methods (without implementation). It can be represented using abstract base classes (`ABCs`) from the `abc` module. They specify a set of methods that must be created within any child class built from the abstract base class.
+Abstract Classes provide a contract for other classes. They can have both concrete methods (with implementation) and abstract methods (without implementation). It can be represented using abstract base classes (`ABCs`) from the `abc` module. They specify a set of methods that must be created within any child class built from the abstract base class. Abstract classes cannot be instantiated directly.
 
-**Note:** Abstract classes cannot be instantiated directly.
+The `@abstractmethod` decorator is used within abstract classes to define methods that must be implemented by any subclass. An abstract method has no implementation in the base class.
+
+The `@abstractclassmethod` is a combination of `@classmethod` and `@abstractmethod`. It ensures that subclasses must implement a class method.
+
+The `@abstractstaticmethod` combines `@staticmethod` and `@abstractmethod`, requiring subclasses to implement a static method.
+
+These decorators ensure that subclasses implement specific methods. You can learn more about them in Python's [Official Documentation](https://docs.python.org/3/library/abc.html) on abstract base classes.
 
 
 ### Example
