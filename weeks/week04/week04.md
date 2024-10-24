@@ -77,7 +77,74 @@ test3 = TestCase()
 ```
 
 
-## 4.1.3 Inheritance and Method Overriding
+## 4.1.3 The `@dataclass` Decorator
+
+The `@dataclass` decorator, available in the `dataclasses` module, simplifies the creation of classes by automatically generating common methods such as `__init__`, `__repr__`, and `__eq__`. This is especially useful when your class is mainly used to store data, which is often the case in test automation scripts.
+
+- `__init__`: method to initialize attributes.
+- `__repr__`: method for easy debugging and logging.
+- `__eq__`: which can be useful for asserting equality in tests.
+
+
+**Curiosity:** In Python, methods that are between double underscores, like the above ones, are called **Magic Methods** or **Dunder Methods**.
+
+
+## Example without `@dataclass`
+
+```python
+class TestResult:
+    def __init__(self, test_name, status, duration):
+        self.test_name = test_name
+        self.status = status
+        self.duration = duration
+
+    def __repr__(self):
+        return f"TestResult(test_name={self.test_name}, status={self.status}, duration={self.duration})"
+
+    def __eq__(self, other):
+        if isinstance(other, TestResult):
+            return (self.test_name == other.test_name and
+                    self.status == other.status and
+                    self.duration == other.duration)
+        return False
+
+result1 = TestResult("TestLogin", "Passed", 5.23)
+result2 = TestResult("TestLogin", "Passed", 5.23)
+
+print(result1)  # Output: TestResult(test_name=TestLogin, status=Passed, duration=5.23)
+print(result1 == result2)  # Output: True
+```
+
+This class requires you to manually write the `__init__`, `__repr__`, and `__eq__` methods, which can be tedious for simple data classes.
+
+
+## Example with `@dataclass`
+
+```python
+from dataclasses import dataclass
+
+@dataclass(frozen=True, order=True)
+class TestResult:
+    test_name: str
+    status: str
+    duration: float
+
+result1 = TestResult("TestLogin", "Passed", 5.23)
+result2 = TestResult("TestLogin", "Passed", 5.23)
+
+print(result1)  # Output: TestResult(test_name='TestLogin', status='Passed', duration=5.23)
+print(result1 == result2)  # Output: True
+```
+
+With `@dataclass`, Python automatically generates the `__init__`, `__repr__`, and `__eq__` methods, drastically reducing boilerplate code.
+
+Note that you can customize the behavior of the generated methods by using parameters:
+
+- `@dataclass(frozen=True)`: This makes instances of the class immutable.
+- `@dataclass(order=True)`: This adds comparison methods (`<`, `<=`, `>`, `>=`) based on the order of attributes.
+
+
+## 4.1.4 Inheritance and Method Overriding
 
 Inheritance allows a class (child) to inherit attributes and methods from another class (parent). This is useful in test automation for creating base test classes that share common functionalities.
 
@@ -407,6 +474,7 @@ class TestSuite:
 TestSuite.increment_count()  # Output: Total tests: 1
 TestSuite.increment_count()  # Output: Total tests: 2
 ```
+
 
 ### Key Differences between `@classmethod` and `@staticmethod`
 
