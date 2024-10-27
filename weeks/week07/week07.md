@@ -55,6 +55,34 @@ Kernel of Playwright UI test: import Page
 ```python
 from playwright.sync_api import Page
 ```
+## API testing
+[Playwright - API testing official documentation]([https://playwright.dev/python](https://playwright.dev/python/docs/api-testing)/)
+[Playwright - API request-new-context]([https://playwright.dev/python](https://playwright.dev/python/docs/api-testing)/)
+
+Kernel of  Playwright API test: import APIRequestContext
+
+```python
+import pytest
+from playwright.sync_api import Playwright, APIRequestContext
+..
+@pytest.fixture(scope="session")
+def api_request_context(Playwright):
+    headers = {
+        "Content-Type": "application/json"
+    }
+    request_context = playwright.request.new_context(
+        base_url="https://server.com", extra_http_headers=headers
+    )
+    return request_context
+
+def test_get_subpage(api_request_context: APIRequestContext)
+    subpage = api_request_context.get(
+        "/subpage"
+    )
+
+    assert subpage.ok
+    assert subpage.status == 200:
+```
 
 ## Assert vs Expect
 The important part of playwright is 'expect'
