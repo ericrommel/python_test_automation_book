@@ -1,4 +1,4 @@
-# Section 2: Python Basics
+# Section 2: Python Basics (Core)
 
 This section introduces the basic building blocks of Python: comments, indentations, variables, data types, and operators. Understanding these are essential for writing test scripts as they allow you to manage test data, define test conditions, and perform calculations in tests.
 
