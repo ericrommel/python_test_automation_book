@@ -1,11 +1,19 @@
 # Week 4: Introduction to Object-Oriented Programming (OOP) for Test Automation
 
-We will cover how to apply Object-Oriented Programming (OOP) concepts in `Python` to write scalable and maintainable test scripts. OOP helps create structured test automation frameworks where code is modular, reusable, and easy to manage.
+We will cover how to apply `Object-Oriented Programming` (`OOP`) concepts in `Python` to write scalable and maintainable test scripts. `OOP` helps create structured test automation frameworks where code is modular, reusable, and easy to manage.
 
-Why OOP matters in Test Automation?
+
+Why `OOP` matters in Test Automation?
 - **Modularity:** Test scripts become easier to maintain when they are modularized using classes.
 - **Reusability:** Common functionalities can be abstracted into base classes and reused across different test cases.
-- **Scalability:** OOP allows test frameworks to grow by organizing test cases and methods into logical units.
+- **Scalability:** `OOP` allows test frameworks to grow by organizing test cases and methods into logical units.
+
+
+The core principles of `OOP` are:
+- **Encapsulation**
+- **Abstraction**
+- **Inheritance**
+- **Polymorphism**
 
 
 ## References
@@ -17,12 +25,19 @@ Why OOP matters in Test Automation?
 ---
 
 
-## 4.1 OOP Basics
+## 4.1 `OOP` Basics
 
 
 ## 4.1.1 Classes and Objects
 
-A `class` is a blueprint (contract or plan) for creating objects, defining the attributes (properties or data) and methods (behavior) that its objects will have. We can think of a `class` as an abstraction of real-world entities.
+A `class` is a blueprint (contract or plan) for creating objects, defining the attributes (properties or data) and methods (behavior) that its objects will have.
+
+We can think of a `class` as an abstraction of real-world entities - one of the core principles of `Object-Oriented Programming` (`OOP`).
+
+Abstraction involves simplifying complex systems by modeling classes that represent real-world entities while hiding unnecessary details. By defining a `class`, we focus only on the attributes and behaviors that are relevant to the program, leaving out irrelevant complexities. For instance, when creating a `Car` class, we only include essential attributes like `make`, `model`, and `year`, as well as key behaviors (methods) like `displaying information`, rather than every possible detail of a real car. This abstraction makes the code more understandable and maintainable.
+
+When we create a new `class`, we're also defining a new type of object in Python, giving us a custom data type to represent specific entities in our code.
+
 
 An `object` is an instance of a class, representing a concrete implementation of that blueprint. In Python, every `object` is created from a `class`. While all objects of a `class` share the same structure (attributes and methods), each instance can hold unique values for those attributes, allowing different instances to represent different data.
 
@@ -43,6 +58,30 @@ test = TestCase("Login Test")
 test.run()  # Output: Running test case: Login Test
 ```
 
+
+```python
+class Car:
+    def __init__(self, make, model, year):
+        self.make = make      # Car manufacturer
+        self.model = model    # Car model
+        self.year = year      # Manufacturing year
+
+    def display_info(self):
+        return f"{self.year} {self.make} {self.model}"
+
+
+# Creating instances of the Car class
+car1 = Car("Toyota", "Camry", 2022)
+car2 = Car("Honda", "Civic", 2020)
+
+# Using the display_info method for each car
+print(car1.display_info())  # Output: 2022 Toyota Camry
+print(car2.display_info())  # Output: 2020 Honda Civic
+
+print(type(car1))  # Output: <class '__main__.Car'>
+print(type(car2))  # Output: <class '__main__.Car'>
+```
+
 **Note:** `self` is a reference to the current instance of a class. It is used to access variables and methods associated with the instance. When you create an object of a class, `self` allows you to work with that specific object's attributes and methods. It must always be the first parameter of instance methods, but it is not required to be named self, it is a convention.
 
 
@@ -50,7 +89,7 @@ test.run()  # Output: Running test case: Login Test
 
 The `__init__` method, also known as the `constructor`, is used to initialize an object's attributes when the object is created. However, this method is optional. If a class doesn't define an `__init__` method, `Python` will provide a default constructor, which doesn't initialize any attributes.
 
-In `Python`, it is not possible to have multiple `__init__` methods in the same class, like in other languages such as `Java`, which support method overloading (having multiple methods with the same name but different parameter signatures).
+In `Python`, it is not possible to have multiple `__init__` methods in the same class, like in other languages such as `Java`, which support **method overloading** (having multiple methods with the same name but different parameter signatures).
 
 Defining multiple `__init__` methods or any kind of methods with the same name will cause the last one defined to override any previous ones. However, you can achieve similar behavior by using default arguments or checking the arguments passed to the methods.
 
@@ -86,7 +125,7 @@ The `@dataclass` decorator, available in the `dataclasses` module, simplifies th
 - `__eq__`: which can be useful for asserting equality in tests.
 
 
-**Curiosity:** In Python, methods that are between double underscores, like the above ones, are called **Magic Methods** or **Dunder Methods**.
+**Curiosity:** In Python, methods that are between double underscores, like the above ones, are called **Magic Methods** or **Dunder Methods**. Learn more about it [here](https://realpython.com/courses/magic-methods-classes/).
 
 
 ## Example without `@dataclass`
@@ -185,7 +224,7 @@ obj.call() # Output: 'Calling from Y'
 ```
 
 
-## 4.2 Advanced OOP Concepts
+## 4.2 Advanced `OOP` Concepts
 
 
 ## 4.2.1 Multiple Inheritance
@@ -214,7 +253,7 @@ print(child.hobby())  # Output: fishing
 
 ## 4.2.2 Method Resolution Order (MRO)
 
-In `Python`, when a method is called on an object, the interpreter looks for the method in a specific order. This order is determined by the Method Resolution Order (MRO), which defines the hierarchy in which `Python` searches for methods in the parent classes.
+In `Python`, when a method is called on an object, the interpreter looks for the method in a specific order. This order is determined by the **Method Resolution Order** (`MRO`), which defines the hierarchy in which `Python` searches for methods in the parent classes.
 
 
 ### Example
@@ -241,8 +280,11 @@ test.run() # Output: Running login test
 test.teardown() # Output: Cleaning up the test
 ```
 
-You can use the `mro()` method to check the method resolution order.
 
+**Note:** What is a `Mixin`? A `mixin` is a type of class that provides methods to other classes but is not considered a base class on its own. `Mixins` are typically used **"to include"** functionality to classes through inheritance, allowing for code reuse without creating a rigid class hierarchy. They are designed to be combined with other classes to enhance their capabilities. This approach promotes a modular design where functionalities can be shared across multiple classes. For more information about `mixins`, you can refer to [Mixin on Wikipedia](https://en.wikipedia.org/wiki/Mixin).
+
+
+You can use the `mro()` method to check the method resolution order.
 
 ### Example
 
@@ -254,46 +296,71 @@ print(LoginTest.mro())
 
 ## 4.2.3. The `super()` method
 
-The `super()` method is used to refer to the parent class or superclass. It allows you to call methods defined in the superclass from the subclass, enabling you to extend and customize the functionality inherited from the parent class
-
-
-### Example
+The `super()` method is used to refer to the parent class or superclass. It allows you to call methods defined in the superclass from the subclass, enabling you to extend and customize the functionality inherited from the parent class.
 
 ```python
-class A:
+class Animal:
     def do_something(self):
-        print("Method from class A")
+        print("Animal behavior")
 
-class B(A):
+class Canine(Animal):
     def do_something(self):
-        print("Method from class B")
-        super().do_something()  # Calls A's method
+        print("Canine behavior")
+        super().do_something()  # Calls Animal's method
 
-class C(A):
+class Pet(Animal):
     def do_something(self):
-        print("Method from class C")
-        super().do_something()  # Calls A's method
+        print("Pet behavior")
+        super().do_something()  # Calls Animal's method
 
-class D(B, C):
+class Dog(Canine, Pet):
     def do_something(self):
-        print("Method from class D")
-        super().do_something()  # Calls the next class in the MRO
+        print("Dog behavior")
+        super().do_something()  # Calls the next class in the MRO (Canine)
 
-# Create an instance of D
-d = D()
-d.do_something()
+# Create an instance of Dog
+dog = Dog()
+dog.do_something()
 
 # Output:
-# (Method from class D)
-# (Method from class B)
-# (Method from class C)
-# (Method from class A)
+# Dog behavior
+# Canine behavior
+# Pet behavior
+# Animal behavior
 ```
 
-Sometimes, you may want to call methods from a specific parent class, especially if they share the same method name. You can bypass `super()` and call a specific parent class’s method directly.
+
+Using `super()` is especially helpful in the `__init__` method to ensure that the parent class's attributes are initialized properly, even when adding new attributes in the subclass.
+
+```python
+class Animal:
+    def __init__(self, species, age):
+        self.species = species
+        self.age = age
+
+    def make_sound(self):
+        return "Some generic sound"
+
+# Dog class inherits from Animal
+class Dog(Animal):
+    def __init__(self, species, age, breed):
+        # Initialize parent class attributes using super()
+        super().__init__(species, age)
+        self.breed = breed  # New attribute specific to Dog
+
+    def make_sound(self):
+        return "Bark!"
+
+# Creating an instance of Dog
+dog = Dog("Canine", 5, "Labrador")
+print(dog.species)       # Output: Canine
+print(dog.age)           # Output: 5
+print(dog.breed)         # Output: Labrador
+print(dog.make_sound())  # Output: Bark!
+```
 
 
-### Example
+Sometimes, you may want to directly call methods from specific parent classes. Here’s how to do this with the Dog class by bypassing super() and calling each parent class’s method directly:
 
 ```python
 class D(B, C):
@@ -306,24 +373,24 @@ class D(B, C):
 
 ## 4.2.4 Encapsulation
 
-Encapsulation means keeping data (attributes) and the methods that work on that data together in one place (a class). It also helps control how the data is accessed and changed, protecting the internal details from outside interference.
+Encapsulation means keeping data (attributes) and the methods that work on that data together in one place (a class). It helps control how the data is accessed and changed, protecting the internal details from outside interference.
 
-In `Python`, while there are no strict access modifiers (`public`, `protected`, and `private`) like in languages such as `Java` or `C++`, we use naming conventions to indicate the intended visibility of class attributes and methods.
+In `Python`, while there are no strict access modifiers (`public`, `protected`, or `private`) found in languages like `Java` or `C++`, we use naming conventions to indicate the intended visibility of class attributes and methods.
 
 
 ### Access Modifiers in `Python`
 
 - **Public Members:**
-  - Attributes and methods that are defined `without any leading underscore` are public by default.
+  - Attributes and methods that are defined **without any leading underscore** are public by default.
   - They can be accessed from outside the class without any restrictions.
 - **Protected Members:**
-  - Attributes and methods that start with a `single underscore` (`_`) are considered protected.
+  - Attributes and methods that start with a **single underscore** (`_`) are considered protected.
   - This indicates that they are intended for internal use within the class and its subclasses. While they can still be accessed from outside, it is discouraged.
 - **Private Members:**
-  - Attributes and methods that start with `double underscores` (`__`) are considered private.
+  - Attributes and methods that start with **double underscores** (`__`) are considered private.
   - They cannot be accessed directly from outside the class, as they are `name-mangled` to avoid naming conflicts in subclasses.
 
-**Note:** `Name mangling` is a process by which the interpreter changes the name of a variable in a way that makes it harder to create accidental collisions in subclasses.
+**Note:** `Name mangling` is a process where the interpreter changes the name of a private variable to make it harder to create accidental collisions in subclasses and less accessible from outside the class.
 
 
 ### Example
@@ -331,8 +398,8 @@ In `Python`, while there are no strict access modifiers (`public`, `protected`, 
 ```python
 class TestCase:
     def __init__(self, test_name):
-        self.test_name = test_name # Public attribute
-        self._test_data = [] # Protected attribute
+        self.test_name = test_name    # Public attribute
+        self._test_data = []          # Protected attribute
         self.__expected_result = None # Private attribute
 
     def add_test_data(self, data):
@@ -347,6 +414,7 @@ class TestCase:
 
     def validate(self):
         """Public method to validate the test case."""
+
         # Simulating validation logic
         if self.__expected_result is not None:
             print(f"Validating {self.test_name}: {self.__expected_result}")
@@ -384,6 +452,9 @@ advanced_test_case.display_test_data()
 
 # Attempting to access private attribute (will raise an error)
 # print(test_case.__expected_result)  # Raises an AttributeError
+
+# Accessing a private attribute using "name mangling"
+print("Accessing private attribute:", test_case._TestCase__expected_result)  # Works due to name mangling but it is not recommended in practice
 
 # Accessing private method through a public method
 print(advanced_test_case.access_private_method())  # Output: This is a private method, not accessible outside.
@@ -534,6 +605,7 @@ execute_tests(test_cases)
 
 ## Practical Exercises (Drill)
 
+- [TI] What are the four main principles (pillars) of Object-Oriented Programming (name and explain)?
 - Write a TestCase class with methods for `setup()`, `run()`, and `teardown()`. Create objects of the TestCase class to represent individual test cases.
 - Investigate what the `Diamond Problem` is in the context of multiple inheritance in OOP. How can you mitigate this problem in your designs?
 - Implement method overriding in a test automation context. Override a method in the child test class to customize the test execution.
