@@ -15,7 +15,7 @@ It is
 - Cross-platform,
 - Support mobile testing
 
-The scope of this page: Playwright - Python
+The scope of this page: Playwright - Python.
 
 
 ## Playwright - Python General information:
