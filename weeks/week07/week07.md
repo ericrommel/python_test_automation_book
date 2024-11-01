@@ -75,6 +75,9 @@ from playwright.sync_api import Page
 ## Playwright Assert vs Expect
 
 The important part of playwright is 'expect'
+
 'assert' returns Boolean
+
 'expect' returns None
+
 The main advantage of 'expect' - waiting for page loading with required parameter till framework's timer
