@@ -1,6 +1,6 @@
 # Week 7: Web Automation with Playwright
 
-## Playwright general information:
+## Summary:
 Playwright is the powerful tool for Web Test automation (UI and API) in different programming languages:
 - TypeScript, 
 - JavaScript,
@@ -28,6 +28,19 @@ The scope of this page: Playwright - Python
 2. [Installation](https://playwright.dev/python/docs/intro)
 3. [Pytest fixtures](https://docs.pytest.org/en/6.2.x/fixture.html#autouse-fixtures-fixtures-you-don-t-have-to-request)
 
+## Playwright and Pytest:
+From Python point of view Playwright is enhanced Pytest Automation framework
+
+### Pytest:
+1. Focus on Test Functions: Primarily focuses on running test functions, managing test configurations, and handling test fixtures.
+2. Testing Framework: Pytest is a general-purpose testing framework for Python that supports unit testing, integration testing, and end-to-end testing.
+3. Fixture - kind of decorator allowы creating interaction between methods of test application 
+
+### Playwright:
+1. Targeted for UI Testing: Best suited for simulating and verifying real user interactions within a web interface.
+2. Browser Automation Framework: Playwright is specifically designed for end-to-end web application testing and automates browser interactions (clicks, form filling, navigation, etc.).
+3. Supports Multiple Browsers: Can control Chromium, Firefox, and WebKit (Safari) browsers, providing cross-browser testing capabilities.
+
 ## Installation:
 From Python point of view Playwright is just a package
 
@@ -37,11 +50,10 @@ pip install pytest-playwright
 ```
 
 ## Launching:
-From Python point of view Playwright is enhanced pytest
 
-Launching: 
+The simplest launching command: 
 ```python
-pytest
+pytest filename_with_pytest_playwright_code.py
 ```
 
 ## Test:
@@ -84,7 +96,7 @@ def test_get_subpage(api_request_context: APIRequestContext)
     assert subpage.status == 200:
 ```
 
-## Assert vs Expect
+## Playwright Assert vs Expect
 The important part of playwright is 'expect'
 'assert' returns Boolean
 'expect' returns None
