@@ -3,25 +3,25 @@
 This training was broken down into 9 weeks plus a last week dedicated to the final project. Each week can have one or more sections. Feel free to navigate there.
 
 
-### [Week 1](weeks/week01/week01.md): Python Basics, Control Structures, and Functions in Test Scripts
+### [Week 1](weeks/week01/main_python_basics): Python Basics, Control Structures, and Functions in Test Scripts
 
-### [Week 2](weeks/week02/week02.md): Data Structures for Test Data
+### [Week 2](weeks/week02/main_data_structures_for_test_data): Data Structures for Test Data
 
-### [Week 3](weeks/week03/week03.md): File Handling and Regular Expressions in Testing
+### [Week 3](weeks/week03/main_file_handling_and_regex): File Handling and Regular Expressions in Testing
 
-### [Week 4](weeks/week04/week04.md): Intro to Object-Oriented Programming (OOP) for Test Automation
+### [Week 4](weeks/week04/main_introduction_to_oop): Intro to Object-Oriented Programming (OOP) for Test Automation
 
-### [Week 5](weeks/week05/week05.md): Python Modules, Packages, and Testing Frameworks
+### [Week 5](weeks/week05/main_modules_packages_testing_framework): Python Modules, Packages, and Testing Frameworks
 
-### [Week 6](weeks/week06/week06.md): API Testing with Python
+### [Week 6](weeks/week06/main_api_testing): API Testing with Python
 
-### [Week 7](weeks/week07/week07.md): Web Automation with Playwright
+### [Week 7](weeks/week07/main_web_automation_with_playwright): Web Automation with Playwright
 
-### [Week 8](weeks/week08/week08.md): AI-Driven Test Automation: Integrating AI
+### [Week 8](weeks/week08/main_test_automation_integrating_ai): AI-Driven Test Automation: Integrating AI
 
-### [Week 9](weeks/week09/week09.md): Advanced AI-Driven Automation Techniques
+### [Week 9](weeks/week09/main_advanced_ai_driven_automation_techniques): Advanced AI-Driven Automation Techniques
 
-### [Week 10](weeks/week10/week10.md): Building a Test Automation Suite, utilizing both web and API testing
+### [Week 10](weeks/week10/main_building_a_project): Building a Test Automation Suite, utilizing both web and API testing
 
 
 ## Fork the Repo
