@@ -10,7 +10,7 @@ Playwright is the powerful tool for Web Test automation (UI and API) in differen
 - Java.
 - Python
 
-It is 
+Playwright is 
 - Cross-browser,
 - Cross-platform,
 - Support mobile testing
@@ -31,26 +31,7 @@ The scope of this page: Playwright - Python
 
 1. [Playwright - Python oficial page](https://playwright.dev/python/)
 2. [Installation](https://playwright.dev/python/docs/intro)
-3. [Pytest fixtures](https://docs.pytest.org/en/6.2.x/fixture.html#autouse-fixtures-fixtures-you-don-t-have-to-request)
-
-
-## Playwright and Pytest:
-
-From Python point of view Playwright is enhanced Pytest Automation framework
-
-
-### Pytest:
-
-1. Focus on Test Functions: Primarily focuses on running test functions, managing test configurations, and handling test fixtures.
-2. Testing Framework: Pytest is a general-purpose testing framework for Python that supports unit testing, integration testing, and end-to-end testing.
-3. Fixture - kind of decorator allowы creating interaction between methods of test application 
-
-
-### Playwright:
-
-1. Targeted for UI Testing: Best suited for simulating and verifying real user interactions within a web interface.
-2. Browser Automation Framework: Playwright is specifically designed for end-to-end web application testing and automates browser interactions (clicks, form filling, navigation, etc.).
-3. Supports Multiple Browsers: Can control Chromium, Firefox, and WebKit (Safari) browsers, providing cross-browser testing capabilities.
+3. 
 
 
 ## Installation:
@@ -67,53 +48,27 @@ pip install pytest-playwright
 
 The simplest launching command: 
 ```python
-pytest filename_with_pytest_playwright_code.py
+pytest filename_with_playwright_code.py
 ```
+
 
 ## Test:
 
 1. Action
 2. Assertion
-3. Using fixtures
+3. TBD
 
 
-## UI testing
+## UI testing components
 
-Kernel of Playwright UI test: import Page
 
+### PageObject
+
+PageObject is the kernel of Playwright UI test
+
+To use it need to import related library: 
 ```python
 from playwright.sync_api import Page
-```
-
-
-## API testing
-
-[Playwright - API testing official documentation]([https://playwright.dev/python](https://playwright.dev/python/docs/api-testing)/)
-[Playwright - API request-new-context]([https://playwright.dev/python](https://playwright.dev/python/docs/api-testing)/)
-
-Kernel of  Playwright API test: import APIRequestContext
-
-```python
-import pytest
-from playwright.sync_api import Playwright, APIRequestContext
-..
-@pytest.fixture(scope="session")
-def api_request_context(Playwright):
-    headers = {
-        "Content-Type": "application/json"
-    }
-    request_context = playwright.request.new_context(
-        base_url="https://server.com", extra_http_headers=headers
-    )
-    return request_context
-
-def test_get_subpage(api_request_context: APIRequestContext)
-    subpage = api_request_context.get(
-        "/subpage"
-    )
-
-    assert subpage.ok
-    assert subpage.status == 200:
 ```
 
 
