@@ -73,12 +73,17 @@ from playwright.sync_api import Page
 
 ### Locators
 
-Playwright supports all standart types of locators liek css or xpath. Additionally it provides the additional functionality like below:
-1. Last and first locator lik
-page.locator(.classname).last.click
-2. Ability operate with locator in "#shadow-root"
+Playwright supports all standart types of locators like css or xpath. Additionally it provides the additional functionality like below:
+1. Last and first locator:
+
+```python
+page.locator(.classname).last.click()
+```
+
+3. Ability operate with locator in "#shadow-root"
 Remark: #shadow-root is area within DOM. Locators within this section are not available for many Test Automation Frameworks
-3. The numerous build-in methods like e.g.
+4. The numerous build-in methods like:
+   
 3.1
    .to_have_text()
 
