@@ -78,12 +78,19 @@ Playwright supports all standart types of locators liek css or xpath. Additional
 page.locator(.classname).last.click
 2. Ability operate with locator in "#shadow-root"
 Remark: #shadow-root is area within DOM. Locators within this section are not available for many Test Automation Frameworks
-3. The numerous build-in methods like .to_have_text(). Expamle of code
- 
+3. The numerous build-in methods like e.g.
+3.1
+   .to_have_text()
+
 ```python
 page.get_by_role("#Category")).to_have_text(["plates", "caps", "catleriese"])
 ```
 
+3.2
+   .get_by_text()
+```python
+page.get_by_text("orange").click()
+```
 
 ### Playwright Assert vs Expect
 
