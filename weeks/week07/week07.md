@@ -97,7 +97,23 @@ page.get_by_role("#Category")).to_have_text(["plates", "caps", "catleriese"])
 page.get_by_text("orange").click()
 ```
 
-### Playwright Assert vs Expect
+from playwright.sync_api import Page
+
+class StartingPage:
+    # Initialize page and selectors
+    def __init__(self, page: Page):
+        self.page = page
+        self.text_selenium = page.locator("[alt='Selenium Online Training']")
+
+
+    # Actions on page
+    def navigate(self, url: str):
+        self.page.goto(url)
+
+
+    # Get information from page
+    def check_loading_initial_page(self):
+        return self.text_selenium.is_visible()
 
 The important part of playwright is 'expect'
 
@@ -106,3 +122,63 @@ The important part of playwright is 'expect'
 'expect' returns None
 
 The main advantage of 'expect' - waiting for page loading with required parameter till framework's timer
+
+### Example of code
+
+#### Page object
+staring_page.py
+```python
+from playwright.sync_api import Page
+
+class StartingPage:
+    # Initialize page and selectors
+    def __init__(self, page: Page):
+        self.page = page
+        self.text_selenium = page.locator("[alt='Selenium Online Training']")
+
+
+    # Actions on page
+    def navigate(self, url: str):
+        self.page.goto(url)
+
+
+    # Get information from page
+    def check_loading_initial_page(self):
+        return self.text_selenium.is_visible()
+```
+#### Test suit
+
+test_starting_page.py
+```python
+import pytest
+from starting_page import StartingPage
+from playwright.sync_api import sync_playwright
+
+# Define a pytest fixture to set up Playwright and browser instance
+@pytest.fixture(scope="session")
+def browser():
+    with sync_playwright() as playwright:
+        browser = playwright.chromium.launch(headless=False)
+        yield browser
+        browser.close()
+
+
+@pytest.fixture
+def page(browser):
+    context = browser.new_context()
+    page = context.new_page()
+    return page
+
+
+# Test case using the StartingPage object
+def test_login(page):
+    login_page = StartingPage(page)
+    login_page.navigate("https://demoqa.com")
+
+    # Assertion example - page check
+    assert login_page.check_loading_initial_page()
+```
+
+#### Launching
+1. Save PO and test suit in same folder
+2. Run command: pytest '\test_starting_page.py
