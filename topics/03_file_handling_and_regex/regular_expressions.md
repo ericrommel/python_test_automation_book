@@ -45,7 +45,7 @@ In this case, the <regex> pattern is just the plain string `HttpStatusCode: 202`
 
 ## 2.2 Python Regex Metacharacters
 
-The real power of regex matching in Python emerges when <regex> contains special characters called metacharacters. These have a unique meaning to the regex matching engine and vastly enhance the capability of the search. 
+The real power of regex matching in Python emerges when <regex> contains special characters called metacharacters. These have a unique meaning to the regex matching engine and vastly enhance the capability of the search.
 Here’s a complete list of the metacharacters: `. ^ $ * + ? { } [ ] \ | ( )`. Please refer to provided links for Python Documentation to check their meanings.
 Let's proceed with our example:
 `\W`- matches any non-alphanumeric character.
@@ -63,8 +63,8 @@ pattern = re.compile("HttpStatusCode\W\s\d{3}", re.I)
 
 Once you have an object representing a compiled regular expression, you can use it's methods and attributes.
 
-[Note] If you want to match an arbitrary literal string that may have regular expression metacharacters in it, 
-you can use `re.escape(pattern)` function, which returns a copy of <regex> with each nonword character (anything other than a letter, digit, or underscore) preceded by a backslash.  
+[Note] If you want to match an arbitrary literal string that may have regular expression metacharacters in it,
+you can use `re.escape(pattern)` function, which returns a copy of <regex> with each nonword character (anything other than a letter, digit, or underscore) preceded by a backslash.
 It saves you the trouble of putting in all the backslash characters manually.
 
 ### Example:
@@ -103,9 +103,9 @@ if match:
 ```
 
 Match object instances also have several methods and attributes; the most important ones are:
-- `group()`: Return the string matched by the RE 
-- `start()`: Return the starting position of the match 
-- `end()`: Return the ending position of the match 
+- `group()`: Return the string matched by the RE
+- `start()`: Return the starting position of the match
+- `end()`: Return the ending position of the match
 - `span()`: Return a tuple containing the (start, end) positions of the match
 
 ### Example:
@@ -169,8 +169,8 @@ re.sub("\d+", "#", "abc123def456", count=1) # Outut: abc#def456
 
 ## 2.8 Splitting Strings
 
-`split()` splits string into substrings using <regex> as the delimiter and returns the substrings as a list. You can limit the number of splits made, by passing a non-zero value 
-for `maxsplit`; the remainder of the string is returned as the final element of the list. 
+`split()` splits string into substrings using <regex> as the delimiter and returns the substrings as a list. You can limit the number of splits made, by passing a non-zero value
+for `maxsplit`; the remainder of the string is returned as the final element of the list.
 
 ### Syntax:
 ```python
