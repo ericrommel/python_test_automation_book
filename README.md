@@ -3,25 +3,25 @@
 This training was broken down into 9 weeks plus a last week dedicated to the final project. Each week can have one or more sections. Feel free to navigate there.
 
 
-### [Week 1](weeks/week01/main_python_basics): Python Basics, Control Structures, and Functions in Test Scripts
+### [Topic 1](topics/01_python_basic/main_python_basics): Python Basics, Control Structures, and Functions in Test Scripts
 
-### [Week 2](weeks/week02/main_data_structures_for_test_data): Data Structures for Test Data
+### [Topic 2](topics/02_basic_data_structures/main_data_structures_for_test_data): Data Structures for Test Data
 
-### [Week 3](weeks/week03/main_file_handling_and_regex): File Handling and Regular Expressions in Testing
+### [Topic 3](topics/03_file_handling_and_regex/main_file_handling_and_regex): File Handling and Regular Expressions in Testing
 
-### [Week 4](weeks/week04/main_introduction_to_oop): Intro to Object-Oriented Programming (OOP) for Test Automation
+### [Topic 4](topics/04_oop_basic/main_introduction_to_oop): Intro to Object-Oriented Programming (OOP) for Test Automation
 
-### [Week 5](weeks/week05/main_modules_packages_testing_framework): Python Modules, Packages, and Testing Frameworks
+### [Topic 5](topics/05_module_packages_and_testing_frameworks/main_modules_packages_testing_framework): Python Modules, Packages, and Testing Frameworks
 
-### [Week 6](weeks/week06/main_api_testing): API Testing with Python
+### [Topic 6](topics/06_api_testing/main_api_testing): API Testing with Python
 
-### [Week 7](weeks/week07/main_web_automation_with_playwright): Web Automation with Playwright
+### [Topic 7](topics/07_web_ui_testing/main_web_automation_with_playwright): Web Automation with Playwright
 
-### [Week 8](weeks/week08/main_test_automation_integrating_ai): AI-Driven Test Automation: Integrating AI
+### [Topic 8](topics/08_ai_integration_basic/main_test_automation_integrating_ai): AI-Driven Test Automation: Integrating AI
 
-### [Week 9](weeks/week09/main_advanced_ai_driven_automation_techniques): Advanced AI-Driven Automation Techniques
+### [Topic 9](topics/09_ai_integration_advanced/main_advanced_ai_driven_automation_techniques): Advanced AI-Driven Automation Techniques
 
-### [Week 10](weeks/week10/main_building_a_project): Building a Test Automation Suite, utilizing both web and API testing
+### [Topic 10](topics/10_projects/main_building_a_project): Building a Test Automation Suite, utilizing both web and API testing
 
 
 ## Fork the Repo

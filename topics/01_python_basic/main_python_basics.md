@@ -1,4 +1,4 @@
-# Week 1: Python Basics, Control Structures, and Functions in Test Scripts
+# Topic 1: Python Basics, Control Structures, and Functions in Test Scripts
 
 ## Introduction
 

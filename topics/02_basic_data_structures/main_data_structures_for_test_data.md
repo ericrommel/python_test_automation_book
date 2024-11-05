@@ -1,4 +1,4 @@
-# Week 2: Data Structures for Test Data
+# Topic 2: Data Structures for Test Data
 
 ## Introduction
 
