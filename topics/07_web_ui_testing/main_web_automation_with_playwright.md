@@ -52,11 +52,14 @@ pytest filename_with_playwright_code.py
 ```
 
 
-## Test:
+## Test suit structure:
 
-1. Action
-2. Assertion
-3. TBD
+1. Import libraries
+2. Import page Page Object
+3. Test
+3.1. Action
+3.2. Assertion
+
 
 
 ## UI testing components
@@ -66,9 +69,36 @@ pytest filename_with_playwright_code.py
 
 PageObject is the kernel of Playwright UI test
 
-To use it need to import related library: 
+To use it the import related library is needed: 
 ```python
 from playwright.sync_api import Page
+```
+Page Object Structure exampe: 
+```python
+from playwright.sync_api import Page
+
+
+class PoClassNamePage:
+    # Initialize page and selectors
+    def __init__(self, page: Page):
+        self.page = page
+        # list of selectors
+        self.fullNameField = page.locator("#userName")
+        self.emailField = page.locator("#userEmail")
+        self.currentAddressField = page.locator("#currentAddress")
+        self.permanentAddressField = page.locator("#permanentAddress")
+        self.submitButton = page.locator("#submit")
+        self.pageLoadingIndicator = page.locator(".text-center")
+
+
+    # method to iteract with page
+    def navigate(self, url: str):
+        self.page.goto(url)
+
+
+    # method to get information from page
+    def check_loading_page(self):
+        return self.pageLoadingIndicator.is_visible()
 ```
 
 ### Locators
