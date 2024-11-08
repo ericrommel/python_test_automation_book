@@ -1,4 +1,4 @@
-# Week 4: Introduction to Object-Oriented Programming (OOP) for Test Automation
+# Topic 4: Introduction to Object-Oriented Programming (OOP) for Test Automation
 
 We will cover how to apply `Object-Oriented Programming` (`OOP`) concepts in `Python` to write scalable and maintainable test scripts. `OOP` helps create structured test automation frameworks where code is modular, reusable, and easy to manage.
 
