@@ -110,8 +110,9 @@ class PoClassNamePage:
     def check_loading_page(self):
         return self.fullNameField.text_content() == "John Smith"
 ```
-[!TIP]
-locator can be organized like 'chain' like:
+> [!TIP]
+> locator can be organized like 'chain' like:
+
 ```python
 self.access_block = page.locator("//*div[@id='add-visibility-form']")
 self.access_block_select_type = self.access_block.locator("/div[@id='id_requied_action']") 
