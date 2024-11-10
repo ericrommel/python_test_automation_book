@@ -20,7 +20,7 @@ The scope of this page: Playwright - Python
 
 ## Playwright - Python General information:
 
-1. Convenient for Web and API testing
+1. Applicable for Web and API testing
 2. Intuitive integration with Pytest Test Automation Framework
 3. Intuitive integration with Allure
 4. Inherited  support for all Python functionality
@@ -29,9 +29,8 @@ The scope of this page: Playwright - Python
 
 ## References:
 
-1. [Playwright - Python oficial page](https://playwright.dev/python/)
+1. [Playwright - Python official page](https://playwright.dev/python/)
 2. [Installation](https://playwright.dev/python/docs/intro)
-3. 
 
 
 ## Installation:
@@ -51,33 +50,40 @@ The simplest launching command:
 pytest filename_with_playwright_code.py
 ```
 
+# Framework structure
+1 Service classes
+2 Page object
+3 Test suits
 
-## Test suit structure:
+## Test suit top level components:
 
 1. Import libraries
-2. Import page Page Object
+2. Import page Page Object(s)
 3. Test
 3.1. Action
 3.2. Assertion
 
 
 
-## UI testing components
+## Page object top level components:
+1. Import libraries
+2. PO constructor (including locators)
+3. Methods of PO
+3.1. Interacting with page
+3.2. Getting information
+3.3. Assertion methods 
 
 
 ### PageObject
 
 PageObject is the kernel of Playwright UI test
 
-To use it the import related library is needed: 
-```python
-from playwright.sync_api import Page
-```
+1. Import libraries
 Page Object Structure exampe: 
 ```python
 from playwright.sync_api import Page
 
-
+2. PO constructor (including locators)
 class PoClassNamePage:
     # Initialize page and selectors
     def __init__(self, page: Page):
@@ -90,15 +96,26 @@ class PoClassNamePage:
         self.submitButton = page.locator("#submit")
         self.pageLoadingIndicator = page.locator(".text-center")
 
-
+3. Methods of PO
     # method to iteract with page
     def navigate(self, url: str):
         self.page.goto(url)
+        self.currentAddressField .click()
 
+    # method to get information
+    def navigate(self, url: str):
+        self.permanentAddressField.text_content()
 
-    # method to get information from page
+    # Asserton methods
     def check_loading_page(self):
-        return self.pageLoadingIndicator.is_visible()
+        return self.fullNameField.text_content() == "John Smith"
+```
+Remark: locator can be organized like 'chain'
+e.g.
+```python
+self.access_block = page.locator("//*div[@id='add-visibility-form']")
+self.access_block_select_type = self.access_block.locator("/div[@id='id_requied_action']") 
+instead of "//*div[@id='add-visibility-form']/div[@id='id_requied_action']"
 ```
 
 ### Locators
@@ -109,18 +126,14 @@ Playwright supports all standart types of locators like css or xpath. Additional
 ```python
 page.locator(.classname).last.click()
 ```
-
-3. Ability operate with locator in "#shadow-root"
+2. Ability operate with locator in "#shadow-root"
 Remark: #shadow-root is area within DOM. Locators within this section are not available for many Test Automation Frameworks
-4. The numerous build-in methods like:
-   
+3. The numerous build-in methods like:
 3.1
    .to_have_text()
-
 ```python
 page.get_by_role("#Category")).to_have_text(["plates", "caps", "catleriese"])
 ```
-
 3.2
    .get_by_text()
 ```python
@@ -146,11 +159,8 @@ class StartingPage:
         return self.text_selenium.is_visible()
 
 The important part of playwright is 'expect'
-
 'assert' returns Boolean
-
 'expect' returns None
-
 The main advantage of 'expect' - waiting for page loading with required parameter till framework's timer
 
 ### Example of code
