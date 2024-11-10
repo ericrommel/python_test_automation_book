@@ -111,7 +111,7 @@ class PoClassNamePage:
         return self.fullNameField.text_content() == "John Smith"
 ```
 > [!TIP]
-> locator can be organized like 'chain' like:
+> locator can be organized like 'chain':
 
 ```python
 self.access_block = page.locator("//*div[@id='add-visibility-form']")
