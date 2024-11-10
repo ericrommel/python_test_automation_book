@@ -60,8 +60,8 @@ pytest filename_with_playwright_code.py
 1. Import libraries
 2. Import page Page Object(s)
 3. Test
-3.1. Action
-3.2. Assertion
+- Action
+- Assertion
 
 
 
@@ -69,9 +69,9 @@ pytest filename_with_playwright_code.py
 1. Import libraries
 2. PO constructor (including locators)
 3. Methods of PO
-3.1. Interacting with page
-3.2. Getting information
-3.3. Assertion methods 
+- Interacting with page
+- Getting information
+- Assertion methods 
 
 
 ### PageObject
