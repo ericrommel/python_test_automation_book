@@ -1,0 +1,42 @@
+# Bubble Sort Algorithm ASC
+N = 3
+a = ["test", "My", "words"]
+print(a)
+
+for i in range(N-1):
+    for j in range(N-1-i):
+        if a[j] > a[j+1]:
+            a[j], a[j+1] = a[j+1], a[j]
+
+print(a)
+
+# Bubble Sort Algorithm DES
+def bubble(array):
+    iterations = len(array) - 1
+    for i in range(iterations):
+        for j in range(iterations-i):
+            if array[j] < array[j+1]:
+                array[j], array[j+1] = array[j+1], array[j]
+
+
+a = [5, 10, 99, 85, 12, 1, 78, 66, 4, 8]
+print(a)
+bubble(a)
+print(a)
+
+# Bubble Sort Algorithm With early stopping
+def bubble_sort(array):
+    n = len(array)
+    for i in range(n):
+        swapped = False
+        for j in range(0, n - i - 1):
+            if array[j] > array[j + 1]:
+                array[j], array[j + 1] = array[j + 1], array[j]
+                swapped = True
+        if not swapped:
+            break
+    return array
+
+array = [5, 10, 8, 85, 12, 1, 78, 66, 98, 99]
+sorted_array = bubble_sort(array)
+print("Sorted list:", sorted_array)
