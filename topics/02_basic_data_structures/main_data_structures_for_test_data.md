@@ -1,4 +1,4 @@
-# Week 2: Data Structures for Test Data
+# Topic 2: Data Structures for Test Data
 
 ## Introduction
 
@@ -17,13 +17,13 @@ By using data structures, test automation becomes `scalable` and `maintainable`.
 ---
 
 
-### [Section 1](section01.md): Lists
+### [Section 1](lists): Lists
 
-### [Section 2](section02.md): Tuples
+### [Section 2](tuples): Tuples
 
-### [Section 3](section03.md): Dictionaries
+### [Section 3](dictionaries): Dictionaries
 
-### [Section 4](section04.md): Sets
+### [Section 4](sets): Sets
 
 
 ## Task Exercises:

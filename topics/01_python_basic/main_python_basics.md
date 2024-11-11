@@ -1,4 +1,4 @@
-# Week 1: Python Basics, Control Structures, and Functions in Test Scripts
+# Topic 1: Python Basics, Control Structures, and Functions in Test Scripts
 
 ## Introduction
 
@@ -13,13 +13,13 @@ In this session, we will start by covering essential Python fundamentals, includ
 ---
 
 
-### [Section 1](section01.md): Setting Up Tools
+### [Section 1](setting_up_tools): Setting Up Tools
 
-### [Section 2](section02.md): Python Basics
+### [Section 2](python_core): Python Basics
 
-### [Section 3](section03.md): Control Structures
+### [Section 3](control_structures): Control Structures
 
-### [Section 4](section04.md): Functions
+### [Section 4](functions): Functions
 
 ## Task Exercises:
 

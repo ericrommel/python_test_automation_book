@@ -1,10 +1,10 @@
 # Section 3: Dictionaries
 
-A dictionary is a mutable mapping object of key-value pair items, perfect for storing related data and efficient data 
-retrieval. A dictionary can grow and shrink. It may be nested and contain other collection data types and other 
+A dictionary is a mutable mapping object of key-value pair items, perfect for storing related data and efficient data
+retrieval. A dictionary can grow and shrink. It may be nested and contain other collection data types and other
 dictionaries. Unlike sequences, which are indexed by a range of numbers, dictionaries are indexed by keys.
 
-An object of any immutable type can be used as a dictionary key. Duplicate key are not allowed. By contrast, 
+An object of any immutable type can be used as a dictionary key. Duplicate key are not allowed. By contrast,
 a dictionary value can be any type of object Python supports, and it can appear in a dictionary multiple times.
 
 A dictionary is presented with class `dict`.
@@ -18,8 +18,8 @@ A dictionary is presented with class `dict`.
 
 ---
 
-Dictionaries stores data in key-value pairs. The main operations on a dictionary are storing a value with some key and 
-extracting the value given the key. 
+Dictionaries stores data in key-value pairs. The main operations on a dictionary are storing a value with some key and
+extracting the value given the key.
 
 ## 3.1 Creating and storing data
 
@@ -133,7 +133,7 @@ KeyError: 'test_1'
 ```
 
 `pop(key, default)`
-Remove `key` from the dictionary and return its value. If `key` is not in the dictionary, it will return `defalt` if it 
+Remove `key` from the dictionary and return its value. If `key` is not in the dictionary, it will return `defalt` if it
 is provided.
 
 
@@ -150,10 +150,10 @@ KeyError: 'test_two'
 ```
 
 `popitem()`
-Remove and return a (key, value) pair from the dictionary. Pairs are returned in LIFO (last-in, first-out) order. If 
+Remove and return a (key, value) pair from the dictionary. Pairs are returned in LIFO (last-in, first-out) order. If
 the dictionary is empty, calling `popitem()` raises a `KeyError`.
 
-[NOTE] *Changed in version 3.7:* LIFO order is now guaranteed. In prior versions, popitem() would return an arbitrary 
+[NOTE] *Changed in version 3.7:* LIFO order is now guaranteed. In prior versions, popitem() would return an arbitrary
 key/value pair.
 
 `clear()`
@@ -197,7 +197,7 @@ for k, v in my_dict.items():
     print(k, v)
 ```
 
-The `keys()` method returns a dict_keys object which contains keys from a dictionary and the `values()` method returns 
+The `keys()` method returns a dict_keys object which contains keys from a dictionary and the `values()` method returns
 dict_values object with values of a dictionary. Both these objects are sequence objects:
 
 ### Example:
@@ -230,7 +230,7 @@ results = {n: n ** 2 for n in range(10)}
 3. Write a function that takes a dictionary and returns a list of all the keys.
 4. Created a nested dictionary.
 
- [Note] For the next two questions please refer to the previous lesson where you study Lists. Copying mechanism was 
+ [Note] For the next two questions please refer to the previous lesson where you study Lists. Copying mechanism was
 explained there.
 
 5. Create a shallow copy of a nested dictionary. Modify the original dictionary. How has the shallow copy changed?
