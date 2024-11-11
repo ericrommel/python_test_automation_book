@@ -139,6 +139,24 @@ expect(locator).to_have_attribute()	Element has a DOM attribute
 'assert' returns Boolean
 'expect' returns None
 
+example:
+```python
+    def is_macros_not_displayed_on_page(self, macro_name: str) -> None:
+        expect(self.page.locator(f"//*[text()[contains(.,'{macros_name}')]]")).not_to_be_visible()
+```
+compare with:
+```python
+    def is_macros_not_displayed_on_page(self, macro_name: str) -> bool:
+        return self.page.locator(f"//*[text()[contains(.,'{macros_name}')]]").not_to_be_visible()
+```
+The last one can be used in test in way like:
+
+```python
+assert request_macros_page.is_macro_displayed_on_page(setup_ui_data["macro_name"])
+```
+It more convenient for code but sometimes not convenient in case of delay with page loading
+
+
 
 ### Additional features of Playwright vs Pytest
 
@@ -227,3 +245,19 @@ def page(browser):
 def test_login(page):
     login_page = StartingPage(page)
     login_page.navigate("https://demoqa.com")
+```
+
+## Hometask
+
+Create PO and test-suit for page https://demoqa.com/text-box with following scenario
+- Add data like:
+fullName = "Donald Duck";
+email = "donald.duck@example.com";
+currentAddress = "56 Main St";
+permanentAddress = "379 Apple Rd";
+- Click Submit button
+- Check that data is displayed as expected
+Name:Donald Duck
+Email:donald.duck@example.com
+Current Address :56 Main St
+Permananet Address :379 Apple Rd
