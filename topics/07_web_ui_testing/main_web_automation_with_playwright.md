@@ -136,8 +136,8 @@ expect(locator).to_have_attribute()	Element has a DOM attribute
 > The main advantage of 'expect' - waiting for page loading with required parameter till framework's timer
 
 #### 'expect' vs default Python 'assert'
-'assert' returns Boolean
-'expect' returns None
+- 'assert' returns Boolean
+- 'expect' returns None
 
 example:
 ```python
