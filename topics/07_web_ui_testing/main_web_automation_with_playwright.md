@@ -251,10 +251,12 @@ def test_login(page):
 
 Create PO and test-suit for page https://demoqa.com/text-box with following scenario
 - Add data like:
+```python
 fullName = "Donald Duck";
 email = "donald.duck@example.com";
 currentAddress = "56 Main St";
 permanentAddress = "379 Apple Rd";
+```
 - Click Submit button
 - Check that data is displayed as expected
 
