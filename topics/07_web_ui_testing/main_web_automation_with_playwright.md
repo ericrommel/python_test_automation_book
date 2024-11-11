@@ -257,7 +257,10 @@ currentAddress = "56 Main St";
 permanentAddress = "379 Apple Rd";
 - Click Submit button
 - Check that data is displayed as expected
+
+```
 Name:Donald Duck
 Email:donald.duck@example.com
 Current Address :56 Main St
 Permananet Address :379 Apple Rd
+```
