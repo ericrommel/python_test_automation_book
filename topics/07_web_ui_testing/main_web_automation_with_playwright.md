@@ -31,6 +31,7 @@ The scope of this page: Playwright - Python
 
 1. [Playwright - Python official page](https://playwright.dev/python/)
 2. [Installation](https://playwright.dev/python/docs/intro)
+3. [Assertion](https://playwright.dev/python/docs/test-assertions)
 
 
 ## Installation:
@@ -119,17 +120,37 @@ self.access_block_select_type = self.access_block.locator("/div[@id='id_requied_
 instead of "//*div[@id='add-visibility-form']/div[@id='id_requied_action']"
 ```
 
-### Locators
+### Assertions
+Playwright has specific assertion: expect(locator).assert_method()
+Assert_method() are numerous:
+expect(locator).to_be_hidden()	Element is not visible
+expect(locator).to_be_in_viewport()	Element intersects viewport
+expect(locator).to_be_visible()	Element is visible
+expect(locator).to_contain_text()	Element contains text
+expect(locator).to_have_accessible_description()	Element has a matching accessible description
+expect(locator).to_have_accessible_name()	Element has a matching accessible name
+expect(locator).to_have_attribute()	Element has a DOM attribute
+..
 
-Playwright supports all standart types of locators like css or xpath. Additionally it provides the additional functionality like below:
-1. Last and first locator:
+> [!TIP]
+> The main advantage of 'expect' - waiting for page loading with required parameter till framework's timer
+
+#### 'expect' vs default Python 'assert'
+'assert' returns Boolean
+'expect' returns None
+
+
+### Additional features of Playwright vs Pytest
+
+1. Playwright supports all standart types of locators like css or xpath. Additionally it provides the additional functionality like last and first locator:
 
 ```python
-page.locator(.classname).last.click()
+page.locator(".classname").last.click()
 ```
 2. Ability operate with locator in "#shadow-root"
 Remark: #shadow-root is area within DOM. Locators within this section are not available for many Test Automation Frameworks
-3. The numerous build-in methods like:
+
+3. Playwright has numerous build-in methods like:
 3.1
    .to_have_text()
 ```python
@@ -141,13 +162,7 @@ page.get_by_role("#Category")).to_have_text(["plates", "caps", "catleriese"])
 page.get_by_text("orange").click()
 ```
 
-from playwright.sync_api import Page
-
-class StartingPage:
-    # Initialize page and selectors
-    def __init__(self, page: Page):
-        self.page = page
-        self.text_selenium = page.locator("[alt='Selenium Online Training']")
+### Action methods
 
 
     # Actions on page
@@ -159,10 +174,7 @@ class StartingPage:
     def check_loading_initial_page(self):
         return self.text_selenium.is_visible()
 
-The important part of playwright is 'expect'
-'assert' returns Boolean
-'expect' returns None
-The main advantage of 'expect' - waiting for page loading with required parameter till framework's timer
+
 
 ### Example of code
 
