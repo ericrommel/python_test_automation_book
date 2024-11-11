@@ -1,4 +1,4 @@
-# Week 6: API Testing with Python
+# Topic 6: API Testing with Python
 
 API Testing is a crucial component in test automation, ensuring that interactions between software components or systems meet specified requirements. This module will cover Python's tools and libraries for API testing, emphasizing HTTP requests, response validation, and creating automated API test suites.
 
@@ -77,7 +77,7 @@ Some APIs allow for sessions created via login credentials, with a token issued 
 
 ## Setting Up API Requests with the `requests` Library
 
-The `requests` library is a popular Python library for sending HTTP requests and managing responses, including data handling in JSON format.
+The `requests` library is a popular Python library for sending HTTP requests and managing responses, including data handling in `JSON` format.
 
 
 ### Example
@@ -88,7 +88,7 @@ import requests
 # Sending a GET request
 response = requests.get("https://jsonplaceholder.typicode.com/posts/1")
 print(response.status_code)  # Should print 200
-print(response.json())       # Should print JSON response data
+print(response.json())       # Should print `JSON` response data
 ```
 
 
@@ -98,7 +98,7 @@ When validating API responses, testers check the following:
 
 - **Status Code:** Confirms if the request succeeded (e.g., `200 OK`, `404 Not Found`). See the list of status code available [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
 - **Response Time:** Measures how quickly the API responds.
-- **Response Data:** Verifies correctness and data format (e.g., JSON structure and data types).
+- **Response Data:** Verifies correctness and data format (e.g., `JSON` structure and data types).
 
 
 ### Example
@@ -111,6 +111,35 @@ def test_api_response():
     assert isinstance(response.json()["id"], int)
 
 test_api_response()
+```
+
+
+## `JSON` Manipulation (Serialize and Deserialize)
+
+In API testing, `JSON` (JavaScript Object Notation) is a widely used data format for communication between clients and servers due to its simplicity and readability. `JSON` serialization is the process of converting Python objects into `JSON` format, while deserialization is the reverse, converting `JSON` data into Python objects.
+
+The Python's `json` module provides methods to handle `JSON` data, including `json.dumps()` for serialization and `json.loads()` for deserialization.
+
+### Example
+
+- Serialize a Python Dictionary to JSON:
+
+```python
+import json
+
+data = {"name": "Alice", "age": 30, "city": "New York"}
+json_data = json.dumps(data)
+print(json_data)  # Output: {"name": "Alice", "age": 30, "city": "New York"}
+```
+
+- Deserialize JSON to a Python Dictionary:
+
+```python
+import json
+
+json_data = '{"name": "Alice", "age": 30, "city": "New York"}'
+data = json.loads(json_data)
+print(data["name"])  # Output: Alice
 ```
 
 
