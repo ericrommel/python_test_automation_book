@@ -1,0 +1,23 @@
+# Dictionary of scenarios with frozensets
+dic_scenarios = {
+    "Test Case 1": frozenset(["open browser", "navigate to page", "click login"]),
+    "Test Case 2": frozenset(["open browser", "navigate to page", "fill form"]),
+    "Test Case 3": frozenset(["open browser", "navigate to page", "click login"])  # Duplicate of Test Case 1
+}
+
+# Function to check if a new test scenario already exists
+def check_scenario(test_name, new_steps, existing_scenarios):
+    # Convert new_steps to frozenset for comparison
+    new_scenario = frozenset(new_steps)
+
+    # Check for existing matches
+    for name, steps in existing_scenarios.items():
+        if steps == new_scenario:
+            print(f"{test_name} matches an existing scenario: {name}")
+            return
+
+    print(f"{test_name} does not match any existing scenario.")
+
+# Example usage
+new_steps = ["open browser", "navigate to page", "click login"]  # Same steps as Test Case 1
+check_scenario("Test Case 4", new_steps, dic_scenarios)  # Output: Should indicate that it matches Test Case 1
