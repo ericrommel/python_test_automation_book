@@ -1,0 +1,37 @@
+import random
+
+num_elements = int(input("Enter the number of elements in the list: "))
+random_list = random.sample(range(1, num_elements*5), num_elements)
+print("Original Random List:", random_list)
+
+def bubble_sort_ascending(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
+
+def bubble_sort_descending(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] < arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
+
+def bubble_sort_early_stopping(arr):
+    n = len(arr)
+    for i in range(n):
+        swapped = False
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                swapped = True
+        if not swapped:
+            break
+    return arr
+
+print("Sorted in Ascending Order:", bubble_sort_ascending(random_list[:]))
+print("Sorted in Descending Order:", bubble_sort_descending(random_list[:]))
+print("Sorted with Early Stopping:", bubble_sort_early_stopping(random_list[:]))
