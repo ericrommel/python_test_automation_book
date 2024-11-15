@@ -454,3 +454,30 @@ def test_api_client_get(api_client):
     response = api_client.get("/posts/1")
     assert response.status_code == 200
 ```
+
+## Task Exercises:
+
+1. Build a robust and modular test suite to validate multiple aspects of a RESTful API with mocking and pytest fixtures. The goal is to apply lessons learned, such as making requests, handling responses, authentication, and automation using pytest, while leveraging mocking to simulate API behaviors and fixtures for reusable test setup.
+- **Instructions:**
+  - API Details: Use the JSONPlaceholder API as the testing target. Focus on the following endpoints:
+    - `/posts`: CRUD operations
+    - `/comments`: Fetch and filter comments
+- **Requirements:**
+  - Add comments and `docstrings` explaining each part of the test suite.
+  - Write a pytest suite with modular tests for:
+    - Fetching a post (GET /posts/{id}) and validating its structure and data.
+    - Creating a new post (POST /posts) and verifying the response code and payload.
+    - Updating a post (PUT /posts/{id}) and checking for proper updates.
+    - Deleting a post (DELETE /posts/{id}) and confirming its removal.
+  - Add parameterized tests to handle multiple posts.
+  - Validate response structure using a schema with the `jsonschema` library.
+  - Include exception handling for timeouts or invalid responses.
+  - Use `pytest` fixtures for common setups, such as:
+    - Creating reusable base URLs and headers.
+    - Setting up authentication tokens if required.
+    - Providing dummy data for test inputs (e.g., payloads for new posts).
+  - Use the `unittest.mock` library or `pytest-mock` to simulate API responses for edge cases, such as:
+    - API server errors.
+    - Invalid data returned by the API.
+    - Timeouts and network errors.
+  - Create mock tests for each CRUD operation, simulating a successful and a failed GET, POST, PUT, and DELETE requests.
