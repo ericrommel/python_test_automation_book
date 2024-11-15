@@ -9,7 +9,7 @@
 ### DOM
 DOM (Document Object Model) 
 The document currently loaded in each one of your browser tabs is represented by a document object model. This is a "tree structure" representation created by the browser that enables the HTML structure to be easily accessed by programming languages.
-Links to read
+#### Links to read about DOM
 - [What is DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction]
 - [DOM Manipulating_documents](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents)
 - [DOM introduction](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
@@ -25,6 +25,55 @@ It allows viewing and edit the HTML structure and CSS styles of a webpage in rea
 Layout and Box Model: Visualize elements’ layout properties like padding, margin, border, and dimensions.
 
 ### Locators
+Locators are used to identify and interact with WebElements within a web page’s Document Object Model (DOM). They serve as the foundation for automating web application tests by allowing testers to perform actions such as clicking buttons, entering text, or verifying content.
+In Python locators are objects that are created by using /consuming string that define the plase of element within DOM
+
+#### The most typical types of Locators:
+##### ID Locator: 
+Targets elements with a unique id attribute. It's the fastest and most reliable locator if available.
+##### Class Name Locator: 
+Matches elements by their class attribute, often used for elements styled similarly.
+##### Name Locator: 
+Uses the name attribute of elements, commonly used for form inputs.
+##### Tag Name Locator:
+Locates elements based on their HTML tag (e.g., input, div).
+##### Link Text Locator:
+Identifies hyperlinks by their full text within <a> tags.
+##### Partial Link Text Locator: 
+Matches hyperlinks with a substring of their text.
+##### CSS Selector: 
+Allows selection of elements using CSS rules, offering advanced querying capabilities.
+##### XPath Locator: 
+Uses XPath expressions to navigate the DOM, highly useful for complex structures or when no unique attributes exist.
+
+The syntax of creating locator depends on of used library and the text framework
+
+e.g. Selenium library without Test Framework:
+```python
+from selenium import webdriver
+
+driver = webdriver.Chrome('./chromedriver')
+driver.get("https://www.python.org")
+
+fullNameField = driver.find_element_by_id("userName")
+# after that is possible to manipulate by locator accodign to available methods like
+fullNameField.click()
+
+```
+
+the same in Playwright Test framework will looks like:
+
+```python
+self.fullNameField = page.locator("#userName")
+...
+# the usage as:
+self.fullNameField.text_content()
+# e.g.
+assert self.fullNameField.text_content() == 'John'
+
+```
+#### Links to read about Locators
+
 
 ### Selenium
 
@@ -130,7 +179,7 @@ class PoClassNamePage:
     # method to iteract with page
     def navigate(self, url: str):
         self.page.goto(url)
-        self.currentAddressField .click()
+        self.currentAddressField.click()
 
     # method to get information
     def navigate(self, url: str):
