@@ -13,6 +13,10 @@ By the end of this module, you'll be able to:
 4. Understand API authentication methods for testing secure endpoints.
 5. Automate API testing using frameworks like pytest.
 
+## Samples for API Testing
+
+Check the folder `sample` to see a basic and an advanced API Testing.
+
 
 ## References
 
@@ -175,6 +179,10 @@ print(response.json())
 
 `pytest` allows API test automation, making tests modular and reusable. Test functions can be organized with fixtures for efficient setup and data reuse.
 
+Fixtures provide predefined configurations or states that tests can rely on. Fixtures are particularly useful when:
+- You need consistent test environments (e.g., database states, configurations, test data)
+- The setup is shared across multiple tests.
+
 
 ### Example
 
@@ -209,23 +217,240 @@ except requests.exceptions.RequestException as e:
 ```
 
 
-## Advanced Testing Techniques - Mocking API Responses
+## Advanced API Testing Techniques
 
-Mocking API responses can control the testing environment without making actual requests. Libraries like responses allow for mocking in Python.
+As APIs become more complex and integral to modern applications, testing them effectively requires more than just basic validations. Advanced API testing techniques enable testers to simulate real-world scenarios, isolate environments, ensure reliability, and uncover edge cases.
+
+This section dives into sophisticated methodologies such as mocking responses, schema validation, testing asynchronous APIs, and more.
 
 
-### Example
+### Mocking API Responses
+
+Mocking API responses can control the testing environment without making actual requests. Libraries like `responses` allow for mocking in Python.
+
+Mocking is useful when:
+- Testing interactions with external dependencies (e.g., APIs, databases).
+- Isolating components to test specific logic.
+
+Check out more about [mocking here](https://realpython.com/python-mock-library/#what-is-mocking)
+
+The `patch` decorator (from the `unittest.mock` module) is used for temporarily replacing objects or methods.
 
 ```python
 import requests
 from unittest.mock import patch
 
-@patch('requests.get')
-def test_mocked_get_request(mock_get):
-    mock_get.return_value.status_code = 200
+@patch('requests.get') # Mocking the HTTP GET method
+def test_mocked_get_request(mock_get): # The param `mock_get` is the `mock` object created by the `patch`
+    """
+    Configuring the `mock` object:
+     - mock_get.return_value: Represents the mocked response object returned when `requests.get` is called.
+     - status_code: Sets the HTTP status code of the mocked response to 200 (indicating success).
+     - json.return_value: Simulates the JSON data returned by the mocked response, in this case, a dictionary with a single key-value pair: {"title": "Mocked Title"}.
+    """
+
+    mock_get.return_value.status_code = 200 #
     mock_get.return_value.json.return_value = {"title": "Mocked Title"}
 
+    # The below line will call `requests.get` using the URL, but due to the `patch`,
+    # the actual `requests.get` method is not executed and the test uses the mock object
     response = requests.get("https://jsonplaceholder.typicode.com/posts/1")
     assert response.status_code == 200
     assert response.json()["title"] == "Mocked Title"
+```
+
+Fixtures can also be combined with mocking for powerful test setups. For example, you can define a fixture that provides a mocked API client for your tests:
+
+```python
+import pytest
+from unittest.mock import patch
+
+@pytest.fixture
+def mocked_api_response():
+    with patch('requests.get') as mock_get:
+        mock_get.return_value.status_code = 200
+        mock_get.return_value.json.return_value = {"message": "Hello from fixture!"}
+        yield mock_get
+
+def test_api_with_fixture(mocked_api_response):
+    response = requests.get("https://example.com/api")
+    assert response.status_code == 200
+    assert response.json()["message"] == "Hello from fixture!"
+```
+
+
+**Note:**
+
+Key Differences Between Mocks and Fixtures
+
+| Feature     | Mocks                                              | Fixtures                                                         |
+|-------------|----------------------------------------------------|------------------------------------------------------------------|
+| Purpose     | Simulates external calls or object behavior        | Provides predefined setups and states for tests                  |
+| Use Case    | Testing API interactions or external services      | Managing environment setups, dependencies, or reusable test data |
+| Scope       | Focused on replacing specific behaviors or objects | Broader, managing the test's context or environment              |
+| Reusability | Generally specific to a test or scenario           | Highly reusable across multiple tests                            |
+| Example     | Mocking an API request to avoid real network calls | Providing a database connection or preloaded data for tests      |
+
+
+### Contract Testing with Schema Validation
+
+API responses should adhere to predefined contracts or schemas. You can use libraries like `jsonschema` or `pydantic` to validate response structures.
+
+```python
+from jsonschema import validate
+
+# Define expected schema
+schema = {
+    "type": "object",
+    "properties": {
+        "id": {"type": "integer"},
+        "title": {"type": "string"},
+        "completed": {"type": "boolean"}
+    },
+    "required": ["id", "title", "completed"]
+}
+
+# Example API response
+response_data = {
+    "id": 1,
+    "title": "Test Task",
+    "completed": True
+}
+
+# Validate response data against schema
+def test_response_schema():
+    validate(instance=response_data, schema=schema)
+```
+
+
+### Testing Asynchronous APIs
+
+For APIs that use asynchronous programming, libraries like `pytest-asyncio` can be utilized to test the behavior of async endpoints.
+
+```python
+import pytest
+import aiohttp
+
+@pytest.mark.asyncio
+async def test_async_api():
+    async with aiohttp.ClientSession() as session:
+        async with session.get("https://jsonplaceholder.typicode.com/todos/1") as response:
+            assert response.status == 200
+            json_data = await response.json()
+            assert "title" in json_data
+```
+
+
+### Rate Limiting and Retry Mechanisms
+
+Test how APIs handle rate limits and implement retries using libraries like `tenacity`.
+
+```python
+from tenacity import retry, wait_exponential, stop_after_attempt
+import requests
+
+@retry(wait=wait_exponential(min=1, max=10), stop=stop_after_attempt(3))
+def fetch_data():
+    response = requests.get("https://jsonplaceholder.typicode.com/posts")
+    if response.status_code != 200:
+        raise Exception("Rate limit exceeded")
+    return response.json()
+
+def test_retry_mechanism():
+    try:
+        data = fetch_data()
+        assert isinstance(data, list)
+    except Exception as e:
+        assert str(e) == "Rate limit exceeded"
+```
+
+
+### Security Testing
+
+Test APIs against common vulnerabilities like SQL Injection, XSS, or improper authentication mechanisms.
+
+```python
+def test_header_injection():
+    headers = {"Authorization": "Bearer invalid_token; DROP TABLE users;"}
+    response = requests.get("https://jsonplaceholder.typicode.com/posts", headers=headers)
+    assert response.status_code == 401  # Expect unauthorized access
+```
+
+
+### Performance Testing with Load Tools
+
+Use tools like `locust` or `pytest-benchmark` to simulate high loads and test API scalability.
+
+```python
+import requests
+
+def test_performance(benchmark):
+    def fetch():
+        response = requests.get("https://jsonplaceholder.typicode.com/posts")
+        assert response.status_code == 200
+
+    benchmark(fetch)
+```
+
+
+### Data-Driven Testing
+
+Use `@pytest.mark.parametrize` to test multiple data combinations, mimicking real-world scenarios.
+
+```python
+import pytest
+
+@pytest.mark.parametrize("user_id, expected_status", [
+    (1, 200),
+    (9999, 404),
+    (None, 400)
+])
+def test_user_api(user_id, expected_status):
+    url = "https://jsonplaceholder.typicode.com/users"
+    params = {"id": user_id} if user_id else {}
+    response = requests.get(url, params=params)
+    assert response.status_code == expected_status
+```
+
+
+### Dynamic Request Manipulation
+
+Generate dynamic payloads for `POST` or `PUT` requests and test server behavior.
+
+```python
+import requests
+
+def test_dynamic_post():
+    payload = {
+        "title": "Dynamic Title",
+        "body": "Dynamic Body",
+        "userId": 1
+    }
+    response = requests.post("https://jsonplaceholder.typicode.com/posts", json=payload)
+    assert response.status_code == 201
+    assert response.json()["title"] == payload["title"]
+```
+
+
+### Dependency Injection for Reusability
+
+Design reusable utilities to manage `setup`, `teardown`, and `dependency injections` for complex API scenarios.
+
+```python
+import pytest
+
+@pytest.fixture
+def api_client():
+    class APIClient:
+        def get(self, endpoint):
+            return requests.get(f"https://jsonplaceholder.typicode.com{endpoint}")
+
+        def post(self, endpoint, data):
+            return requests.post(f"https://jsonplaceholder.typicode.com{endpoint}", json=data)
+
+    return APIClient()
+
+def test_api_client_get(api_client):
+    response = api_client.get("/posts/1")
+    assert response.status_code == 200
 ```
