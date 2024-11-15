@@ -9,6 +9,7 @@
 ### DOM
 DOM (Document Object Model) 
 The document currently loaded in each one of your browser tabs is represented by a document object model. This is a "tree structure" representation created by the browser that enables the HTML structure to be easily accessed by programming languages.
+
 #### Links to read about DOM
 - [What is DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction]
 - [DOM Manipulating_documents](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents)
@@ -46,7 +47,7 @@ Allows selection of elements using CSS rules, offering advanced querying capabil
 ##### XPath Locator: 
 Uses XPath expressions to navigate the DOM, highly useful for complex structures or when no unique attributes exist.
 
-The syntax of creating locator depends on of used library and the text framework
+The syntax of creating locator depends on of used library and the Test Framework
 
 e.g. Selenium library without Test Framework:
 ```python
@@ -58,11 +59,9 @@ driver.get("https://www.python.org")
 fullNameField = driver.find_element_by_id("userName")
 # after that is possible to manipulate by locator accodign to available methods like
 fullNameField.click()
-
 ```
 
-the same in Playwright Test framework will looks like:
-
+The same locator in Playwright Test framework will look like:
 ```python
 self.fullNameField = page.locator("#userName")
 ...
@@ -70,8 +69,8 @@ self.fullNameField = page.locator("#userName")
 self.fullNameField.text_content()
 # e.g.
 assert self.fullNameField.text_content() == 'John'
-
 ```
+
 #### Links to read about Locators
 [Locators1](https://toolsqa.com/selenium-webdriver/selenium-locators)
 [Locators2](https://www.browserstack.com/guide/locators-in-seleniu)
@@ -133,9 +132,6 @@ Playwright is
 - Cross-platform,
 - Support mobile testing
 
-
-
-
 ## Playwright - Python General information:
 
 1. Applicable for Web and API testing
@@ -167,7 +163,6 @@ Installation:
 pip install pytest-playwright
 ```
 
-
 ## Playwright Launching:
 
 The simplest launching command: 
@@ -188,8 +183,6 @@ pytest filename_with_playwright_code.py
 - Action
 - Assertion
 
-
-
 ## Page object top level components:
 1. Import libraries
 2. PO constructor (including locators)
@@ -197,7 +190,6 @@ pytest filename_with_playwright_code.py
 - Interacting with page
 - Getting information
 - Assertion methods 
-
 
 ### PageObject
 
@@ -306,7 +298,7 @@ page.get_by_text("orange").click()
 
 ### Action methods
 
-
+```python
     # Actions on page
     def navigate(self, url: str):
         self.page.goto(url)
@@ -315,8 +307,7 @@ page.get_by_text("orange").click()
     # Get information from page
     def check_loading_initial_page(self):
         return self.text_selenium.is_visible()
-
-
+```
 
 ### Example of code
 
@@ -341,8 +332,8 @@ class StartingPage:
     def check_loading_initial_page(self):
         return self.text_selenium.is_visible()
 ```
-#### Test suit
 
+#### Test suit
 test_starting_page.py
 ```python
 import pytest
