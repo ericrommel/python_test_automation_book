@@ -11,7 +11,7 @@ DOM (Document Object Model)
 The document currently loaded in each one of your browser tabs is represented by a document object model. This is a "tree structure" representation created by the browser that enables the HTML structure to be easily accessed by programming languages.
 
 #### Links to read about DOM
-- [What is DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction]
+- [What is DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
 - [DOM Manipulating_documents](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents)
 - [DOM introduction](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
 
@@ -72,9 +72,9 @@ assert self.fullNameField.text_content() == 'John'
 ```
 
 #### Links to read about Locators
-[Locators1](https://toolsqa.com/selenium-webdriver/selenium-locators)
-[Locators2](https://www.browserstack.com/guide/locators-in-seleniu)
-[Locators3 from Selenium](https://www.selenium.dev/documentation/webdriver/elements/locators)
+- [Locators1](https://toolsqa.com/selenium-webdriver/selenium-locators)
+- [Locators2](https://www.browserstack.com/guide/locators-in-seleniu)
+- [Locators3 from Selenium](https://www.selenium.dev/documentation/webdriver/elements/locators)
 
 ### Selenium WebDriver
 Selenium WebDriver is a widely used web automation tool that allows developers and testers to automate browser interactions for testing web applications. It is part of the Selenium suite and provides a programming interface to interact directly with web browsers like Chrome, Firefox, Edge, and Safari. Here's an overview:
