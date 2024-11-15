@@ -1,7 +1,36 @@
 # Topic 7: Web Automation with Playwright
 
+## Basic approach of Web Automation
+- DOM, 
+- DevTool,
+- Locators
+- Selenium
 
-## Summary:
+### DOM
+DOM (Document Object Model) 
+The document currently loaded in each one of your browser tabs is represented by a document object model. This is a "tree structure" representation created by the browser that enables the HTML structure to be easily accessed by programming languages.
+Links to read
+- [What is DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction]
+- [DOM Manipulating_documents](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents)
+- [DOM introduction](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
+
+### DevTool
+DevTools (short for Developer Tools) are built-in utilities in web browsers that allow developers to inspect, debug, and optimize their web applications directly from the browser. They provide a range of powerful features that facilitate front-end development, testing, and performance analysis, making it easier to understand how web pages are constructed and behave.
+It is a part of many browsersp articularly in Chrome, Firefox, Safari, and Edge
+
+It incorporates several panels
+For Web Automation the most important is Elements Panel:
+It contains DOM
+It allows viewing and edit the HTML structure and CSS styles of a webpage in real-time. You can change attributes, add styles, and see how these affect the page immediately.
+Layout and Box Model: Visualize elements’ layout properties like padding, margin, border, and dimensions.
+
+### Locators
+
+### Selenium
+
+
+
+## Playwright Summary:
 
 Playwright is the powerful tool for Web Test automation (UI and API) in different programming languages:
 - TypeScript, 
