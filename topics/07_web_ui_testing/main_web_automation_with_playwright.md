@@ -16,7 +16,7 @@ The document currently loaded in each one of your browser tabs is represented by
 
 ### DevTool
 DevTools (short for Developer Tools) are built-in utilities in web browsers that allow developers to inspect, debug, and optimize their web applications directly from the browser. They provide a range of powerful features that facilitate front-end development, testing, and performance analysis, making it easier to understand how web pages are constructed and behave.
-It is a part of many browsersp articularly in Chrome, Firefox, Safari, and Edge
+It is a part of many browsers particularly in Chrome, Firefox, Safari, and Edge
 
 It incorporates several panels
 For Web Automation the most important is Elements Panel:
@@ -26,7 +26,7 @@ Layout and Box Model: Visualize elements’ layout properties like padding, marg
 
 ### Locators
 Locators are used to identify and interact with WebElements within a web page’s Document Object Model (DOM). They serve as the foundation for automating web application tests by allowing testers to perform actions such as clicking buttons, entering text, or verifying content.
-In Python locators are objects that are created by using /consuming string that define the plase of element within DOM
+In Python locators are objects that are created by using /consuming string that define the place of element within DOM
 
 #### The most typical types of Locators:
 ##### ID Locator: 
@@ -73,10 +73,50 @@ assert self.fullNameField.text_content() == 'John'
 
 ```
 #### Links to read about Locators
+[Locators1](https://toolsqa.com/selenium-webdriver/selenium-locators)
+[Locators2](https://www.browserstack.com/guide/locators-in-seleniu)
+[Locators3 from Selenium](https://www.selenium.dev/documentation/webdriver/elements/locators)
 
+### Selenium WebDriver
+Selenium WebDriver is a widely used web automation tool that allows developers and testers to automate browser interactions for testing web applications. It is part of the Selenium suite and provides a programming interface to interact directly with web browsers like Chrome, Firefox, Edge, and Safari. Here's an overview:
 
-### Selenium
+#### Key Features of Selenium WebDriver:
+##### Browser Automation: 
+Simulates user actions such as clicking, typing, scrolling, and navigation.
+#####  Cross-Browser Testing: 
+Supports multiple browsers for testing (e.g., ChromeDriver for Chrome, GeckoDriver for Firefox).
+##### Programming Language Support: 
+Compatible with popular programming languages, including Python, Java, C#, Ruby, and JavaScript.
+##### Direct Browser Control: 
+Communicates directly with the browser, leading to faster and more reliable test execution.
 
+#### Use Cases:
+- Automated functional testing.
+- Regression testing of web applications.
+- End-to-end testing for multi-page workflows.
+- Performance and compatibility testing across browsers.
+
+How does it Works (code example - Python):
+
+```python
+from selenium import webdriver
+
+# Set up WebDriver
+driver = webdriver.Chrome()  # Replace with Firefox, Edge, etc., as needed
+
+# Open a website
+driver.get("https://example.com")
+
+# Find an element and interact
+element = driver.find_element("id", "example-id")
+element.click()
+
+# Close the browser
+driver.quit()
+```
+
+#### Official site: 
+[Selenium](https://www.selenium.dev)
 
 
 ## Playwright Summary:
@@ -93,7 +133,7 @@ Playwright is
 - Cross-platform,
 - Support mobile testing
 
-The scope of this page: Playwright - Python
+
 
 
 ## Playwright - Python General information:
@@ -104,6 +144,12 @@ The scope of this page: Playwright - Python
 4. Inherited  support for all Python functionality
 5. Easy to use within CI/CD (e.g. Jenkins)
 
+## Remark
+Playwright is one of numerous test frameworks that use/support Python
+Some other popular Python Test Frameworks:
+1. Robot Test Framework: powerful frameworks that can be used without deep knowledge of Python. It allows creating tests that are convenient for reading by non-technical stakeholders. Website: robotframework.org
+2. Pytest: versatile testing framework supporting unit, functional, and integration testing. Website: pytest.org
+3. Behave: A behavior-driven development (BDD) framework. Website: https://behave.readthedocs.io
 
 ## References:
 
@@ -112,7 +158,7 @@ The scope of this page: Playwright - Python
 3. [Assertion](https://playwright.dev/python/docs/test-assertions)
 
 
-## Installation:
+## Playwright Installation:
 
 From Python point of view Playwright is just a package
 
@@ -122,7 +168,7 @@ pip install pytest-playwright
 ```
 
 
-## Launching:
+## Playwright Launching:
 
 The simplest launching command: 
 ```python
@@ -158,7 +204,7 @@ pytest filename_with_playwright_code.py
 PageObject is the kernel of Playwright UI test
 
 1. Import libraries
-Page Object Structure exampe: 
+Page Object Structure example: 
 ```python
 from playwright.sync_api import Page
 
@@ -185,7 +231,7 @@ class PoClassNamePage:
     def navigate(self, url: str):
         self.permanentAddressField.text_content()
 
-    # Asserton methods
+    # Assertion methods
     def check_loading_page(self):
         return self.fullNameField.text_content() == "John Smith"
 ```
@@ -200,7 +246,7 @@ instead of "//*div[@id='add-visibility-form']/div[@id='id_requied_action']"
 
 ### Assertions
 Playwright has specific assertion: expect(locator).assert_method()
-Assert_method() are numerous:
+Assert methods are numerous:
 expect(locator).to_be_hidden()	Element is not visible
 expect(locator).to_be_in_viewport()	Element intersects viewport
 expect(locator).to_be_visible()	Element is visible
