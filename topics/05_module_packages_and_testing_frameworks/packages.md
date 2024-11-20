@@ -1,5 +1,7 @@
 # Section 2: Packages
 
+A package in Python is a directory that contains a collection of modules (which are covered in a previous [section](modules.md)).
+
 During test automation framework development, you will create many modules and it will be difficult to maintain them if they are all placed in one location.
 
 ### Example:
@@ -12,7 +14,7 @@ During test automation framework development, you will create many modules and i
   # base_test.py (module implements base test class)
 ```
 
-Packages allow for a hierarchical structuring of other subpackages and the module namespace using dot notation. Packages help avoid collisions between module names.
+Packages are a way of structuring Python’s module namespace by using “dotted module names”. Packages help avoid collisions between module names.
 
 
 ## References:
@@ -24,7 +26,7 @@ Packages allow for a hierarchical structuring of other subpackages and the modul
 
 ## 2.1 Creating Package
 
-A package in Python is a directory that includes other subpackages and modules. Creating a package is quite straightforward, since it makes use of the operating system’s inherent hierarchical file structure.
+Creating a package is quite straightforward, since it makes use of the operating system’s inherent hierarchical file structure.
 
 ### Example:
 
@@ -36,7 +38,7 @@ A package in Python is a directory that includes other subpackages and modules. 
     # test_ui.py (module implements some UI test)
 ```
 
-Here, there is a directory named `test_automation_framework` that contains two packages, `src` and `tests`. Each package contains a module. You can refer to the two modules with dot notation:
+Here, there is a directory named `test_automation_framework` that contains two packages, `src` and `tests`. Each package contains a module. Users of the package can import individual modules from the package with dot notation:
 
 ### Example:
 
@@ -44,6 +46,8 @@ Here, there is a directory named `test_automation_framework` that contains two p
 # test_ui.py
 import src.base_test
 ```
+
+An alternative way of importing the module is:
 
 ```python
 # test_ui.py
@@ -68,13 +72,24 @@ If a file named `__init__.py` is present in a package directory, it is invoked w
 
 ### Example:
 
+
+```python
+# src.__init__.py
+print(f'Invoking __init__.py for {__name__}')
+```
+
+```python
+# tests.__init__.py
+# empty file
+```
+
 ```python
 # test_automation_framework
   # src
-    # __init__.py (file contains the following statement: print(f'Invoking __init__.py for {__name__}'))
+    # __init__.py
     # base_test.py
   # tests
-    # __init__.py (empty file)
+    # __init__.py
     # test_ui.py
 ```
 
@@ -96,7 +111,7 @@ import src.base_test
 ### Example:
 
 ```python
-# __init__.py
+# src.__init__.py
 print(f'Invoking __init__.py for {__name__}')
 import src.base_test
 ```
