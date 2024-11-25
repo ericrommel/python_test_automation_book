@@ -35,7 +35,24 @@ The syntax of creating locator depends on of used library and the Test Framework
 ##### ID Locator: 
 Targets elements with a unique id attribute. It's the fastest and most reliable locator if available.
 
-Examples
+Examples for DOM:
+
+```xml
+<div>
+    <h1>Header 1</h1>
+    <ul> Menu 1
+        <li>Item 1</li>
+        <li class='item2'>Item 2</li>
+        <li id='item3'>Item 3</li>
+        <li name='item4'>Item 4</li>
+        <li input>Item 4</li>
+        <li>Item5</li>
+    </ul>
+    <input type="hidden" name="type" class="js-site-search-type-field">
+    <div class="example-class">
+        <a>Click Here</a>
+</div>
+```
 
 In Selenium:
 ```python
@@ -43,7 +60,7 @@ from selenium import webdriver
 
 driver = webdriver.Chrome()
 driver.get("https://example.com")
-element = driver.find_element("id", "uniqueId")
+element = driver.find_element("id", "item3")
 element.click()
 driver.quit()
 ```
@@ -56,7 +73,7 @@ with sync_playwright() as p:
     browser = p.chromium.launch()
     page = browser.new_page()
     page.goto("https://example.com")
-    element = page.locator("#uniqueId")
+    element = page.locator("#item3")
     element.click()
     browser.close()
 ```
@@ -66,12 +83,12 @@ Matches elements by their class attribute, often used for elements styled simila
 Examples
 In Selenium:
 ```python
-element = driver.find_element("class name", "button-class")
+element = driver.find_element("class name", "item2")
 element.click()
 ```
 In Playwright:
 ```python
-element = page.locator(".button-class")
+element = page.locator(".item2")
 element.click()
 ```
 ##### Name Locator: 
@@ -80,11 +97,11 @@ Uses the name attribute of elements, commonly used for form inputs.
 Examples
 In Selenium:
 ```python
-element = driver.find_element("name", "example_name")
+element = driver.find_element("name", "item4")
 ```
 In Playwright:
 ```python
-element = page.locator('[name="example_name"])'
+element = page.locator('[name="item4"])'
 ```
 
 ##### Tag Name Locator:
@@ -147,11 +164,11 @@ Uses XPath expressions to navigate the DOM, highly useful for complex structures
 Examples
 In Selenium:
 ```python
-element = driver.find_element("xpath", "//div[@class='example-class']//a[text()='Click Here']")
+element = driver.find_element("xpath", "//*div[@class='example-class']/a[text()='Click Here']")
 ```
 In Playwright:
 ```python
-element = page.locator("//*div[@class='example-class']//a[text()='Click Here']")
+element = page.locator("//*div[@class='example-class']/a[text()='Click Here']")
 ```
 #### Locator Parent, sibling, child
 - Parent: locator at level above the current locator
