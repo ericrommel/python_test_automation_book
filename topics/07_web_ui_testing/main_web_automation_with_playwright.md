@@ -154,9 +154,9 @@ In Playwright:
 element = page.locator("//*div[@class='example-class']//a[text()='Click Here']")
 ```
 #### Locator Parent, sibling, child
-Parent: locator at level above the current locator
-Child: locator at level below the current locator
-Sibling: locator at same level of the current locator
+- Parent: locator at level above the current locator
+- Child: locator at level below the current locator
+- Sibling: locator at same level of the current locator
 
 Parent, sibling, child are used e.g. when target locator is difficult to identify (e.g. no id, name or complex class) while parent or child is easy to identify (e.g. it has id)
 
@@ -169,6 +169,15 @@ Parent, sibling, child are used e.g. when target locator is difficult to identif
 Selenium WebDriver is a widely used web automation tool that allows developers and testers to automate browser interactions for testing web applications. It is part of the Selenium suite and provides a programming interface to interact directly with web browsers like Chrome, Firefox, Edge, and Safari. Here's an overview:
 
 #### Key Features of Selenium WebDriver:
+
+| Feature       | Desctiption      |
+|-----------------|----------------|
+| Browser Automation | Simulates user actions such as clicking, typing, scrolling, and navigation. |
+| Cross-Browser Testing | Supports multiple browsers for testing (e.g., ChromeDriver for Chrome, GeckoDriver for Firefox)|
+| Programming Language Support| Compatible with popular programming languages, including Python, Java, C#, Ruby, and JavaScript.|
+| Direct Browser Control| Communicates directly with the browser, leading to faster and more reliable test execution.|
+| Row 3, Column 1| Row 3, Column 2|
+
 ##### Browser Automation: 
 Simulates user actions such as clicking, typing, scrolling, and navigation.
 #####  Cross-Browser Testing: 
