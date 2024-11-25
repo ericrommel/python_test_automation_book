@@ -3,25 +3,25 @@
 This training was broken down into 9 weeks plus a last week dedicated to the final project. Each week can have one or more sections. Feel free to navigate there.
 
 
-### [Topic 1](topics/01_python_basic/main_python_basics): Python Basics, Control Structures, and Functions in Test Scripts
+### [Topic 1](topics/01_python_basic/main_python_basics.md): Python Basics, Control Structures, and Functions in Test Scripts
 
-### [Topic 2](topics/02_basic_data_structures/main_data_structures_for_test_data): Data Structures for Test Data
+### [Topic 2](topics/02_basic_data_structures/main_data_structures_for_test_data.md): Data Structures for Test Data
 
-### [Topic 3](topics/03_file_handling_and_regex/main_file_handling_and_regex): File Handling and Regular Expressions in Testing
+### [Topic 3](topics/03_file_handling_and_regex/main_file_handling_and_regex.md): File Handling and Regular Expressions in Testing
 
-### [Topic 4](topics/04_oop_basic/main_introduction_to_oop): Intro to Object-Oriented Programming (OOP) for Test Automation
+### [Topic 4](topics/04_oop_basic/main_introduction_to_oop.md): Intro to Object-Oriented Programming (OOP) for Test Automation
 
-### [Topic 5](topics/05_module_packages_and_testing_frameworks/main_modules_packages_testing_framework): Python Modules, Packages, and Testing Frameworks
+### [Topic 5](topics/05_module_packages_and_testing_frameworks/main_modules_packages_testing_framework.md): Python Modules, Packages, and Testing Frameworks
 
-### [Topic 6](topics/06_api_testing/main_api_testing): API Testing with Python
+### [Topic 6](topics/06_api_testing/main_api_testing.md): API Testing with Python
 
-### [Topic 7](topics/07_web_ui_testing/main_web_automation_with_playwright): Web Automation with Playwright
+### [Topic 7](topics/07_web_ui_testing/main_web_automation_with_playwright.md): Web Automation with Playwright
 
-### [Topic 8](topics/08_ai_integration_basic/main_test_automation_integrating_ai): AI-Driven Test Automation: Integrating AI
+### [Topic 8](topics/08_ai_integration_basic/main_test_automation_integrating_ai.md): AI-Driven Test Automation: Integrating AI
 
-### [Topic 9](topics/09_ai_integration_advanced/main_advanced_ai_driven_automation_techniques): Advanced AI-Driven Automation Techniques
+### [Topic 9](topics/09_ai_integration_advanced/main_advanced_ai_driven_automation_techniques.md): Advanced AI-Driven Automation Techniques
 
-### [Topic 10](topics/10_projects/main_building_a_project): Building a Test Automation Suite, utilizing both web and API testing
+### [Topic 10](topics/10_projects/main_building_a_project.md): Building a Test Automation Suite, utilizing both web and API testing
 
 
 ## Fork the Repo
