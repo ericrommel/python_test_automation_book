@@ -29,47 +29,136 @@ Layout and Box Model: Visualize elements’ layout properties like padding, marg
 Locators are used to identify and interact with WebElements within a web page’s Document Object Model (DOM). They serve as the foundation for automating web application tests by allowing testers to perform actions such as clicking buttons, entering text, or verifying content.
 In Python locators are objects that are created by using /consuming string that define the place of element within DOM
 
-#### The most typical types of Locators:
+The syntax of creating locator depends on of used library and the Test Framework. Below are examples for Selenium and Python Playwright
+
+#### The most typical types of Locators
 ##### ID Locator: 
 Targets elements with a unique id attribute. It's the fastest and most reliable locator if available.
-##### Class Name Locator: 
-Matches elements by their class attribute, often used for elements styled similarly.
-##### Name Locator: 
-Uses the name attribute of elements, commonly used for form inputs.
-##### Tag Name Locator:
-Locates elements based on their HTML tag (e.g., input, div).
-##### Link Text Locator:
-Identifies hyperlinks by their full text within <a> tags.
-##### Partial Link Text Locator: 
-Matches hyperlinks with a substring of their text.
-##### CSS Selector: 
-Allows selection of elements using CSS rules, offering advanced querying capabilities.
-##### XPath Locator: 
-Uses XPath expressions to navigate the DOM, highly useful for complex structures or when no unique attributes exist.
 
-The syntax of creating locator depends on of used library and the Test Framework
+Examples
 
-e.g. Selenium library without Test Framework:
+In Selenium:
 ```python
 from selenium import webdriver
 
-driver = webdriver.Chrome('./chromedriver')
-driver.get("https://www.python.org")
-
-fullNameField = driver.find_element_by_id("userName")
-# after that is possible to manipulate by locator accodign to available methods like
-fullNameField.click()
+driver = webdriver.Chrome()
+driver.get("https://example.com")
+element = driver.find_element("id", "uniqueId")
+element.click()
+driver.quit()
 ```
 
-The same locator in Playwright Test framework will look like:
+In Playwright:
 ```python
-self.fullNameField = page.locator("#userName")
-...
-# the usage as:
-self.fullNameField.text_content()
-# e.g.
-assert self.fullNameField.text_content() == 'John'
+from playwright.sync_api import sync_playwright
+
+with sync_playwright() as p:
+    browser = p.chromium.launch()
+    page = browser.new_page()
+    page.goto("https://example.com")
+    element = page.locator("#uniqueId")
+    element.click()
+    browser.close()
 ```
+
+##### Class Name Locator: 
+Matches elements by their class attribute, often used for elements styled similarly.
+Examples
+In Selenium:
+```python
+element = driver.find_element("class name", "button-class")
+element.click()
+```
+In Playwright:
+```python
+element = page.locator(".button-class")
+element.click()
+```
+##### Name Locator: 
+Uses the name attribute of elements, commonly used for form inputs.
+
+Examples
+In Selenium:
+```python
+element = driver.find_element("name", "example_name")
+```
+In Playwright:
+```python
+element = page.locator('[name="example_name"])'
+```
+
+##### Tag Name Locator:
+Locates elements based on their HTML tag (e.g., input, div).
+
+Examples
+In Selenium:
+```python
+element = driver.find_element("tag name", "input")
+```
+In Playwright:
+```python
+element = page.locator("input")'
+```
+
+##### Link Text Locator:
+Identifies hyperlinks by their full text within <a> tags.
+
+Examples
+In Selenium:
+```python
+element = driver.find_element("link text", "Click Here") 
+```
+In Playwright:
+```python
+element = page.locator("text='Click Here'")
+```
+
+##### Partial Link Text Locator: 
+Matches hyperlinks with a substring of their text.
+
+Examples
+In Selenium:
+```python
+element = driver.find_element("partial link text", "Click") 
+```
+In Playwright:
+```python
+element = page.locator("text='Click'")
+```
+
+
+##### CSS Selector: 
+Allows selection of elements using CSS rules, offering advanced querying capabilities.
+
+Examples
+In Selenium:
+```python
+element = driver.find_element("css selector", "div.example-class > a") 
+```
+In Playwright:
+```python
+element = page.locator("div.example-class > a") 
+```
+
+
+##### XPath Locator: 
+Uses XPath expressions to navigate the DOM, highly useful for complex structures or when no unique attributes exist.
+
+Examples
+In Selenium:
+```python
+element = driver.find_element("xpath", "//div[@class='example-class']//a[text()='Click Here']")
+```
+In Playwright:
+```python
+element = page.locator("//*div[@class='example-class']//a[text()='Click Here']")
+```
+#### Locator Parent, sibling, child
+Parent: locator at level above the current locator
+Child: locator at level below the current locator
+Sibling: locator at same level of the current locator
+
+Parent, sibling, child are used e.g. when target locator is difficult to identify (e.g. no id, name or complex class) while parent or child is easy to identify (e.g. it has id)
 
 #### Links to read about Locators
 - [Locators1](https://toolsqa.com/selenium-webdriver/selenium-locators)
@@ -362,7 +451,7 @@ def test_login(page):
     login_page.navigate("https://demoqa.com")
 ```
 
-## Hometask
+## Task Exercises:
 
 Create PO and test-suit for page https://demoqa.com/text-box with following scenario
 - Add data like:
