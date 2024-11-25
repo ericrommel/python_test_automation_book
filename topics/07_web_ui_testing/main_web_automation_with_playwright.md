@@ -176,16 +176,6 @@ Selenium WebDriver is a widely used web automation tool that allows developers a
 | Cross-Browser Testing | Supports multiple browsers for testing (e.g., ChromeDriver for Chrome, GeckoDriver for Firefox)|
 | Programming Language Support| Compatible with popular programming languages, including Python, Java, C#, Ruby, and JavaScript.|
 | Direct Browser Control| Communicates directly with the browser, leading to faster and more reliable test execution.|
-| Row 3, Column 1| Row 3, Column 2|
-
-##### Browser Automation: 
-Simulates user actions such as clicking, typing, scrolling, and navigation.
-#####  Cross-Browser Testing: 
-Supports multiple browsers for testing (e.g., ChromeDriver for Chrome, GeckoDriver for Firefox).
-##### Programming Language Support: 
-Compatible with popular programming languages, including Python, Java, C#, Ruby, and JavaScript.
-##### Direct Browser Control: 
-Communicates directly with the browser, leading to faster and more reliable test execution.
 
 #### Use Cases:
 - Automated functional testing.
