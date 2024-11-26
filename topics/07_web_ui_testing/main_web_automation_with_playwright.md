@@ -80,7 +80,6 @@ with sync_playwright() as p:
 
 ##### Class Name Locator: 
 Matches elements by their class attribute, often used for elements styled similarly.
-Examples
 In Selenium:
 ```python
 element = driver.find_element("class name", "item2")
@@ -93,28 +92,24 @@ element.click()
 ```
 ##### Name Locator: 
 Uses the name attribute of elements, commonly used for form inputs.
-
-Examples
 In Selenium:
 ```python
 element = driver.find_element("name", "item4")
 ```
 In Playwright:
 ```python
-element = page.locator('[name="item4"])'
+element = page.locator("[name='item4']")
 ```
 
 ##### Tag Name Locator:
 Locates elements based on their HTML tag (e.g., input, div).
-
-Examples
 In Selenium:
 ```python
 element = driver.find_element("tag name", "input")
 ```
 In Playwright:
 ```python
-element = page.locator("input")'
+element = page.locator("input")
 ```
 
 ##### Link Text Locator:
@@ -299,13 +294,12 @@ pytest filename_with_playwright_code.py
 ### PageObject
 
 PageObject is the kernel of Playwright UI test
-
-1. Import libraries
 Page Object Structure example: 
 ```python
+# Import libraries
 from playwright.sync_api import Page
 
-2. PO constructor (including locators)
+# PO constructor (including locators)
 class PoClassNamePage:
     # Initialize page and selectors
     def __init__(self, page: Page):
@@ -318,7 +312,7 @@ class PoClassNamePage:
         self.submitButton = page.locator("#submit")
         self.pageLoadingIndicator = page.locator(".text-center")
 
-3. Methods of PO
+    # Methods of PO
     # method to iteract with page
     def navigate(self, url: str):
         self.page.goto(url)
