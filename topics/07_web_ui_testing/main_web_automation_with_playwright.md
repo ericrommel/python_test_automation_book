@@ -373,7 +373,15 @@ It more convenient for code but sometimes not convenient in case of delay with p
 page.locator(".classname").last.click()
 ```
 2. Ability operate with locator in "#shadow-root"
-Remark: #shadow-root is area within DOM. Locators within this section are not available for many Test Automation Frameworks
+Remark: #shadow-root is a part of the DOM, a web standard that allows encapsulation of DOM and CSS within a custom element. It provides a scoped tree of elements that are isolated from the main document tree. Locators within this section are not available for many Test Automation Frameworks.
+```html
+<div id="shadow-host">
+  #shadow-root (open)
+    <div>This is inside the shadow DOM.</div>
+    <button>Botton In Shadow</button>
+</div>
+```
+In example above locator for "<button>Botton In Shadow</button>" is not avaible for many Test Frameworks
 
 3. Playwright has numerous build-in methods like:
 3.1
