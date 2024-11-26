@@ -114,8 +114,6 @@ element = page.locator("input")
 
 ##### Link Text Locator:
 Identifies hyperlinks by their full text within <a> tags.
-
-Examples
 In Selenium:
 ```python
 element = driver.find_element("link text", "Click Here") 
@@ -127,8 +125,6 @@ element = page.locator("text='Click Here'")
 
 ##### Partial Link Text Locator: 
 Matches hyperlinks with a substring of their text.
-
-Examples
 In Selenium:
 ```python
 element = driver.find_element("partial link text", "Click") 
@@ -141,8 +137,6 @@ element = page.locator("text='Click'")
 
 ##### CSS Selector: 
 Allows selection of elements using CSS rules, offering advanced querying capabilities.
-
-Examples
 In Selenium:
 ```python
 element = driver.find_element("css selector", "div.example-class > a") 
@@ -155,8 +149,6 @@ element = page.locator("div.example-class > a")
 
 ##### XPath Locator: 
 Uses XPath expressions to navigate the DOM, highly useful for complex structures or when no unique attributes exist.
-
-Examples
 In Selenium:
 ```python
 element = driver.find_element("xpath", "//*div[@class='example-class']/a[text()='Click Here']")
