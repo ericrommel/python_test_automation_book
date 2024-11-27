@@ -233,6 +233,7 @@ def boo():
 ```
 
 ### Practical Exercises (Drills):
+
 1. Create a module. Print some text and define a function.
 2. What built-in function is used to print the list of defined names in a namespace?
 3. Create one more module. Import the function from the first exercise. Run the module and explain the result.
