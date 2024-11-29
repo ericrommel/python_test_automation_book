@@ -355,6 +355,7 @@ Process finished with exit code 1
 
 **Note** You could also use the parametrize marker on a class or a module.
 
+
 ### Example:
 
 ```python
@@ -379,6 +380,7 @@ class TestClass:
 
 To parametrize all tests in a module, you can assign to the `pytestmark` global variable:
 
+
 ### Example:
 
 ```python
@@ -402,6 +404,77 @@ class TestClass:
         assert (n * 1) + 1 == expected
 ```
 
+
+### 3.4.6 Using markers
+
+To set metadata on your test functions, use `pytest.mark` decorator. Here is some of builtin markers:
+
+- filterwarnings - filter certain warnings of a test function
+- skip - always skip a test function
+- skipif - skip a test function if a certain condition is met
+- xfail - produce an “expected failure” outcome if a certain condition is met
+
+
+### Example:
+
+```python
+import pytest
+
+@pytest.mark.skip(reason="no way of currently testing this")
+def test_the_unknown(): ...
+```
+
+```python
+# output
+============================= test session starts =============================
+collecting ... collected 1 item
+
+test_m.py::test_the_unknown SKIPPED (no way of currently testing this)   [100%]
+Skipped: no way of currently testing this
+
+
+============================= 1 skipped in 0.01s ==============================
+
+Process finished with exit code 0
+```
+
+You can mark a test function with custom metadata like this:
+
+
+### Example:
+
+```python
+import pytest
+
+
+@pytest.mark.apitest
+def test_send_http():
+    pass  # perform some api test for your app
+
+
+@pytest.mark.smoke
+@pytest.mark.webtest
+def test_login():
+    pass  # perform some webtest test for your app
+```
+
+You can then restrict a test run to only run tests marked with `webtest`:
+
+```bash
+$ pytest -v -m webtest
+```
+
+```python
+# output
+============================= test session starts =============================
+collecting ... collected 1 item
+
+test_m.py::test_login PASSED                                             [100%]
+
+======================== 1 passed, 2 warnings in 0.02s ========================
+
+Process finished with exit code 0
+```
 
 ### Practical Exercises (Drills):
 
