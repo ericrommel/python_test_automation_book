@@ -296,7 +296,14 @@ def my_func(x):
     return x + 1
 
 
-@pytest.mark.parametrize("test_input, expected", [(1, 2), (-1, 0), (3, 5)])
+@pytest.mark.parametrize(
+    "test_input, expected", 
+    [
+        (1, 2), 
+        (-1, 0), 
+        (3, 5)
+    ]
+)
 def test_my_func(test_input, expected):
     assert my_func(test_input) == expected
 ```
