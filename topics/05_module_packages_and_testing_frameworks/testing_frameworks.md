@@ -522,3 +522,4 @@ def test_add():
 def test_divide():
     pass
 ```
+5. Solve the following problem https://judge.beecrowd.com/en/problems/view/1003. Use fixture and parametrization in your solution.
