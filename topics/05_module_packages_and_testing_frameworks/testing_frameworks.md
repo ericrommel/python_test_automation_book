@@ -476,6 +476,17 @@ test_m.py::test_login PASSED                                             [100%]
 Process finished with exit code 0
 ```
 
+
+### 3.4.7 Pytest plugins
+
+Here is a list for some popular plugins:
+
+- pytest-xdist: to distribute tests to CPUs and remote hosts, to run in boxed mode which allows to survive segmentation faults, to run in looponfailing mode, automatically re-running failing tests on file changes
+- pytest-bdd: to write tests using behaviour-driven testing
+- pytest-html: pytest plugin for generating HTML reports
+- allure-pytest: report test results via allure-framework
+- pytest-random-order: randomise the order in which pytest tests are run with some control over the randomness.
+
 ### Practical Exercises (Drills):
 
 1. Name benefits which a three-layered architecture brings for Test Automation Framework.
