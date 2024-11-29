@@ -355,6 +355,53 @@ Process finished with exit code 1
 
 **Note** You could also use the parametrize marker on a class or a module.
 
+### Example:
+
+```python
+# parametrize class
+import pytest
+
+
+@pytest.mark.parametrize(
+    "n, expected", 
+    [
+        (1, 2), 
+        (3, 4)
+    ]
+)
+class TestClass:
+    def test_simple_case(self, n, expected):
+        assert n + 1 == expected
+
+    def test_weird_simple_case(self, n, expected):
+        assert (n * 1) + 1 == expected
+```
+
+To parametrize all tests in a module, you can assign to the `pytestmark` global variable:
+
+### Example:
+
+```python
+# parametrize module
+import pytest
+
+pytestmark = pytest.mark.parametrize(
+    "n, expected", 
+    [
+        (1, 2), 
+        (3, 4)
+    ]
+)
+
+
+class TestClass:
+    def test_simple_case(self, n, expected):
+        assert n + 1 == expected
+
+    def test_weird_simple_case(self, n, expected):
+        assert (n * 1) + 1 == expected
+```
+
 
 ### Practical Exercises (Drills):
 
