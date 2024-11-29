@@ -56,7 +56,7 @@ A **Layered Architecture** is the most commonly known architecture pattern. It i
 
 The most known and widely used architecture for test automation frameworks is a three-layered architecture: Data, Business, and Core layers.
 
-- On the core layer, there are entities that belong to the entire framework and are not specific to the application. For example, it could be an API client, which implements main methods: GET, POST, PUT, DELETE. This laayer does not have any details, such as URLs or body of a request.
+- On the core layer, there are entities that belong to the entire framework and are not specific to the application. For example, it could be an API client, which implements main methods: GET, POST, PUT, DELETE. This layer does not have any details, such as URLs or body of a request.
 
 
 ### Example:
