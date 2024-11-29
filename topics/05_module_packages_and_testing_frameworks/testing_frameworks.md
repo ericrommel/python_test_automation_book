@@ -112,7 +112,11 @@ Here are some key features of Pytest:
 
 ### 3.4.1 Install pytest
 
-Run the following command in your command line: `pip install -U pytest`
+Run the following command in your command line: 
+
+```bash
+$ pip install pytest
+```
 
 
 ### 3.4.2 Create your first test
