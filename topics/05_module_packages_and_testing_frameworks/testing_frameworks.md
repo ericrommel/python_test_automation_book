@@ -74,8 +74,10 @@ The most known and widely used architecture for test automation frameworks is a 
 ### Example:
 
 ```python
-def get_request(self, url, headers, params):
-    pass
+import requests
+
+def get_request(url, headers, params):
+    return requests.get(url=url, params=params, headers=headers)
 ```
 
 - Business layer provides methods depending on the functionality specific to the application under test.
