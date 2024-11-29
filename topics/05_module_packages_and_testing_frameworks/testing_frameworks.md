@@ -24,14 +24,23 @@ A test automation framework is a set of guidelines, rules, and best practices th
 
 **Linear Scripting Framework:** Also known as "Record and Playback", this framework records test steps executed by the tester and generates scripts. It doesn't require any programming knowledge but is hard to maintain and scale.
 
+Example: Selenium IDE - This tool offers a record-and-playback feature which records user interactions with the web browser and plays them back to test whether the interactions produce the expected results. This is best suited for small projects and simple tests where maintainability is not a big concern.
+
 **Modular Testing Framework:** Tests are divided into small, independent scripts representing modules, functions, or parts of the application. Each is tested separately, then combined to build larger tests.
+
+TestComplete is a good example of a modular testing framework. It allows testers to create small, reusable scripts for different parts of an application, 
 
 **Data Driven Framework:** This framework separates test scripts from test data, allowing testers to store data externally. Test data can be sourced from database or spreadsheets, enabling reusability and easier maintenance.
 
+Apache JMeter is an example of a data-driven framework. It allows testers to separate test scripts from test data, which can be stored in external files like Excel spreadsheets, databases, or XML files
+
 **Keyword-Driven Framework:** It involves the use of a table format to define keywords or action words for each function or method which an automation tool can understand and execute.
+
+QTP/UFT (Unified Functional Testing) is a well-known keyword-driven framework. It uses a table format to define keywords for each function or method, which the automation tool can then execute.
 
 **Hybrid Testing Framework:** This framework combines features of more than one of the above frameworks to leverage the strengths and mitigate the weaknesses of each.
 
+Serenity (formerly Thucydides) is an example of a hybrid testing framework. It combines features of data-driven and keyword-driven frameworks to leverage the strengths of both.
 
 ## 3.3 Test Automation Framework Architecture
 
