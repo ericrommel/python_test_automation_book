@@ -42,6 +42,18 @@ QTP/UFT (Unified Functional Testing) is a well-known keyword-driven framework. I
 
 Serenity (formerly Thucydides) is an example of a hybrid testing framework. It combines features of data-driven and keyword-driven frameworks to leverage the strengths of both.
 
+
+
+| **Framework Type**          | **Pros**                                                                 | **Cons**                                                                 | **When to Use**                                                                 |
+|-----------------------------|--------------------------------------------------------------------------|--------------------------------------------------------------------------|--------------------------------------------------------------------------------|
+| **Linear Scripting**        | - Easy to implement and use<br>- No programming knowledge required       | - Hard to maintain and scale<br>- Not reusable across different projects | - Small projects<br>- Initial automation efforts                                |
+| **Modular Testing**         | - Promotes reusability<br>- Easier maintenance and updates               | - Requires more upfront effort<br>- Initial complexity in managing dependencies | - Larger applications<br>- Projects requiring scalability and flexibility       |
+| **Data Driven**             | - Separates test scripts from test data<br>- Enables reusability and easier maintenance | - Requires strong technical expertise<br>- Initial setup can be complex   | - Projects with large datasets<br>- Tests requiring multiple data sets         |
+| **Keyword-Driven**          | - Easy to write test scripts<br>- No programming skills required         | - Significant time to set up<br>- Requires understanding of the framework | - Projects with repetitive tasks<br>- Teams with limited programming skills     |
+| **Hybrid Testing**          | - Leverages strengths of multiple frameworks<br>- Flexible and scalable  | - Complex to set up and maintain<br>- Requires expertise in multiple frameworks | - Complex projects<br>- Projects requiring a combination of different frameworks |
+
+I hope this helps! Let me know if you need more information or have any other questions.
+
 ## 3.3 Test Automation Framework Architecture
 
 A typical test automation framework architecture includes several components such as:
