@@ -1,18 +1,38 @@
 [tool.black]
+# Set the maximum allowed line length to 120 characters
 line-length = 120
+
+# Include files with the extension '.py' or '.pyi'
 include = '\.pyi?$'
+
+# Exclude specific directories or files from being formatted by Black
 exclude = '''
 /(
+    # Exclude .git directory
     \.git
+
+    # Exclude .hg directory (Mercurial repository)
   | \.hg
+
+    # Exclude mypy cache
   | \.mypy_cache
+
+    # Exclude tox environments
   | \.tox
+
+    # Exclude virtual environments
   | \.venv
+
+    # Exclude build directories
   | _build
   | buck-out
   | build
   | dist
+
+    # Exclude blib2to3, which is used by Python 2-to-3 conversion
   | blib2to3
+
+    # Exclude test data
   | tests/data
 )/
 '''
