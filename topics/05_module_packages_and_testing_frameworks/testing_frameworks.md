@@ -52,7 +52,6 @@ Serenity (formerly Thucydides) is an example of a hybrid testing framework. It c
 | **Keyword-Driven**          | - Easy to write test scripts<br>- No programming skills required         | - Significant time to set up<br>- Requires understanding of the framework | - Projects with repetitive tasks<br>- Teams with limited programming skills     |
 | **Hybrid Testing**          | - Leverages strengths of multiple frameworks<br>- Flexible and scalable  | - Complex to set up and maintain<br>- Requires expertise in multiple frameworks | - Complex projects<br>- Projects requiring a combination of different frameworks |
 
-I hope this helps! Let me know if you need more information or have any other questions.
 
 ## 3.3 Test Automation Framework Architecture
 
