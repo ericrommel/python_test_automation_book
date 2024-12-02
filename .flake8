@@ -1,6 +1,38 @@
 [flake8]
+# List of error and warning codes to ignore (comma-separated)
+# Examples:
+#   E203: Whitespace before ':'
+#   E266: Too many leading '#' for block comment
+#   E402: Module level import not at top of file
+#   E501: Line too long (handled by max-line-length below)
+#   W503: Line break occurred before a binary operator
+#   F403: 'from module import *' used; unable to detect undefined names
+#   F401: Module imported but unused
+#   F841: Local variable assigned but never used
 ignore = E203, E266, E402, , E501, W503, F403, F401, F841
+
+# Maximum allowed line length (overrides E501)
 max-line-length = 120
+
+# Files and directories to exclude from linting (comma-separated)
+# Common examples:
+#   .git: Git configuration and metadata
+#   __pycache__: Compiled Python files
+#   docs/source/conf.py: Documentation configuration file
+#   old, build, dist: Legacy or distribution directories
 exclude = .git,__pycache__,docs/source/conf.py,old,build,dist
+
+# Set a maximum Cyclomatic Complexity for functions and methods
+# This limits how complex a single function or method can be.
 max-complexity = 10
+
+# List of error and warning codes to enforce
+# Examples:
+#   B: Bugbear warnings
+#   C: Cyclomatic complexity
+#   E: Pycodestyle (formerly PEP 8) errors
+#   F: Pyflakes errors
+#   W: Pycodestyle warnings
+#   T4: flake8-bugbear specific checks
+#   B9: flake8-bandit specific checks
 select = B,C,E,F,W,T4,B9
