@@ -1,0 +1,8 @@
+Print text messages from an Android phone
+You can print text messages from an Android phone by:
+Using the hamburger menu: Press and hold the text message, then select the hamburger menu, Share, and your printer app.
+Using the email app: Press and hold the text message, then select the hamburger menu, Share, and your email app.
+Using the Google Messages app: Download the Google Messages app, pair your device, locate the texts to print, click the three dots, and select Print.
+Using Droid Transfer: Download Droid Transfer on your PC, get the Transfer Companion app on your phone, scan the QR code, select a conversation, and click Print.
+Using Bluetooth: Take a screenshot of the text, ensure Bluetooth is on for your phone and printer, select your printer, open the photos, find the screenshot, tap Share, select Print, and confirm Print.
+Using the SMS Backup app: Use the SMS Backup, Print & Restore app to back up your SMS messages, then print them out.
