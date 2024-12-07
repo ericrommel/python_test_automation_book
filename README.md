@@ -24,6 +24,9 @@ This training was broken down into 9 weeks plus a last week dedicated to the fin
 ### [Topic 10](topics/10_projects/main_building_a_project.md): Building a Test Automation Suite, utilizing both web and API testing
 
 
+### [Miscellaneous](topics/miscellaneous/main_miscellaneous.md): Interesting topics for deep learning
+
+
 ## Fork the Repo
 
 A `fork` is a new repository that shares code and visibility settings with the original `upstream` repository. This is a good way to have your own repository and still having updates from the `upstream`. Here the basic steps to take it. Follow the references if you want to get it deeper.
@@ -42,6 +45,7 @@ A `fork` is a new repository that shares code and visibility settings with the o
 9. Set the mentors as reviewers
 10. Expect comments to fix or approvals
 11. Once your work is approved, you can merge in
+
 
 ### Updating your fork
 

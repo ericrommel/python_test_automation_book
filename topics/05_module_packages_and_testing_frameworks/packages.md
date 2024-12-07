@@ -140,6 +140,7 @@ Packages can contain nested **subpackages** to arbitrary depth. Importing still 
 
 
 ### Practical Exercises (Drills):
+
 1. Modify the example package directory by adding a subpackage. How import syntax should be modified?
 2. Why much of the Python documentation states that an `__init__.py` file must be present in the package directory when creating a package?
 3. What happens when user tries importing * From a Package?
