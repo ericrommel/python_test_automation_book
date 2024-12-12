@@ -603,7 +603,7 @@ execute_tests(test_cases)
 ```
 
 
-## Practical Exercises (Drill)
+## Task Exercises:
 
 - [TI] What are the four main principles (pillars) of Object-Oriented Programming (name and explain)?
 - Write a TestCase class with methods for `setup()`, `run()`, and `teardown()`. Create objects of the TestCase class to represent individual test cases.

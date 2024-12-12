@@ -23,9 +23,3 @@ In this session, we will explore some frequently used terms: modules, packages, 
 ## Task Exercises:
 
 These tasks should be delivered/solved in maximum 1 week (next Friday).
-
-#### Python Modules, Packages, and Testing Frameworks
-
-
-
-
