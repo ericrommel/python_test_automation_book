@@ -6,6 +6,7 @@ This folder contains filew with PO and test suites to demo different version of 
 
 selenium_test_demo.py:
 It is a simple example of selenium webdriver test
+
 CL command
 ```bash
 python .\selenium_test_demo.py
