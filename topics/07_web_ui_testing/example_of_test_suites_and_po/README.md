@@ -25,8 +25,8 @@ This folder contains files with PO and test suites to demo different implementat
    ```
 4. `product_page_object.py` - PO
    `test_product_page.py` - test suit that uses `product_page_object.py`.
-  - It use Pytest fixture and consume data from conftest.py
-  - It incorporates functionality of `login_page_object.py` and test suit `test_login_page.py`
+   - It use Pytest fixture and consume data from conftest.py
+   - It incorporates functionality of `login_page_object.py` and test suit `test_login_page.py`
    ```bash
    #  CLI command:
    $ python .\test_product_page.py
