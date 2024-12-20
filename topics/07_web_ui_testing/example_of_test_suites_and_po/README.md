@@ -4,14 +4,10 @@ This folder contains files with PO and test suites to demo different implementat
 
 ## Files
 
-1)
-selenium_test_demo.py:
-- It is a simple example of selenium webdriver test
-
-CL command
-```bash
-python .\selenium_test_demo.py
-```
+1. `selenium_test_demo.py`: It is a simple example of selenium webdriver test. CLI command:
+   \```bash
+   $ python .\selenium_test_demo.py
+   \```
 
 2)
 test_login_page_not_pytest.py
