@@ -1,18 +1,20 @@
 # Introduction
-This folder contains files with PO and test suites to demo different version of Web UI automation tests
+This folder contains files with PO and test suites to demo different implementation of Web UI automation tests
 
 
 ## Files
 
-1) selenium_test_demo.py:
-It is a simple example of selenium webdriver test
+1)
+selenium_test_demo.py:
+- It is a simple example of selenium webdriver test
 
 CL command
 ```bash
 python .\selenium_test_demo.py
 ```
 
-2) test_login_page_not_pytest.py
+2)
+test_login_page_not_pytest.py
 - The separated Playwright suit (without pytest)
 
 CL command
