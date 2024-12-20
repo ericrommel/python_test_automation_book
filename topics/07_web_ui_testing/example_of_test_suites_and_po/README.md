@@ -4,18 +4,21 @@ This folder contains files with PO and test suites to demo different implementat
 
 ## Files
 
-1. `selenium_test_demo.py` It is a simple example of selenium webdriver test. CLI command:
+1. `selenium_test_demo.py` It is a simple example of selenium webdriver test.
+   CLI command:
    ```bash
    $ python .\selenium_test_demo.py
    ```
 
-2. `test_login_page_not_pytest.py` The separated Playwright suit (without pytest). CLI command:
+2. `test_login_page_not_pytest.py` The separated Playwright suit (without pytest).
+   CLI command:
    ```bash
    $ python .\test_login_page_not_pytest.py
    ```
 
 3. `login_page_object.py` - PO
-   `test_login_page.py` - test suit that uses `login_page_object.py`. This couple of files uses Pytest fixture. CLI command:
+   `test_login_page.py` - test suit that uses `login_page_object.py`. This couple of files uses Pytest fixture.
+   CLI command:
    ```bash
    $ python .\test_login_page.py
    ```
