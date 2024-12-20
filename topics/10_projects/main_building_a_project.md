@@ -15,26 +15,27 @@ Create a suite of tests for a web user interface. At least two functionalities s
 
 ### 2. API Test Suite
 
-Develop a suite of tests for an API. This should include tests for at least these API methods: GET, POST, PUT, DELETE. You can also include tests for Data validation, and error handling. Use pytest and requests library for API testing.
+Develop a suite of tests for an API. This should include tests for at least these API methods: GET, POST, and PUT. You can also include tests for Data validation, and error handling. Use pytest and requests library for API testing.
 
 
 ### 3. Documentation
 
-Provide basic documentation for your project, including:
-- **Test Strategy**: Outline your overall approach to testing.
-- **Test Plan**: Detail the specific tests to be performed, the schedule, and resources.
-- **Test Cases**: Describe the individual tests in detail.
-- **Test Report**: Summarize the results of the tests, including any issues found and their severity.
+Provide basic documentation for your project:
+- Using docstring within your code
+- Creating a README.md file containing relevant information and instructions for running the project locally
 
 
-### 4. Optional Enhancements
+### 4. Code Quality
 
-Consider adding enhancements like linters and formatters to your project. These tools can help maintain code quality by enforcing coding standards and formatting rules. They can also help identify potential issues early in the development process.
+Ensure your code quality by using tools like `pylint`/`flake8`/`black`/`pycodestyle`.
+
+> [!TIP]
+> Optionally, use GitHub Actions to check your code quality and execute all your tests. Bonus point for an HTML report showing the results.
 
 
 ## Reporting
 
-Each suite should generate its own report, detailing the results of the tests. Additionally, there should be a global report that consolidates the results from both the Web UI and API tests.
+Each suite should generate its own report, detailing the results of the tests. Additionally, there should be a global report that consolidates the results from both the Web UI and API tests. Implement a logger to log the results during the test execution.
 
 
 ## Deadline
@@ -49,4 +50,4 @@ Create your own repository on GitHub and upload all files there. Once you're don
 
 ## Evaluation Criteria
 
-No measures will be applied but make sure the project is working fine and follows the requirements. Be professional.
+Reviewers will evaluate the quality and completeness of your project. Code should allow downloading and running Web/API tests locally by following instructions that are provided in your README files.
