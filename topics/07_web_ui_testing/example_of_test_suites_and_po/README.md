@@ -14,6 +14,11 @@ This folder contains files with PO and test suites to demo different implementat
    $ python .\test_login_page_not_pytest.py
    ```
 
+3. `login_page_object.py` - PO
+   `test_login_page.py` - test suit that uses `login_page_object.py`. This couple of files uses Pytest fixture. CLI command:
+   ```bash
+   $ python .\test_login_page.py
+   ```
 3) 
 login_page_object.py - PO
 test_login_page.py - test suit that uses login_page_object.py
