@@ -1,5 +1,5 @@
 # Introduction
-This folder contains filew with PO and test suites to demo different version of Web UI automation tests
+This folder contains files with PO and test suites to demo different version of Web UI automation tests
 
 
 ## Files
@@ -20,15 +20,19 @@ CL command
 python .\test_login_page_not_pytest.py
 ```
 
-3) login_page_object.py - PO for test suit test_login_page.py
-- It uses Pytest fixture
+3) 
+login_page_object.py - PO
+test_login_page.py - test suit that uses login_page_object.py
+- This couple of files uses Pytest fixture
 
 CL command
 ```bash
 pytest .\test_login_page.py
 ```
 
-4) product_page_object.py - PO for test suit test_product_page.py
+4) 
+product_page_object.py - PO
+test_product_page.py - test suit that uses login_page_object.py
 - It use Pytest fixture and consume data from conftest.py
 - It incorporates functionality of login_page_object.py and test suit test_login_page.py
 
