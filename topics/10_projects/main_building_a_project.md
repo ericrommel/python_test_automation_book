@@ -27,7 +27,8 @@ Provide basic documentation for your project:
 
 ### 4. Code Quality
 
-Ensure your code quality by using tools like `pylint`/`flake8`/`black`/`pycodestyle`.
+All code files should produce no warning or errors while checking by `pylint`/`flake8`/`black`/`pycodestyle`.
+
 
 > [!TIP]
 > Optionally, use GitHub Actions to check your code quality and execute all your tests. Bonus point for an HTML report showing the results.
